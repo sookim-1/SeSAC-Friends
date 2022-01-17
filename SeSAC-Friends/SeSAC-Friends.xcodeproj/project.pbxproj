@@ -15,6 +15,9 @@
 		765A4F7F279510440034A328 /* SeSAC_FriendsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765A4F7E279510440034A328 /* SeSAC_FriendsTests.swift */; };
 		765A4F89279510440034A328 /* SeSAC_FriendsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765A4F88279510440034A328 /* SeSAC_FriendsUITests.swift */; };
 		765A4F8B279510440034A328 /* SeSAC_FriendsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765A4F8A279510440034A328 /* SeSAC_FriendsUITestsLaunchTests.swift */; };
+		8DC310AC0357D98E88240950 /* Pods_SeSAC_FriendsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7134A9B299D25E5531425EA2 /* Pods_SeSAC_FriendsTests.framework */; };
+		D2067850F49FBFAD5890E1A9 /* Pods_SeSAC_Friends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B0DF07388A1930EEA9C7B8 /* Pods_SeSAC_Friends.framework */; };
+		DE66B39DE7617ED43B20DE7C /* Pods_SeSAC_Friends_SeSAC_FriendsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F66A08C613686400BCC4042 /* Pods_SeSAC_Friends_SeSAC_FriendsUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F66A08C613686400BCC4042 /* Pods_SeSAC_Friends_SeSAC_FriendsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeSAC_Friends_SeSAC_FriendsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25B8D7E5B3BD2801FE885E09 /* Pods-SeSAC-Friends-SeSAC-FriendsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeSAC-Friends-SeSAC-FriendsUITests.debug.xcconfig"; path = "Target Support Files/Pods-SeSAC-Friends-SeSAC-FriendsUITests/Pods-SeSAC-Friends-SeSAC-FriendsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3649F51854AF24D8B0DB4F88 /* Pods-SeSAC-Friends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeSAC-Friends.release.xcconfig"; path = "Target Support Files/Pods-SeSAC-Friends/Pods-SeSAC-Friends.release.xcconfig"; sourceTree = "<group>"; };
+		7134A9B299D25E5531425EA2 /* Pods_SeSAC_FriendsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeSAC_FriendsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		765A4F64279510430034A328 /* SeSAC-Friends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SeSAC-Friends.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		765A4F67279510430034A328 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		765A4F69279510430034A328 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +54,11 @@
 		765A4F84279510440034A328 /* SeSAC-FriendsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SeSAC-FriendsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		765A4F88279510440034A328 /* SeSAC_FriendsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSAC_FriendsUITests.swift; sourceTree = "<group>"; };
 		765A4F8A279510440034A328 /* SeSAC_FriendsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSAC_FriendsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		877E55BE2C47F8E371F7A836 /* Pods-SeSAC-FriendsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeSAC-FriendsTests.release.xcconfig"; path = "Target Support Files/Pods-SeSAC-FriendsTests/Pods-SeSAC-FriendsTests.release.xcconfig"; sourceTree = "<group>"; };
+		91CCE32BA0FF98052F72337F /* Pods-SeSAC-FriendsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeSAC-FriendsTests.debug.xcconfig"; path = "Target Support Files/Pods-SeSAC-FriendsTests/Pods-SeSAC-FriendsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D9B0DF07388A1930EEA9C7B8 /* Pods_SeSAC_Friends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeSAC_Friends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F34915DCDA044ACD7CF9129A /* Pods-SeSAC-Friends-SeSAC-FriendsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeSAC-Friends-SeSAC-FriendsUITests.release.xcconfig"; path = "Target Support Files/Pods-SeSAC-Friends-SeSAC-FriendsUITests/Pods-SeSAC-Friends-SeSAC-FriendsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FCBD4895FD56136D5096DE43 /* Pods-SeSAC-Friends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeSAC-Friends.debug.xcconfig"; path = "Target Support Files/Pods-SeSAC-Friends/Pods-SeSAC-Friends.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2067850F49FBFAD5890E1A9 /* Pods_SeSAC_Friends.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DC310AC0357D98E88240950 /* Pods_SeSAC_FriendsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +82,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE66B39DE7617ED43B20DE7C /* Pods_SeSAC_Friends_SeSAC_FriendsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24742796F645F7FCDE435CAE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FCBD4895FD56136D5096DE43 /* Pods-SeSAC-Friends.debug.xcconfig */,
+				3649F51854AF24D8B0DB4F88 /* Pods-SeSAC-Friends.release.xcconfig */,
+				25B8D7E5B3BD2801FE885E09 /* Pods-SeSAC-Friends-SeSAC-FriendsUITests.debug.xcconfig */,
+				F34915DCDA044ACD7CF9129A /* Pods-SeSAC-Friends-SeSAC-FriendsUITests.release.xcconfig */,
+				91CCE32BA0FF98052F72337F /* Pods-SeSAC-FriendsTests.debug.xcconfig */,
+				877E55BE2C47F8E371F7A836 /* Pods-SeSAC-FriendsTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		58AA94650FE389AEF69DA950 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D9B0DF07388A1930EEA9C7B8 /* Pods_SeSAC_Friends.framework */,
+				1F66A08C613686400BCC4042 /* Pods_SeSAC_Friends_SeSAC_FriendsUITests.framework */,
+				7134A9B299D25E5531425EA2 /* Pods_SeSAC_FriendsTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		765A4F5B279510430034A328 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +119,8 @@
 				765A4F7D279510440034A328 /* SeSAC-FriendsTests */,
 				765A4F87279510440034A328 /* SeSAC-FriendsUITests */,
 				765A4F65279510430034A328 /* Products */,
+				24742796F645F7FCDE435CAE /* Pods */,
+				58AA94650FE389AEF69DA950 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,9 +171,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 765A4F8E279510440034A328 /* Build configuration list for PBXNativeTarget "SeSAC-Friends" */;
 			buildPhases = (
+				C601E51364EE99F2F1E4A75B /* [CP] Check Pods Manifest.lock */,
 				765A4F60279510430034A328 /* Sources */,
 				765A4F61279510430034A328 /* Frameworks */,
 				765A4F62279510430034A328 /* Resources */,
+				8EB7ECCC7F8E9434B7C67061 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -148,6 +190,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 765A4F91279510440034A328 /* Build configuration list for PBXNativeTarget "SeSAC-FriendsTests" */;
 			buildPhases = (
+				78B57F25E43387E6EBDCC761 /* [CP] Check Pods Manifest.lock */,
 				765A4F76279510440034A328 /* Sources */,
 				765A4F77279510440034A328 /* Frameworks */,
 				765A4F78279510440034A328 /* Resources */,
@@ -166,9 +209,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 765A4F94279510440034A328 /* Build configuration list for PBXNativeTarget "SeSAC-FriendsUITests" */;
 			buildPhases = (
+				BF54E6E0617EEFEE58683D5C /* [CP] Check Pods Manifest.lock */,
 				765A4F80279510440034A328 /* Sources */,
 				765A4F81279510440034A328 /* Frameworks */,
 				765A4F82279510440034A328 /* Resources */,
+				BD7CA85B25A8EE547E63815A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -248,6 +293,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		78B57F25E43387E6EBDCC761 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SeSAC-FriendsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8EB7ECCC7F8E9434B7C67061 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SeSAC-Friends/Pods-SeSAC-Friends-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SeSAC-Friends/Pods-SeSAC-Friends-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SeSAC-Friends/Pods-SeSAC-Friends-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD7CA85B25A8EE547E63815A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SeSAC-Friends-SeSAC-FriendsUITests/Pods-SeSAC-Friends-SeSAC-FriendsUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SeSAC-Friends-SeSAC-FriendsUITests/Pods-SeSAC-Friends-SeSAC-FriendsUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SeSAC-Friends-SeSAC-FriendsUITests/Pods-SeSAC-Friends-SeSAC-FriendsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF54E6E0617EEFEE58683D5C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SeSAC-Friends-SeSAC-FriendsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C601E51364EE99F2F1E4A75B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SeSAC-Friends-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		765A4F60279510430034A328 /* Sources */ = {
@@ -422,9 +570,11 @@
 		};
 		765A4F8F279510440034A328 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCBD4895FD56136D5096DE43 /* Pods-SeSAC-Friends.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "SeSAC-Friends/SeSAC-Friends.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2MRY8P7863;
@@ -451,9 +601,11 @@
 		};
 		765A4F90279510440034A328 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3649F51854AF24D8B0DB4F88 /* Pods-SeSAC-Friends.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "SeSAC-Friends/SeSAC-Friends.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2MRY8P7863;
@@ -480,6 +632,7 @@
 		};
 		765A4F92279510440034A328 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91CCE32BA0FF98052F72337F /* Pods-SeSAC-FriendsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -505,6 +658,7 @@
 		};
 		765A4F93279510440034A328 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 877E55BE2C47F8E371F7A836 /* Pods-SeSAC-FriendsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -530,6 +684,7 @@
 		};
 		765A4F95279510440034A328 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25B8D7E5B3BD2801FE885E09 /* Pods-SeSAC-Friends-SeSAC-FriendsUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -553,6 +708,7 @@
 		};
 		765A4F96279510440034A328 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F34915DCDA044ACD7CF9129A /* Pods-SeSAC-Friends-SeSAC-FriendsUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

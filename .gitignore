@@ -15,6 +15,10 @@ Pods/
 .AppleDouble
 .LSOverride
 
+### GoogleInfo.plist
+SeSAC-Friends/SeSAC-Friends/GoogleService-Info.plist
+SeSAC-Friends/SeSAC-Friends/SeSAC-Friends.entitlements
+
 # Icon must end with two \r
 Icon
 
