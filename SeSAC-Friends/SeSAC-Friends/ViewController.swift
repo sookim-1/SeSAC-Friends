@@ -7,11 +7,12 @@
 
 import UIKit
 import FirebaseAuth
+import SnapKit
 
 class ViewController: UIViewController {
 
-    var doneButton = UIButton()
-    var sendButton = UIButton()
+    var doneButton = CustomButton()
+    var sendButton = CustomButton()
     var varificationCodeTextField = UITextField()
     var phoneNumberTextField = UITextField()
     
@@ -22,6 +23,8 @@ class ViewController: UIViewController {
         
         view.backgroundColor = .systemBackground
         configure()
+        doneButton.buttonStatus = .inactive
+        sendButton.buttonStatus = .disable
         doneButton.addTarget(self, action: #selector(handleDoneBtn(_:)), for: .touchUpInside)
         sendButton.addTarget(self, action: #selector(handleSendVarification(_:)), for: .touchUpInside)
     }
@@ -68,7 +71,11 @@ class ViewController: UIViewController {
         NSLayoutConstraint.activate([
             doneButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             doneButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            doneButton.heightAnchor.constraint(equalToConstant: 150),
+            doneButton.widthAnchor.constraint(equalToConstant: 150),
             
+            sendButton.heightAnchor.constraint(equalToConstant: 150),
+            sendButton.widthAnchor.constraint(equalToConstant: 150),
             sendButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             sendButton.topAnchor.constraint(equalTo: doneButton.bottomAnchor, constant: 10),
             
