@@ -18,7 +18,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let firstLaunch = FirstLaunch(userDefaults: .standard, key: "firstLaunchKey")
         firstLaunch.isFirstLaunch ? (window?.rootViewController = OnboardingVC()) : (window?.rootViewController = UINavigationController(rootViewController: ViewController()))
-        window?.rootViewController = OnboardingVC()
         window?.makeKeyAndVisible()
     }
 
