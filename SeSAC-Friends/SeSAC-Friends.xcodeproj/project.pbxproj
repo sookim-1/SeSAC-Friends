@@ -18,6 +18,9 @@
 		76CC47872797885600B82EF6 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 76CC47852797885500B82EF6 /* NotoSansKR-Medium.otf */; };
 		76CC47882797885600B82EF6 /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 76CC47862797885600B82EF6 /* NotoSansKR-Regular.otf */; };
 		76CC478A27980B7400B82EF6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 76CC478927980B7400B82EF6 /* GoogleService-Info.plist */; };
+		76CC478D27985DA600B82EF6 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CC478C27985DA600B82EF6 /* R.generated.swift */; };
+		76CC479027985E5A00B82EF6 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CC478F27985E5A00B82EF6 /* CustomFont.swift */; };
+		76CC4792279860CD00B82EF6 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CC4791279860CD00B82EF6 /* CustomColor.swift */; };
 		8DC310AC0357D98E88240950 /* Pods_SeSAC_FriendsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7134A9B299D25E5531425EA2 /* Pods_SeSAC_FriendsTests.framework */; };
 		D2067850F49FBFAD5890E1A9 /* Pods_SeSAC_Friends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B0DF07388A1930EEA9C7B8 /* Pods_SeSAC_Friends.framework */; };
 		DE66B39DE7617ED43B20DE7C /* Pods_SeSAC_Friends_SeSAC_FriendsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F66A08C613686400BCC4042 /* Pods_SeSAC_Friends_SeSAC_FriendsUITests.framework */; };
@@ -60,6 +63,9 @@
 		76CC47852797885500B82EF6 /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
 		76CC47862797885600B82EF6 /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
 		76CC478927980B7400B82EF6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		76CC478C27985DA600B82EF6 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		76CC478F27985E5A00B82EF6 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
+		76CC4791279860CD00B82EF6 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		877E55BE2C47F8E371F7A836 /* Pods-SeSAC-FriendsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeSAC-FriendsTests.release.xcconfig"; path = "Target Support Files/Pods-SeSAC-FriendsTests/Pods-SeSAC-FriendsTests.release.xcconfig"; sourceTree = "<group>"; };
 		91CCE32BA0FF98052F72337F /* Pods-SeSAC-FriendsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeSAC-FriendsTests.debug.xcconfig"; path = "Target Support Files/Pods-SeSAC-FriendsTests/Pods-SeSAC-FriendsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D9B0DF07388A1930EEA9C7B8 /* Pods_SeSAC_Friends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeSAC_Friends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,10 +149,12 @@
 		765A4F66279510430034A328 /* SeSAC-Friends */ = {
 			isa = PBXGroup;
 			children = (
+				76CC478E27985E4500B82EF6 /* CustomViews */,
 				76CC47842797881000B82EF6 /* Fonts */,
 				765A4F67279510430034A328 /* AppDelegate.swift */,
 				765A4F69279510430034A328 /* SceneDelegate.swift */,
 				765A4F6B279510430034A328 /* ViewController.swift */,
+				76CC478C27985DA600B82EF6 /* R.generated.swift */,
 				76CC478927980B7400B82EF6 /* GoogleService-Info.plist */,
 				765A4F70279510440034A328 /* Assets.xcassets */,
 				765A4F72279510440034A328 /* LaunchScreen.storyboard */,
@@ -177,8 +185,17 @@
 			children = (
 				76CC47852797885500B82EF6 /* NotoSansKR-Medium.otf */,
 				76CC47862797885600B82EF6 /* NotoSansKR-Regular.otf */,
+				76CC478F27985E5A00B82EF6 /* CustomFont.swift */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		76CC478E27985E4500B82EF6 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				76CC4791279860CD00B82EF6 /* CustomColor.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +206,7 @@
 			buildConfigurationList = 765A4F8E279510440034A328 /* Build configuration list for PBXNativeTarget "SeSAC-Friends" */;
 			buildPhases = (
 				C601E51364EE99F2F1E4A75B /* [CP] Check Pods Manifest.lock */,
+				76CC478B2798598B00B82EF6 /* Run Script */,
 				765A4F60279510430034A328 /* Sources */,
 				765A4F61279510430034A328 /* Frameworks */,
 				765A4F62279510430034A328 /* Resources */,
@@ -315,6 +333,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		76CC478B2798598B00B82EF6 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
 		78B57F25E43387E6EBDCC761 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -422,9 +459,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76CC479027985E5A00B82EF6 /* CustomFont.swift in Sources */,
 				765A4F6C279510430034A328 /* ViewController.swift in Sources */,
+				76CC4792279860CD00B82EF6 /* CustomColor.swift in Sources */,
 				765A4F68279510430034A328 /* AppDelegate.swift in Sources */,
 				765A4F6A279510430034A328 /* SceneDelegate.swift in Sources */,
+				76CC478D27985DA600B82EF6 /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
