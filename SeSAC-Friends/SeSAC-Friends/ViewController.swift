@@ -13,8 +13,8 @@ class ViewController: UIViewController {
 
     var doneButton = CustomButton()
     var sendButton = CustomButton()
-    var varificationCodeTextField = UITextField()
-    var phoneNumberTextField = UITextField()
+    var varificationCodeTextField = CustomTextField()
+    var phoneNumberTextField = CustomTextField()
     
     private var verifyID: String?
     
@@ -27,6 +27,11 @@ class ViewController: UIViewController {
         sendButton.buttonStatus = .disable
         doneButton.addTarget(self, action: #selector(handleDoneBtn(_:)), for: .touchUpInside)
         sendButton.addTarget(self, action: #selector(handleSendVarification(_:)), for: .touchUpInside)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        varificationCodeTextField.textFieldStatus = .disable
+        phoneNumberTextField.textFieldStatus = .error
     }
 
     @objc func handleDoneBtn(_ sender: Any) {
