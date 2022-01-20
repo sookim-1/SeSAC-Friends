@@ -9,7 +9,9 @@ target 'SeSAC-Friends' do
   pod 'Firebase/Auth'
   pod 'SnapKit', '~> 5.0.0'
   pod 'R.swift'
-
+  pod 'RxSwift', '6.5.0'
+  pod 'RxCocoa', '6.5.0'
+  
   target 'SeSAC-FriendsTests' do
     inherit! :search_paths
     # Pods for testing

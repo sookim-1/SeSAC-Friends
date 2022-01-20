@@ -58,5 +58,6 @@ class CustomTextField: UITextField {
         
         self.borderStyle = .none
         self.layer.addSublayer(bottomLine)
+        self.layoutIfNeeded()
     }
 }
