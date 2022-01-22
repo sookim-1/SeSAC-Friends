@@ -28,6 +28,7 @@
 		76CC479F279881F300B82EF6 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CC479E279881F300B82EF6 /* OnboardingVC.swift */; };
 		76CC47A22798B2B500B82EF6 /* FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CC47A12798B2B500B82EF6 /* FirstLaunch.swift */; };
 		76CC47A42798F82200B82EF6 /* SMSAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CC47A32798F82200B82EF6 /* SMSAuthViewModel.swift */; };
+		76CC47A62799DFF400B82EF6 /* NicknameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CC47A52799DFF400B82EF6 /* NicknameVC.swift */; };
 		8DC310AC0357D98E88240950 /* Pods_SeSAC_FriendsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7134A9B299D25E5531425EA2 /* Pods_SeSAC_FriendsTests.framework */; };
 		D2067850F49FBFAD5890E1A9 /* Pods_SeSAC_Friends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B0DF07388A1930EEA9C7B8 /* Pods_SeSAC_Friends.framework */; };
 		DE66B39DE7617ED43B20DE7C /* Pods_SeSAC_Friends_SeSAC_FriendsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F66A08C613686400BCC4042 /* Pods_SeSAC_Friends_SeSAC_FriendsUITests.framework */; };
@@ -80,6 +81,7 @@
 		76CC479E279881F300B82EF6 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 		76CC47A12798B2B500B82EF6 /* FirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunch.swift; sourceTree = "<group>"; };
 		76CC47A32798F82200B82EF6 /* SMSAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSAuthViewModel.swift; sourceTree = "<group>"; };
+		76CC47A52799DFF400B82EF6 /* NicknameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameVC.swift; sourceTree = "<group>"; };
 		877E55BE2C47F8E371F7A836 /* Pods-SeSAC-FriendsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeSAC-FriendsTests.release.xcconfig"; path = "Target Support Files/Pods-SeSAC-FriendsTests/Pods-SeSAC-FriendsTests.release.xcconfig"; sourceTree = "<group>"; };
 		91CCE32BA0FF98052F72337F /* Pods-SeSAC-FriendsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeSAC-FriendsTests.debug.xcconfig"; path = "Target Support Files/Pods-SeSAC-FriendsTests/Pods-SeSAC-FriendsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D9B0DF07388A1930EEA9C7B8 /* Pods_SeSAC_Friends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeSAC_Friends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,6 +175,7 @@
 				765A4F69279510430034A328 /* SceneDelegate.swift */,
 				76CC47A32798F82200B82EF6 /* SMSAuthViewModel.swift */,
 				765A4F6B279510430034A328 /* SMSAuthVC.swift */,
+				76CC47A52799DFF400B82EF6 /* NicknameVC.swift */,
 				76CC478C27985DA600B82EF6 /* R.generated.swift */,
 				76CC478927980B7400B82EF6 /* GoogleService-Info.plist */,
 				765A4F70279510440034A328 /* Assets.xcassets */,
@@ -514,6 +517,7 @@
 			files = (
 				76CC479027985E5A00B82EF6 /* CustomFont.swift in Sources */,
 				765A4F6C279510430034A328 /* SMSAuthVC.swift in Sources */,
+				76CC47A62799DFF400B82EF6 /* NicknameVC.swift in Sources */,
 				76CC4792279860CD00B82EF6 /* CustomColor.swift in Sources */,
 				76CC47A22798B2B500B82EF6 /* FirstLaunch.swift in Sources */,
 				765A4F68279510430034A328 /* AppDelegate.swift in Sources */,
