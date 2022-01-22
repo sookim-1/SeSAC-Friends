@@ -17,7 +17,7 @@ enum TextFieldStatus {
 }
 
 class CustomTextField: UITextField {
-    var textFieldStatus: TextFieldStatus = .inactive {
+    var textFieldStatus: TextFieldStatus = .success {
         didSet {
             switch self.textFieldStatus {
             case .inactive:
@@ -41,6 +41,7 @@ class CustomTextField: UITextField {
         super.init(frame: frame)
         
         placeholder = "내용을 입력"
+        self.setBottomLine(bottomLineColor: UIColor.CustomColor.gray3.cgColor)
     }
     
     required init?(coder: NSCoder) {
@@ -58,6 +59,5 @@ class CustomTextField: UITextField {
         
         self.borderStyle = .none
         self.layer.addSublayer(bottomLine)
-        self.layoutIfNeeded()
     }
 }

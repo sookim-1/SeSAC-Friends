@@ -1,13 +1,13 @@
 //
-//  NicknameVC.swift
+//  HomeVC.swift
 //  SeSAC-Friends
 //
-//  Created by sookim on 2022/01/21.
+//  Created by sookim on 2022/01/23.
 //
 
 import UIKit
 
-class NicknameVC: UIViewController {
+class HomeVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,6 +15,5 @@ class NicknameVC: UIViewController {
         view.backgroundColor = .systemBackground
     }
     
-
 
 }

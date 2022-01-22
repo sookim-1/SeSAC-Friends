@@ -41,15 +41,21 @@ class CustomButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        configureDefault()
+        configureDefault(text: "입력")
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func configureDefault() {
-        setTitle("버튼내용", for: .normal)
+    init(text: String) {
+        super.init(frame: .zero)
+        
+        configureDefault(text: text)
+    }
+    
+    private func configureDefault(text: String) {
+        setTitle(text, for: .normal)
         titleLabel?.font = UIFont.CustomFont.body3R14
     }
 

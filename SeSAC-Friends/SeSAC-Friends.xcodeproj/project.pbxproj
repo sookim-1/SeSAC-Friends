@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7657E144279C6E92004CE565 /* SMSInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7657E143279C6E92004CE565 /* SMSInputVC.swift */; };
+		7657E146279C6EB3004CE565 /* BirthdayInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7657E145279C6EB3004CE565 /* BirthdayInputVC.swift */; };
+		7657E14A279C6EEE004CE565 /* EmailInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7657E149279C6EEE004CE565 /* EmailInputVC.swift */; };
+		7657E14C279C6F0F004CE565 /* GenderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7657E14B279C6F0F004CE565 /* GenderVC.swift */; };
+		7657E14E279C8727004CE565 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7657E14D279C8727004CE565 /* HomeVC.swift */; };
+		7657E152279C87DF004CE565 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7657E151279C87DF004CE565 /* R.generated.swift */; };
+		7657E154279C8955004CE565 /* UITextField+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7657E153279C8955004CE565 /* UITextField+Ext.swift */; };
+		7657E156279C89CC004CE565 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7657E155279C89CC004CE565 /* CustomLabel.swift */; };
 		765A4F68279510430034A328 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765A4F67279510430034A328 /* AppDelegate.swift */; };
 		765A4F6A279510430034A328 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765A4F69279510430034A328 /* SceneDelegate.swift */; };
 		765A4F6C279510430034A328 /* SMSAuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765A4F6B279510430034A328 /* SMSAuthVC.swift */; };
@@ -18,7 +26,6 @@
 		76CC47872797885600B82EF6 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 76CC47852797885500B82EF6 /* NotoSansKR-Medium.otf */; };
 		76CC47882797885600B82EF6 /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 76CC47862797885600B82EF6 /* NotoSansKR-Regular.otf */; };
 		76CC478A27980B7400B82EF6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 76CC478927980B7400B82EF6 /* GoogleService-Info.plist */; };
-		76CC478D27985DA600B82EF6 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CC478C27985DA600B82EF6 /* R.generated.swift */; };
 		76CC479027985E5A00B82EF6 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CC478F27985E5A00B82EF6 /* CustomFont.swift */; };
 		76CC4792279860CD00B82EF6 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CC4791279860CD00B82EF6 /* CustomColor.swift */; };
 		76CC47942798633000B82EF6 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CC47932798633000B82EF6 /* CustomButton.swift */; };
@@ -28,7 +35,7 @@
 		76CC479F279881F300B82EF6 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CC479E279881F300B82EF6 /* OnboardingVC.swift */; };
 		76CC47A22798B2B500B82EF6 /* FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CC47A12798B2B500B82EF6 /* FirstLaunch.swift */; };
 		76CC47A42798F82200B82EF6 /* SMSAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CC47A32798F82200B82EF6 /* SMSAuthViewModel.swift */; };
-		76CC47A62799DFF400B82EF6 /* NicknameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CC47A52799DFF400B82EF6 /* NicknameVC.swift */; };
+		76CC47A62799DFF400B82EF6 /* NicknameInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CC47A52799DFF400B82EF6 /* NicknameInputVC.swift */; };
 		8DC310AC0357D98E88240950 /* Pods_SeSAC_FriendsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7134A9B299D25E5531425EA2 /* Pods_SeSAC_FriendsTests.framework */; };
 		D2067850F49FBFAD5890E1A9 /* Pods_SeSAC_Friends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B0DF07388A1930EEA9C7B8 /* Pods_SeSAC_Friends.framework */; };
 		DE66B39DE7617ED43B20DE7C /* Pods_SeSAC_Friends_SeSAC_FriendsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F66A08C613686400BCC4042 /* Pods_SeSAC_Friends_SeSAC_FriendsUITests.framework */; };
@@ -56,6 +63,14 @@
 		25B8D7E5B3BD2801FE885E09 /* Pods-SeSAC-Friends-SeSAC-FriendsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeSAC-Friends-SeSAC-FriendsUITests.debug.xcconfig"; path = "Target Support Files/Pods-SeSAC-Friends-SeSAC-FriendsUITests/Pods-SeSAC-Friends-SeSAC-FriendsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3649F51854AF24D8B0DB4F88 /* Pods-SeSAC-Friends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeSAC-Friends.release.xcconfig"; path = "Target Support Files/Pods-SeSAC-Friends/Pods-SeSAC-Friends.release.xcconfig"; sourceTree = "<group>"; };
 		7134A9B299D25E5531425EA2 /* Pods_SeSAC_FriendsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeSAC_FriendsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7657E143279C6E92004CE565 /* SMSInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSInputVC.swift; sourceTree = "<group>"; };
+		7657E145279C6EB3004CE565 /* BirthdayInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayInputVC.swift; sourceTree = "<group>"; };
+		7657E149279C6EEE004CE565 /* EmailInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailInputVC.swift; sourceTree = "<group>"; };
+		7657E14B279C6F0F004CE565 /* GenderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderVC.swift; sourceTree = "<group>"; };
+		7657E14D279C8727004CE565 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		7657E151279C87DF004CE565 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		7657E153279C8955004CE565 /* UITextField+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Ext.swift"; sourceTree = "<group>"; };
+		7657E155279C89CC004CE565 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		765A4F64279510430034A328 /* SeSAC-Friends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SeSAC-Friends.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		765A4F67279510430034A328 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		765A4F69279510430034A328 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,7 +86,6 @@
 		76CC47852797885500B82EF6 /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
 		76CC47862797885600B82EF6 /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
 		76CC478927980B7400B82EF6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		76CC478C27985DA600B82EF6 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		76CC478F27985E5A00B82EF6 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
 		76CC4791279860CD00B82EF6 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		76CC47932798633000B82EF6 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -81,7 +95,7 @@
 		76CC479E279881F300B82EF6 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 		76CC47A12798B2B500B82EF6 /* FirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunch.swift; sourceTree = "<group>"; };
 		76CC47A32798F82200B82EF6 /* SMSAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSAuthViewModel.swift; sourceTree = "<group>"; };
-		76CC47A52799DFF400B82EF6 /* NicknameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameVC.swift; sourceTree = "<group>"; };
+		76CC47A52799DFF400B82EF6 /* NicknameInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameInputVC.swift; sourceTree = "<group>"; };
 		877E55BE2C47F8E371F7A836 /* Pods-SeSAC-FriendsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeSAC-FriendsTests.release.xcconfig"; path = "Target Support Files/Pods-SeSAC-FriendsTests/Pods-SeSAC-FriendsTests.release.xcconfig"; sourceTree = "<group>"; };
 		91CCE32BA0FF98052F72337F /* Pods-SeSAC-FriendsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeSAC-FriendsTests.debug.xcconfig"; path = "Target Support Files/Pods-SeSAC-FriendsTests/Pods-SeSAC-FriendsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D9B0DF07388A1930EEA9C7B8 /* Pods_SeSAC_Friends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeSAC_Friends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +154,42 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7657E147279C6EBD004CE565 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				76CC47A32798F82200B82EF6 /* SMSAuthViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		7657E148279C6ED5004CE565 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				765A4F6B279510430034A328 /* SMSAuthVC.swift */,
+				7657E143279C6E92004CE565 /* SMSInputVC.swift */,
+				76CC47A52799DFF400B82EF6 /* NicknameInputVC.swift */,
+				7657E145279C6EB3004CE565 /* BirthdayInputVC.swift */,
+				7657E149279C6EEE004CE565 /* EmailInputVC.swift */,
+				7657E14B279C6F0F004CE565 /* GenderVC.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		7657E14F279C874E004CE565 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7657E153279C8955004CE565 /* UITextField+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7657E150279C8772004CE565 /* BaseViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BaseViews;
+			sourceTree = "<group>";
+		};
 		765A4F5B279510430034A328 = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +215,9 @@
 		765A4F66279510430034A328 /* SeSAC-Friends */ = {
 			isa = PBXGroup;
 			children = (
+				7657E150279C8772004CE565 /* BaseViews */,
+				7657E14F279C874E004CE565 /* Extensions */,
+				7657E147279C6EBD004CE565 /* ViewModels */,
 				76CC47A02798B2A600B82EF6 /* Helper */,
 				76CC479B279881AC00B82EF6 /* CustomCells */,
 				76CC47982798817A00B82EF6 /* Models */,
@@ -173,11 +226,8 @@
 				76CC47842797881000B82EF6 /* Fonts */,
 				765A4F67279510430034A328 /* AppDelegate.swift */,
 				765A4F69279510430034A328 /* SceneDelegate.swift */,
-				76CC47A32798F82200B82EF6 /* SMSAuthViewModel.swift */,
-				765A4F6B279510430034A328 /* SMSAuthVC.swift */,
-				76CC47A52799DFF400B82EF6 /* NicknameVC.swift */,
-				76CC478C27985DA600B82EF6 /* R.generated.swift */,
 				76CC478927980B7400B82EF6 /* GoogleService-Info.plist */,
+				7657E151279C87DF004CE565 /* R.generated.swift */,
 				765A4F70279510440034A328 /* Assets.xcassets */,
 				765A4F72279510440034A328 /* LaunchScreen.storyboard */,
 				765A4F75279510440034A328 /* Info.plist */,
@@ -218,6 +268,7 @@
 				76CC4791279860CD00B82EF6 /* CustomColor.swift */,
 				76CC47932798633000B82EF6 /* CustomButton.swift */,
 				76CC479527987C6C00B82EF6 /* CustomTextField.swift */,
+				7657E155279C89CC004CE565 /* CustomLabel.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -225,7 +276,9 @@
 		76CC47972798817200B82EF6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7657E148279C6ED5004CE565 /* SignUp */,
 				76CC479E279881F300B82EF6 /* OnboardingVC.swift */,
+				7657E14D279C8727004CE565 /* HomeVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -515,20 +568,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7657E146279C6EB3004CE565 /* BirthdayInputVC.swift in Sources */,
 				76CC479027985E5A00B82EF6 /* CustomFont.swift in Sources */,
 				765A4F6C279510430034A328 /* SMSAuthVC.swift in Sources */,
-				76CC47A62799DFF400B82EF6 /* NicknameVC.swift in Sources */,
+				76CC47A62799DFF400B82EF6 /* NicknameInputVC.swift in Sources */,
 				76CC4792279860CD00B82EF6 /* CustomColor.swift in Sources */,
 				76CC47A22798B2B500B82EF6 /* FirstLaunch.swift in Sources */,
+				7657E152279C87DF004CE565 /* R.generated.swift in Sources */,
 				765A4F68279510430034A328 /* AppDelegate.swift in Sources */,
 				76CC479627987C6C00B82EF6 /* CustomTextField.swift in Sources */,
 				76CC47942798633000B82EF6 /* CustomButton.swift in Sources */,
+				7657E156279C89CC004CE565 /* CustomLabel.swift in Sources */,
 				76CC47A42798F82200B82EF6 /* SMSAuthViewModel.swift in Sources */,
+				7657E154279C8955004CE565 /* UITextField+Ext.swift in Sources */,
+				7657E144279C6E92004CE565 /* SMSInputVC.swift in Sources */,
 				76CC479F279881F300B82EF6 /* OnboardingVC.swift in Sources */,
 				765A4F6A279510430034A328 /* SceneDelegate.swift in Sources */,
+				7657E14A279C6EEE004CE565 /* EmailInputVC.swift in Sources */,
 				76CC479D279881C500B82EF6 /* OnboardingCollectionViewCell.swift in Sources */,
 				76CC479A2798818800B82EF6 /* OnboardingSlide.swift in Sources */,
-				76CC478D27985DA600B82EF6 /* R.generated.swift in Sources */,
+				7657E14E279C8727004CE565 /* HomeVC.swift in Sources */,
+				7657E14C279C6F0F004CE565 /* GenderVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

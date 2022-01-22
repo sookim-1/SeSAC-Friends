@@ -471,18 +471,22 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 5 images.
+  /// This `R.image` struct is generated, and contains static references to 7 images.
   struct image {
     /// Image `SeSAC`.
     static let seSAC = Rswift.ImageResource(bundle: R.hostingBundle, name: "SeSAC")
     /// Image `Splash`.
     static let splash = Rswift.ImageResource(bundle: R.hostingBundle, name: "Splash")
+    /// Image `man`.
+    static let man = Rswift.ImageResource(bundle: R.hostingBundle, name: "man")
     /// Image `onboardingImg1`.
     static let onboardingImg1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "onboardingImg1")
     /// Image `onboardingImg2`.
     static let onboardingImg2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "onboardingImg2")
     /// Image `onboardingImg3`.
     static let onboardingImg3 = Rswift.ImageResource(bundle: R.hostingBundle, name: "onboardingImg3")
+    /// Image `woman`.
+    static let woman = Rswift.ImageResource(bundle: R.hostingBundle, name: "woman")
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "SeSAC", bundle: ..., traitCollection: ...)`
@@ -495,6 +499,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "Splash", bundle: ..., traitCollection: ...)`
     static func splash(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.splash, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "man", bundle: ..., traitCollection: ...)`
+    static func man(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.man, compatibleWith: traitCollection)
     }
     #endif
 
@@ -516,6 +527,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "onboardingImg3", bundle: ..., traitCollection: ...)`
     static func onboardingImg3(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.onboardingImg3, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "woman", bundle: ..., traitCollection: ...)`
+    static func woman(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.woman, compatibleWith: traitCollection)
     }
     #endif
 
