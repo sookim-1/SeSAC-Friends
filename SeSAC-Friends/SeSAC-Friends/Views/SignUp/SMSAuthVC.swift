@@ -85,7 +85,7 @@ class SMSAuthVC: UIViewController {
                     let smsInputVC = SMSInputVC()
                     smsInputVC.varification = varification
                     smsInputVC.authViewModel = self.viewModel
-                    UserDefaults.standard.set("+82\(self.viewModel.phoneNumberText.value)", forKey: "phoneNumber")
+                    UserDefaults.phoneNumber = "+82\(self.viewModel.phoneNumberText.value)"
                     self.navigationController?.pushViewController(smsInputVC, animated: true)
                 }
             case .completed:

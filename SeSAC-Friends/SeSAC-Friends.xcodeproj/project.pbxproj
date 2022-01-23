@@ -23,6 +23,7 @@
 		7657E168279CBF6E004CE565 /* EmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7657E167279CBF6E004CE565 /* EmailViewModel.swift */; };
 		7657E16A279CBF7E004CE565 /* GenderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7657E169279CBF7E004CE565 /* GenderViewModel.swift */; };
 		7657E16C279CC343004CE565 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7657E16B279CC343004CE565 /* User.swift */; };
+		7657E181279D730B004CE565 /* UserDefaults+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7657E180279D730B004CE565 /* UserDefaults+Ext.swift */; };
 		765A4F68279510430034A328 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765A4F67279510430034A328 /* AppDelegate.swift */; };
 		765A4F6A279510430034A328 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765A4F69279510430034A328 /* SceneDelegate.swift */; };
 		765A4F6C279510430034A328 /* SMSAuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765A4F6B279510430034A328 /* SMSAuthVC.swift */; };
@@ -87,6 +88,7 @@
 		7657E167279CBF6E004CE565 /* EmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewModel.swift; sourceTree = "<group>"; };
 		7657E169279CBF7E004CE565 /* GenderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderViewModel.swift; sourceTree = "<group>"; };
 		7657E16B279CC343004CE565 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7657E180279D730B004CE565 /* UserDefaults+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Ext.swift"; sourceTree = "<group>"; };
 		765A4F64279510430034A328 /* SeSAC-Friends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SeSAC-Friends.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		765A4F67279510430034A328 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		765A4F69279510430034A328 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			children = (
 				7657E153279C8955004CE565 /* UITextField+Ext.swift */,
 				7657E163279CBE9D004CE565 /* Date+Ext.swift */,
+				7657E180279D730B004CE565 /* UserDefaults+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -616,6 +619,7 @@
 				76CC47A62799DFF400B82EF6 /* NicknameInputVC.swift in Sources */,
 				76CC4792279860CD00B82EF6 /* CustomColor.swift in Sources */,
 				76CC47A22798B2B500B82EF6 /* FirstLaunch.swift in Sources */,
+				7657E181279D730B004CE565 /* UserDefaults+Ext.swift in Sources */,
 				7657E16C279CC343004CE565 /* User.swift in Sources */,
 				7657E152279C87DF004CE565 /* R.generated.swift in Sources */,
 				765A4F68279510430034A328 /* AppDelegate.swift in Sources */,

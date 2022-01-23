@@ -112,7 +112,7 @@ class BirthdayInputVC: UIViewController {
         age = datePicker.date.age
         dateformatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
         dateformatter.timeZone = NSTimeZone(name: "ko_KR") as TimeZone?
-        UserDefaults.standard.set(dateformatter.string(from: datePicker.date), forKey: "birthday")
+        UserDefaults.birthday = dateformatter.string(from: datePicker.date)
         
         sender.resignFirstResponder()
     }

@@ -65,7 +65,7 @@ class EmailInputVC: UIViewController {
         doneButton.rx.tap
             .bind {
                 if self.viewModel.emailValid.value {
-                UserDefaults.standard.set(self.viewModel.emailText.value, forKey: "email")
+                    UserDefaults.email = self.viewModel.emailText.value
                 self.navigationController?.pushViewController(GenderVC(), animated: true)
                 } else {
                     self.view.makeToast("이메일 형식이 올바르지 않습니다.")

@@ -107,7 +107,7 @@ class SMSInputVC: UIViewController {
                     self.view.makeToast("에러가 발생했습니다. 다시 시도해주세요")
                 }
                 else {
-                    UserDefaults.standard.set(idToken, forKey: "idToken")
+                    UserDefaults.idToken = idToken!
                     self.getUser(idToken: idToken!) { [weak self] result in
                         switch result {
                         case .success(let str):

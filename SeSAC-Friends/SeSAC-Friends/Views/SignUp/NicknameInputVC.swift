@@ -70,7 +70,7 @@ class NicknameInputVC: UIViewController {
                     self.view.makeToast("닉네임은 1자 이상 10자 이내로 부탁드려요")
                 }
                 else {
-                    UserDefaults.standard.set(self.viewModel.nicknameText.value, forKey: "nickname")
+                    UserDefaults.nickname = self.viewModel.nicknameText.value
                     self.navigationController?.pushViewController(BirthdayInputVC(), animated: true)
                 }
              }

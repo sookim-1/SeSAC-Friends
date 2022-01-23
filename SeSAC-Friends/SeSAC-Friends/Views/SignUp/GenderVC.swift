@@ -159,8 +159,8 @@ class GenderVC: UIViewController {
     
     @objc func authComplete() {
         
-        let idToken = UserDefaults.standard.string(forKey: "idToken")
-        postUser(idToken: idToken!) { result in
+        let idToken = UserDefaults.idToken
+        postUser(idToken: idToken) { result in
             switch result {
             case .success(let str):
                 print(str)
@@ -180,17 +180,17 @@ class GenderVC: UIViewController {
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue(idToken, forHTTPHeaderField: "idtoken")
-        let phoneNumber = UserDefaults.standard.string(forKey: "phoneNumber")
-        let FCMToken = UserDefaults.standard.string(forKey: "FCMToken")
-        let nick = UserDefaults.standard.string(forKey: "nickname")
-        let birth = UserDefaults.standard.string(forKey: "birthday")
-        let email = UserDefaults.standard.string(forKey: "email")
+        let phoneNumber = UserDefaults.phoneNumber
+        let FCMToken = UserDefaults.FCMToken
+        let nick = UserDefaults.nickname
+        let birth = UserDefaults.birthday
+        let email = UserDefaults.email
         
         [phoneNumber, FCMToken, nick, birth, email].forEach { str in
             print(str)
         }
         
-        request.httpBody = try? JSONEncoder().encode(User(phoneNumber: phoneNumber!, FCMtoken: "aefewfawefajlgrhawljfawflawejflajw313123123efkljawlkfj222aw", nick: nick!, birth: birth!, email: email!, gender: genderIndex))
+        request.httpBody = try? JSONEncoder().encode(User(phoneNumber: phoneNumber, FCMtoken: "aefewfawefajlgrhawljfawflawejflajw313123123efkljawlkfj222aw", nick: nick, birth: birth, email: email, gender: genderIndex))
         
         
         URLSession.shared.dataTask(with: request) { data, response, error in
