@@ -32,8 +32,7 @@ class SMSAuthVC: UIViewController {
     }()
     
     var viewModel = SMSAuthViewModel()
-    let disposeBag = DisposeBag()
-    private var verifyID: String?
+    var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,11 +41,58 @@ class SMSAuthVC: UIViewController {
         setUpConstraints()
         setUpNavigationBar()
         doneButton.buttonStatus = .disable
-        doneButton.addTarget(self, action: #selector(handleDoneBtn(_:)), for: .touchUpInside)
+        
+        phoneNumberTextField.rx.text
+            .orEmpty
+            .bind(to: viewModel.phoneNumberText)
+            .disposed(by: disposeBag)
+        
+        viewModel.phoneNumberText
+            .map{ self.viewModel.isValidPhoneNumber(text: $0) }
+            .bind(to: viewModel.phoneNumberValid)
+            .disposed(by: disposeBag)
+        
+        viewModel.phoneNumberValid.subscribe(onNext: { valid in
+            if valid {
+                self.phoneNumberTextField.textFieldStatus = .success
+                self.doneButton.buttonStatus = .fill
+            } else {
+                self.phoneNumberTextField.textFieldStatus = .error
+            }
+        }).disposed(by: disposeBag)
+        
+        doneButton.rx.tap
+            .bind {
+                 self.viewModel.smsAuth()
+             }
+             .disposed(by: disposeBag)
+        
+        viewModel.verifyID
+            .observe(on: MainScheduler.instance)
+            .subscribe { event in
+            print(event)
+            switch event {
+            case .next(let varification):
+                print(varification)
+                guard varification != nil else { return }
+                if varification == "에러" {
+                    print("에러발생")
+                } else {
+                    let smsInputVC = SMSInputVC()
+                    smsInputVC.varification = varification
+                    UserDefaults.standard.set("+82\(self.viewModel.phoneNumberText.value)", forKey: "phoneNumber")
+                    self.navigationController?.pushViewController(smsInputVC, animated: true)
+                }
+            case .completed:
+                print("완료")
+            case .error(let err):
+                print(err)
+            }
+        }.disposed(by: disposeBag)
     }
     
     override func viewDidLayoutSubviews() {
-        phoneNumberTextField.textFieldStatus = .inactive
+        //phoneNumberTextField.textFieldStatus = .inactive
     }
     
     private func setUpNavigationBar() {
@@ -79,7 +125,9 @@ class SMSAuthVC: UIViewController {
     }
 
     @objc func handleDoneBtn(_ sender: Any) {
-        navigationController?.pushViewController(SMSInputVC(), animated: true)
+        //navigationController?.pushViewController(SMSInputVC(), animated: true)
+    
+        print(viewModel.phoneNumberText.value)
     }
     
 }

@@ -40,7 +40,7 @@ class CustomTextField: UITextField {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        placeholder = "내용을 입력"
+        placeholder = ""
         self.setBottomLine(bottomLineColor: UIColor.CustomColor.gray3.cgColor)
     }
     

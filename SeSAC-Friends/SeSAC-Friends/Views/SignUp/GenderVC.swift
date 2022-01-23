@@ -9,6 +9,7 @@ import UIKit
 
 class GenderVC: UIViewController {
 
+    var genderIndex: Int = 2
     lazy var authDescriptionLabel: CustomLabel = CustomLabel(lineHeight: 1.5, text: "성별을 선택해 주세요\n새싹 찾기 기능을 이용하기 위해서 필요해요!", labelList: .genderLabel)
     
     lazy var manView: UIView = {
@@ -63,7 +64,32 @@ class GenderVC: UIViewController {
         configure()
         setUpConstraints()
         setUpNavigationBar()
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:)))
+        manView.addGestureRecognizer(tapGesture)
+        
+        let tapGesture2 = UITapGestureRecognizer(target: self, action: #selector(handleTap2(sender:)))
+        womanView.addGestureRecognizer(tapGesture2)
     }
+    @objc func handleTap(sender: UITapGestureRecognizer) {
+        manView.backgroundColor = UIColor.CustomColor.green.withAlphaComponent(0.5)
+        if womanView.backgroundColor == UIColor.CustomColor.green.withAlphaComponent(0.5) {
+            womanView.backgroundColor = .clear
+        }
+        genderIndex = 1
+        doneButton.buttonStatus = .fill
+        print("man")
+        
+    }
+    @objc func handleTap2(sender: UITapGestureRecognizer) {
+        womanView.backgroundColor = UIColor.CustomColor.green.withAlphaComponent(0.5)
+        if manView.backgroundColor == UIColor.CustomColor.green.withAlphaComponent(0.5) {
+            manView.backgroundColor = .clear
+        }
+        genderIndex = 0
+        doneButton.buttonStatus = .fill
+        print("woman")
+    }
+
     
     private func setUpNavigationBar() {
         navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "arrow.left")
@@ -132,6 +158,79 @@ class GenderVC: UIViewController {
     }
     
     @objc func authComplete() {
-        navigationController?.pushViewController(GenderVC(), animated: true)
+        
+        let idToken = UserDefaults.standard.string(forKey: "idToken")
+        postUser(idToken: idToken!) { result in
+            switch result {
+            case .success(let str):
+                print(str)
+                self.navigationController?.pushViewController(HomeVC(), animated: true)
+            case .failure(let err):
+                print(err)
+            }
+        }
+    }
+    
+    func postUser(idToken: String, completion: @escaping (Result<String, Error>) -> Void) {
+        var request = URLRequest(url: SeSacAPI.postUser.url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue(idToken, forHTTPHeaderField: "idToken")
+        let phoneNumber = UserDefaults.standard.string(forKey: "phoneNumber")
+        let FCMToken = UserDefaults.standard.string(forKey: "FCMToken")
+        let nick = UserDefaults.standard.string(forKey: "nickname")
+        let birth = UserDefaults.standard.string(forKey: "birthday")
+        let email = UserDefaults.standard.string(forKey: "email")
+        
+        [phoneNumber, FCMToken, nick, birth, email].forEach { str in
+            print(str)
+        }
+        
+        request.httpBody = try? JSONEncoder().encode(User(phoneNumber: phoneNumber!, FCMToken: "aefewfawefajlgrhawljfawflawejflajw313123123efkljawlkfj222aw", nick: nick!, birth: birth!, email: email!, gender: genderIndex))
+        
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            guard error == nil else {
+                print(error)
+                completion(.failure(error!))
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse else {
+                completion(.failure(error!))
+                return
+            }
+            
+            guard let data = data else {
+                completion(.failure(error!))
+                return
+            }
+
+            
+            switch response.statusCode {
+            case 200:
+                print("성공")
+                completion(.success("성공"))
+            case 201:
+                print("닉네임")
+                completion(.success("닉네임"))
+            case 202:
+                print("사용할수없는닉네임")
+                completion(.success("닉네임"))
+            case 401:
+                print("파이어베이스토큰만료")
+                completion(.failure(error!))
+            case 500:
+                print("서버에러")
+                completion(.failure(error!))
+            case 501:
+                print("클라이언트에러")
+                completion(.failure(error!))
+            default:
+                print("에러")
+                completion(.failure(error!))
+            }
+            
+        }.resume()
     }
 }

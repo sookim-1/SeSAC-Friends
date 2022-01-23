@@ -20,7 +20,6 @@ class BirthdayInputVC: UIViewController {
         return stackView
     }()
     
-    
     var yearTextField = CustomTextField()
     var monthTextField = CustomTextField()
     var dayTextField = CustomTextField()
@@ -43,6 +42,10 @@ class BirthdayInputVC: UIViewController {
         configure()
         setUpConstraints()
         setUpNavigationBar()
+        doneButton.rx.tap
+            .bind {
+                self.navigationController?.pushViewController(EmailInputVC(), animated: true)
+            }
     }
     
     override func viewDidLayoutSubviews() {
@@ -64,7 +67,6 @@ class BirthdayInputVC: UIViewController {
         
         view.addSubview(stackView)
         doneButton.buttonStatus = .disable
-        doneButton.addTarget(self, action: #selector(authComplete), for: .touchUpInside)
         yearLabel.text = "년"
         monthLabel.text = "월"
         dayLabel.text = "일"
@@ -72,17 +74,21 @@ class BirthdayInputVC: UIViewController {
         yearTextField.setInputViewDatePicker(target: self, selector: #selector(tapYearDone))
         monthTextField.setInputViewDatePicker(target: self, selector: #selector(tapMonthDone))
         dayTextField.setInputViewDatePicker(target: self, selector: #selector(tapDayDone))
-
+        
+        yearTextField.becomeFirstResponder()
     }
     
     @objc func tapYearDone() {
         setDatePicker(yearTextField)
+        doneButton.buttonStatus = .fill
     }
     @objc func tapMonthDone() {
         setDatePicker(monthTextField)
+        doneButton.buttonStatus = .fill
     }
     @objc func tapDayDone() {
         setDatePicker(dayTextField)
+        doneButton.buttonStatus = .fill
     }
     
     func setDatePicker(_ sender: UITextField) {
@@ -98,6 +104,14 @@ class BirthdayInputVC: UIViewController {
         self.monthTextField.text = dateformatter.string(from: datePicker.date) //2-4
         dateformatter.dateFormat = "dd"
         self.dayTextField.text = dateformatter.string(from: datePicker.date) //2-4
+        
+        print(datePicker.date.age)
+        if datePicker.date.age >= 17 {
+            print("17세이상")
+        }
+        dateformatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        dateformatter.timeZone = NSTimeZone(name: "ko_KR") as TimeZone?
+        UserDefaults.standard.set(dateformatter.string(from: datePicker.date), forKey: "birthday")
         
         sender.resignFirstResponder()
     }
@@ -118,9 +132,5 @@ class BirthdayInputVC: UIViewController {
             make.height.equalTo(48)
         }
     }
-    
-    @objc func authComplete() {
-        navigationController?.pushViewController(EmailInputVC(), animated: true)
     }
-}
 

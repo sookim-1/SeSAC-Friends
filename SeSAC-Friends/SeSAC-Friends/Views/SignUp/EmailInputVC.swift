@@ -6,8 +6,13 @@
 //
 
 import UIKit
+import SnapKit
+import RxCocoa
+import RxSwift
 
 class EmailInputVC: UIViewController {
+    var viewModel = EmailViewModel()
+    var disposeBag = DisposeBag()
 
     lazy var authDescriptionLabel: CustomLabel = CustomLabel(lineHeight: 1.5, text: "이메일을 입력해주세요\n휴대폰 번호 변경시 인증을 위해 사용해요", labelList: .emailLabel)
     
@@ -34,9 +39,34 @@ class EmailInputVC: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .systemBackground
+        emailTextField.becomeFirstResponder()
         configure()
         setUpConstraints()
         setUpNavigationBar()
+        
+        emailTextField.rx.text
+            .orEmpty
+            .bind(to: viewModel.emailText)
+            .disposed(by: disposeBag)
+        viewModel.emailText
+            .map{ self.viewModel.isValidEmail(text: $0) }
+            .bind(to: viewModel.emailValid)
+            .disposed(by: disposeBag)
+        viewModel.emailValid.subscribe(onNext: { valid in
+            if valid {
+                self.emailTextField.textFieldStatus = .success
+                self.doneButton.buttonStatus = .fill
+            } else {
+                self.emailTextField.textFieldStatus = .error
+            }
+        }).disposed(by: disposeBag)
+        
+        doneButton.rx.tap
+            .bind {
+                UserDefaults.standard.set(self.viewModel.emailText.value, forKey: "email")
+                self.navigationController?.pushViewController(GenderVC(), animated: true)
+             }
+             .disposed(by: disposeBag)
     }
     
     override func viewDidLayoutSubviews() {
@@ -56,7 +86,6 @@ class EmailInputVC: UIViewController {
         
         view.addSubview(stackView)
         doneButton.buttonStatus = .disable
-        doneButton.addTarget(self, action: #selector(authComplete), for: .touchUpInside)
     }
     
     private func setUpConstraints() {
@@ -76,9 +105,6 @@ class EmailInputVC: UIViewController {
         }
 
     }
-    
-    @objc func authComplete() {
-        navigationController?.pushViewController(GenderVC(), animated: true)
-    }
+
     
 }

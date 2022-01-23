@@ -15,6 +15,14 @@
 		7657E152279C87DF004CE565 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7657E151279C87DF004CE565 /* R.generated.swift */; };
 		7657E154279C8955004CE565 /* UITextField+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7657E153279C8955004CE565 /* UITextField+Ext.swift */; };
 		7657E156279C89CC004CE565 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7657E155279C89CC004CE565 /* CustomLabel.swift */; };
+		7657E15B279CA870004CE565 /* SMSInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7657E15A279CA870004CE565 /* SMSInputViewModel.swift */; };
+		7657E160279CAF3E004CE565 /* SeSacAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7657E15F279CAF3E004CE565 /* SeSacAPI.swift */; };
+		7657E162279CBC51004CE565 /* NicknameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7657E161279CBC51004CE565 /* NicknameViewModel.swift */; };
+		7657E164279CBE9D004CE565 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7657E163279CBE9D004CE565 /* Date+Ext.swift */; };
+		7657E166279CBF5E004CE565 /* BirthdayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7657E165279CBF5E004CE565 /* BirthdayViewModel.swift */; };
+		7657E168279CBF6E004CE565 /* EmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7657E167279CBF6E004CE565 /* EmailViewModel.swift */; };
+		7657E16A279CBF7E004CE565 /* GenderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7657E169279CBF7E004CE565 /* GenderViewModel.swift */; };
+		7657E16C279CC343004CE565 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7657E16B279CC343004CE565 /* User.swift */; };
 		765A4F68279510430034A328 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765A4F67279510430034A328 /* AppDelegate.swift */; };
 		765A4F6A279510430034A328 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765A4F69279510430034A328 /* SceneDelegate.swift */; };
 		765A4F6C279510430034A328 /* SMSAuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765A4F6B279510430034A328 /* SMSAuthVC.swift */; };
@@ -71,6 +79,14 @@
 		7657E151279C87DF004CE565 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		7657E153279C8955004CE565 /* UITextField+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Ext.swift"; sourceTree = "<group>"; };
 		7657E155279C89CC004CE565 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		7657E15A279CA870004CE565 /* SMSInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSInputViewModel.swift; sourceTree = "<group>"; };
+		7657E15F279CAF3E004CE565 /* SeSacAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSacAPI.swift; sourceTree = "<group>"; };
+		7657E161279CBC51004CE565 /* NicknameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewModel.swift; sourceTree = "<group>"; };
+		7657E163279CBE9D004CE565 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		7657E165279CBF5E004CE565 /* BirthdayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewModel.swift; sourceTree = "<group>"; };
+		7657E167279CBF6E004CE565 /* EmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewModel.swift; sourceTree = "<group>"; };
+		7657E169279CBF7E004CE565 /* GenderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderViewModel.swift; sourceTree = "<group>"; };
+		7657E16B279CC343004CE565 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		765A4F64279510430034A328 /* SeSAC-Friends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SeSAC-Friends.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		765A4F67279510430034A328 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		765A4F69279510430034A328 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +174,11 @@
 			isa = PBXGroup;
 			children = (
 				76CC47A32798F82200B82EF6 /* SMSAuthViewModel.swift */,
+				7657E15A279CA870004CE565 /* SMSInputViewModel.swift */,
+				7657E161279CBC51004CE565 /* NicknameViewModel.swift */,
+				7657E165279CBF5E004CE565 /* BirthdayViewModel.swift */,
+				7657E167279CBF6E004CE565 /* EmailViewModel.swift */,
+				7657E169279CBF7E004CE565 /* GenderViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -179,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				7657E153279C8955004CE565 /* UITextField+Ext.swift */,
+				7657E163279CBE9D004CE565 /* Date+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -188,6 +210,22 @@
 			children = (
 			);
 			path = BaseViews;
+			sourceTree = "<group>";
+		};
+		7657E157279C947B004CE565 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				7657E16B279CC343004CE565 /* User.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		7657E15C279CAD60004CE565 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7657E15F279CAF3E004CE565 /* SeSacAPI.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		765A4F5B279510430034A328 = {
@@ -215,6 +253,7 @@
 		765A4F66279510430034A328 /* SeSAC-Friends */ = {
 			isa = PBXGroup;
 			children = (
+				7657E15C279CAD60004CE565 /* Network */,
 				7657E150279C8772004CE565 /* BaseViews */,
 				7657E14F279C874E004CE565 /* Extensions */,
 				7657E147279C6EBD004CE565 /* ViewModels */,
@@ -286,6 +325,7 @@
 		76CC47982798817A00B82EF6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7657E157279C947B004CE565 /* SignUp */,
 				76CC47992798818800B82EF6 /* OnboardingSlide.swift */,
 			);
 			path = Models;
@@ -570,22 +610,30 @@
 			files = (
 				7657E146279C6EB3004CE565 /* BirthdayInputVC.swift in Sources */,
 				76CC479027985E5A00B82EF6 /* CustomFont.swift in Sources */,
+				7657E160279CAF3E004CE565 /* SeSacAPI.swift in Sources */,
 				765A4F6C279510430034A328 /* SMSAuthVC.swift in Sources */,
+				7657E168279CBF6E004CE565 /* EmailViewModel.swift in Sources */,
 				76CC47A62799DFF400B82EF6 /* NicknameInputVC.swift in Sources */,
 				76CC4792279860CD00B82EF6 /* CustomColor.swift in Sources */,
 				76CC47A22798B2B500B82EF6 /* FirstLaunch.swift in Sources */,
+				7657E16C279CC343004CE565 /* User.swift in Sources */,
 				7657E152279C87DF004CE565 /* R.generated.swift in Sources */,
 				765A4F68279510430034A328 /* AppDelegate.swift in Sources */,
+				7657E164279CBE9D004CE565 /* Date+Ext.swift in Sources */,
 				76CC479627987C6C00B82EF6 /* CustomTextField.swift in Sources */,
 				76CC47942798633000B82EF6 /* CustomButton.swift in Sources */,
 				7657E156279C89CC004CE565 /* CustomLabel.swift in Sources */,
+				7657E166279CBF5E004CE565 /* BirthdayViewModel.swift in Sources */,
 				76CC47A42798F82200B82EF6 /* SMSAuthViewModel.swift in Sources */,
 				7657E154279C8955004CE565 /* UITextField+Ext.swift in Sources */,
+				7657E15B279CA870004CE565 /* SMSInputViewModel.swift in Sources */,
 				7657E144279C6E92004CE565 /* SMSInputVC.swift in Sources */,
 				76CC479F279881F300B82EF6 /* OnboardingVC.swift in Sources */,
 				765A4F6A279510430034A328 /* SceneDelegate.swift in Sources */,
+				7657E16A279CBF7E004CE565 /* GenderViewModel.swift in Sources */,
 				7657E14A279C6EEE004CE565 /* EmailInputVC.swift in Sources */,
 				76CC479D279881C500B82EF6 /* OnboardingCollectionViewCell.swift in Sources */,
+				7657E162279CBC51004CE565 /* NicknameViewModel.swift in Sources */,
 				76CC479A2798818800B82EF6 /* OnboardingSlide.swift in Sources */,
 				7657E14E279C8727004CE565 /* HomeVC.swift in Sources */,
 				7657E14C279C6F0F004CE565 /* GenderVC.swift in Sources */,

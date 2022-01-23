@@ -6,8 +6,14 @@
 //
 
 import UIKit
+import SnapKit
+import RxCocoa
+import RxSwift
 
 class NicknameInputVC: UIViewController {
+    var viewModel = NicknameViewModel()
+    var disposeBag = DisposeBag()
+    
     
     lazy var authDescriptionLabel: CustomLabel = CustomLabel(text: "닉네임을 입력해 주세요", labelList: .nicknameLabel)
     
@@ -34,9 +40,36 @@ class NicknameInputVC: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .systemBackground
+        nicknameTextField.becomeFirstResponder()
         configure()
         setUpConstraints()
         setUpNavigationBar()
+        
+        
+        nicknameTextField.rx.text
+            .orEmpty
+            .bind(to: viewModel.nicknameText)
+            .disposed(by: disposeBag)
+        viewModel.nicknameText
+            .map{ $0.count > 0 && $0.count < 10 }
+            .bind(to: viewModel.nicknameValid)
+            .disposed(by: disposeBag)
+        viewModel.nicknameValid.subscribe(onNext: { valid in
+            if valid {
+                self.nicknameTextField.textFieldStatus = .success
+                self.doneButton.buttonStatus = .fill
+            } else {
+                self.nicknameTextField.textFieldStatus = .error
+            }
+        }).disposed(by: disposeBag)
+        
+        doneButton.rx.tap
+            .bind {
+                UserDefaults.standard.set(self.viewModel.nicknameText.value, forKey: "nickname")
+                self.navigationController?.pushViewController(BirthdayInputVC(), animated: true)
+             }
+             .disposed(by: disposeBag)
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -56,7 +89,7 @@ class NicknameInputVC: UIViewController {
         
         view.addSubview(stackView)
         doneButton.buttonStatus = .disable
-        doneButton.addTarget(self, action: #selector(authComplete), for: .touchUpInside)
+        
     }
     
     private func setUpConstraints() {
@@ -76,8 +109,5 @@ class NicknameInputVC: UIViewController {
         }
     }
     
-    @objc func authComplete() {
-        navigationController?.pushViewController(BirthdayInputVC(), animated: true)
-    }
 }
 
