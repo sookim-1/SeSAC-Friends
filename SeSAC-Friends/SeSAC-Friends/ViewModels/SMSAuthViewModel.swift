@@ -36,6 +36,7 @@ class SMSAuthViewModel {
         let auth = Auth.auth()
         auth.languageCode = "ko" //한국: ko, 미국: en
         
+        print(phoneNumberText.value)
         PhoneAuthProvider.provider(auth: auth).verifyPhoneNumber("+82\(phoneNumberText.value)", uiDelegate: nil) { [weak self] (varification, error) in
             guard let self = self else { return }
             if error == nil {

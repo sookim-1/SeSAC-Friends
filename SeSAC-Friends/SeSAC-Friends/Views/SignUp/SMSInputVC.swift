@@ -9,11 +9,13 @@ import UIKit
 import SnapKit
 import RxCocoa
 import RxSwift
+import Toast_Swift
 
 class SMSInputVC: UIViewController {
     var limitTime: Int = 60
     var varification: String?
     var viewModel = SMSInputViewModel()
+    var authViewModel: SMSAuthViewModel?
     var disposeBag = DisposeBag()
     
     lazy var authDescriptionLabel: CustomLabel = CustomLabel(lineHeight: 1.5, text: "인증번호가 문자로 전송되었어요\n(최대 소모 20초)", labelList: .smsInputLabel)
@@ -31,6 +33,7 @@ class SMSInputVC: UIViewController {
         textField.placeholder = "인증번호 입력"
         textField.textFieldStatus = .inactive
         textField.keyboardType = .numberPad
+        textField.textContentType = .oneTimeCode
         
         return textField
     }()
@@ -55,6 +58,7 @@ class SMSInputVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.view.makeToast("인증번호를 보냈습니다")
         view.backgroundColor = .systemBackground
         smsAuthTextField.becomeFirstResponder()
         smsAuthTextField.rightView = timerLabel
@@ -100,7 +104,7 @@ class SMSInputVC: UIViewController {
                     return
                 }
                 if idToken == "에러" {
-                    print("idToken에러")
+                    self.view.makeToast("에러가 발생했습니다. 다시 시도해주세요")
                 }
                 else {
                     UserDefaults.standard.set(idToken, forKey: "idToken")
@@ -116,7 +120,7 @@ class SMSInputVC: UIViewController {
                                 }
                             }
                         case .failure(let err):
-                            print("에러발생")
+                            self?.view.makeToast("에러가 발생했습니다. 다시 시도해주세요")
                         }
                         
                     }
@@ -127,6 +131,29 @@ class SMSInputVC: UIViewController {
                 print(err)
             }
         }.disposed(by: disposeBag)
+        
+        sendButton.rx.tap
+            .bind {
+                self.limitTime = 60
+                self.authViewModel?.smsAuth()
+            }
+            .disposed(by: disposeBag)
+                
+        authViewModel?.verifyID
+            .observe(on: MainScheduler.instance)
+            .subscribe { value in
+                switch value {
+                case .next(let value):
+                    self.varification = value
+                    self.getSetTime()
+                case .error(_):
+                    break
+                case .completed:
+                    break
+                }
+        }
+        .disposed(by: disposeBag)
+            
     }
     
     override func viewDidLayoutSubviews() {
@@ -202,7 +229,7 @@ class SMSInputVC: UIViewController {
         var request = URLRequest(url: SeSacAPI.getUser.url)
         request.httpMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue(idToken, forHTTPHeaderField: "idToken")
+        request.addValue(idToken, forHTTPHeaderField: "idtoken")
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             guard error == nil else {
@@ -225,8 +252,8 @@ class SMSInputVC: UIViewController {
             switch response.statusCode {
             case 200:
                 print("성공")
-                let token = try! JSONDecoder().decode(FCMTokenModel.self, from: data)
-                UserDefaults.standard.set(token, forKey: "FCMToken")
+//                let token = try! JSONDecoder().decode(FCMTokenModel.self, from: data)
+//                UserDefaults.standard.set(token, forKey: "FCMToken")
                 completion(.success("성공"))
             case 201:
                 print("닉네임")

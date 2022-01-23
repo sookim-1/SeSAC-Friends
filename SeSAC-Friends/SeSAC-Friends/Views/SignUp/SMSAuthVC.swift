@@ -9,6 +9,7 @@ import UIKit
 import FirebaseAuth
 import SnapKit
 import RxSwift
+import Toast_Swift
 
 class SMSAuthVC: UIViewController {
     lazy var authDescriptionLabel: CustomLabel = CustomLabel(lineHeight: 1.08, text: "새싹 서비스 이용을 위해\n휴대폰 번호를 입력해 주세요", labelList: .smsAuthLabel)
@@ -63,7 +64,10 @@ class SMSAuthVC: UIViewController {
         
         doneButton.rx.tap
             .bind {
-                 self.viewModel.smsAuth()
+                if !self.viewModel.phoneNumberValid.value {
+                    self.view.makeToast("잘못된 전화번호 형식입니다")
+                }
+                self.viewModel.smsAuth()
              }
              .disposed(by: disposeBag)
         
@@ -76,10 +80,11 @@ class SMSAuthVC: UIViewController {
                 print(varification)
                 guard varification != nil else { return }
                 if varification == "에러" {
-                    print("에러발생")
+                    self.view.makeToast("에러가 발생했습니다. 다시 시도해주세요")
                 } else {
                     let smsInputVC = SMSInputVC()
                     smsInputVC.varification = varification
+                    smsInputVC.authViewModel = self.viewModel
                     UserDefaults.standard.set("+82\(self.viewModel.phoneNumberText.value)", forKey: "phoneNumber")
                     self.navigationController?.pushViewController(smsInputVC, animated: true)
                 }

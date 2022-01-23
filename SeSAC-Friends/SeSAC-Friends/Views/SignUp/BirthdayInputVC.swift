@@ -11,7 +11,7 @@ class BirthdayInputVC: UIViewController {
     lazy var authDescriptionLabel: CustomLabel = CustomLabel(text: "생년월일을 알려주세요", labelList: .birthdayLabel)
 
     let doneButton: CustomButton = CustomButton(text: "다음")
-    
+    var age = 0
     lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [authDescriptionLabel, textFieldStackView, doneButton])
         stackView.axis = .vertical
@@ -44,7 +44,11 @@ class BirthdayInputVC: UIViewController {
         setUpNavigationBar()
         doneButton.rx.tap
             .bind {
-                self.navigationController?.pushViewController(EmailInputVC(), animated: true)
+                if !(self.age >= 17) {
+                    self.view.makeToast("새싹친구는 만17세 이상만 사용할 수 있습니다.")
+                } else {
+                    self.navigationController?.pushViewController(EmailInputVC(), animated: true)
+                }
             }
     }
     
@@ -105,10 +109,7 @@ class BirthdayInputVC: UIViewController {
         dateformatter.dateFormat = "dd"
         self.dayTextField.text = dateformatter.string(from: datePicker.date) //2-4
         
-        print(datePicker.date.age)
-        if datePicker.date.age >= 17 {
-            print("17세이상")
-        }
+        age = datePicker.date.age
         dateformatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
         dateformatter.timeZone = NSTimeZone(name: "ko_KR") as TimeZone?
         UserDefaults.standard.set(dateformatter.string(from: datePicker.date), forKey: "birthday")

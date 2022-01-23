@@ -164,7 +164,11 @@ class GenderVC: UIViewController {
             switch result {
             case .success(let str):
                 print(str)
-                self.navigationController?.pushViewController(HomeVC(), animated: true)
+                DispatchQueue.main.async {
+                    guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+                    windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: HomeVC())
+                    windowScene.windows.first?.makeKeyAndVisible()
+                }
             case .failure(let err):
                 print(err)
             }
@@ -175,7 +179,7 @@ class GenderVC: UIViewController {
         var request = URLRequest(url: SeSacAPI.postUser.url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue(idToken, forHTTPHeaderField: "idToken")
+        request.addValue(idToken, forHTTPHeaderField: "idtoken")
         let phoneNumber = UserDefaults.standard.string(forKey: "phoneNumber")
         let FCMToken = UserDefaults.standard.string(forKey: "FCMToken")
         let nick = UserDefaults.standard.string(forKey: "nickname")
@@ -186,7 +190,7 @@ class GenderVC: UIViewController {
             print(str)
         }
         
-        request.httpBody = try? JSONEncoder().encode(User(phoneNumber: phoneNumber!, FCMToken: "aefewfawefajlgrhawljfawflawejflajw313123123efkljawlkfj222aw", nick: nick!, birth: birth!, email: email!, gender: genderIndex))
+        request.httpBody = try? JSONEncoder().encode(User(phoneNumber: phoneNumber!, FCMtoken: "aefewfawefajlgrhawljfawflawejflajw313123123efkljawlkfj222aw", nick: nick!, birth: birth!, email: email!, gender: genderIndex))
         
         
         URLSession.shared.dataTask(with: request) { data, response, error in

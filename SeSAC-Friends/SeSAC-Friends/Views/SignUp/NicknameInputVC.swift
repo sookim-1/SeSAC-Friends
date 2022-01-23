@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 import RxCocoa
 import RxSwift
+import Toast_Swift
 
 class NicknameInputVC: UIViewController {
     var viewModel = NicknameViewModel()
@@ -65,8 +66,13 @@ class NicknameInputVC: UIViewController {
         
         doneButton.rx.tap
             .bind {
-                UserDefaults.standard.set(self.viewModel.nicknameText.value, forKey: "nickname")
-                self.navigationController?.pushViewController(BirthdayInputVC(), animated: true)
+                if self.viewModel.nicknameValid.value {
+                    self.view.makeToast("닉네임은 1자 이상 10자 이내로 부탁드려요")
+                }
+                else {
+                    UserDefaults.standard.set(self.viewModel.nicknameText.value, forKey: "nickname")
+                    self.navigationController?.pushViewController(BirthdayInputVC(), animated: true)
+                }
              }
              .disposed(by: disposeBag)
         

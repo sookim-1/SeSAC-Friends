@@ -18,6 +18,7 @@ class HomeVC: UIViewController {
         view.backgroundColor = .systemBackground
         btn.backgroundColor = .systemRed
         btn.setTitle("회원탈퇴", for: .normal)
+        view.addSubview(btn)
         btn.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
@@ -33,6 +34,11 @@ class HomeVC: UIViewController {
                 print(str)
                 ["idToken", "phoneNumber", "FCMToken", "nickname", "birthday", "email"].forEach { str in
                     UserDefaults.standard.removeObject(forKey: str)
+                }
+                DispatchQueue.main.async {
+                    guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+                    windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: SMSAuthVC())
+                    windowScene.windows.first?.makeKeyAndVisible()
                 }
             case .failure(let err):
                 print(err)
