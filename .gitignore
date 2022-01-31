@@ -16,7 +16,7 @@ Pods/
 .LSOverride
 
 ### GoogleInfo.plist
-SeSAC-Friends/SeSAC-Friends/GoogleService-Info.plist
+SeSAC-Friends/SeSAC-Friends/Support/GoogleService-Info.plist
 SeSAC-Friends/SeSAC-Friends/SeSAC-Friends.entitlements
 
 ### API
