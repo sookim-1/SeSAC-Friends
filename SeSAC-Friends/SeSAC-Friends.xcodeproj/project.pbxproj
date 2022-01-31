@@ -77,7 +77,7 @@
 		7657E149279C6EEE004CE565 /* EmailInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailInputVC.swift; sourceTree = "<group>"; };
 		7657E14B279C6F0F004CE565 /* GenderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderVC.swift; sourceTree = "<group>"; };
 		7657E14D279C8727004CE565 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
-		7657E151279C87DF004CE565 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		7657E151279C87DF004CE565 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = "SeSAC-Friends/Support/R.generated.swift"; sourceTree = SOURCE_ROOT; };
 		7657E153279C8955004CE565 /* UITextField+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Ext.swift"; sourceTree = "<group>"; };
 		7657E155279C89CC004CE565 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		7657E15A279CA870004CE565 /* SMSInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSInputViewModel.swift; sourceTree = "<group>"; };
@@ -172,6 +172,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		763A9BB027A857CE001B04DD /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				765A4F67279510430034A328 /* AppDelegate.swift */,
+				765A4F69279510430034A328 /* SceneDelegate.swift */,
+				76CC478927980B7400B82EF6 /* GoogleService-Info.plist */,
+				7657E151279C87DF004CE565 /* R.generated.swift */,
+				765A4F70279510440034A328 /* Assets.xcassets */,
+				765A4F72279510440034A328 /* LaunchScreen.storyboard */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
 		7657E147279C6EBD004CE565 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +269,7 @@
 		765A4F66279510430034A328 /* SeSAC-Friends */ = {
 			isa = PBXGroup;
 			children = (
+				763A9BB027A857CE001B04DD /* Support */,
 				7657E15C279CAD60004CE565 /* Network */,
 				7657E150279C8772004CE565 /* BaseViews */,
 				7657E14F279C874E004CE565 /* Extensions */,
@@ -266,12 +280,6 @@
 				76CC47972798817200B82EF6 /* Views */,
 				76CC478E27985E4500B82EF6 /* CustomViews */,
 				76CC47842797881000B82EF6 /* Fonts */,
-				765A4F67279510430034A328 /* AppDelegate.swift */,
-				765A4F69279510430034A328 /* SceneDelegate.swift */,
-				76CC478927980B7400B82EF6 /* GoogleService-Info.plist */,
-				7657E151279C87DF004CE565 /* R.generated.swift */,
-				765A4F70279510440034A328 /* Assets.xcassets */,
-				765A4F72279510440034A328 /* LaunchScreen.storyboard */,
 				765A4F75279510440034A328 /* Info.plist */,
 			);
 			path = "SeSAC-Friends";
