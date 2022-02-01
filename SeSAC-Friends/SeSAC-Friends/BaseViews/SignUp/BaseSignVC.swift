@@ -14,6 +14,7 @@ class BaseSignVC: UIViewController {
 
         setUpNavigationBar()
         configure()
+        hideKeyboard()
     }
     
     func setUpNavigationBar() {
@@ -25,5 +26,14 @@ class BaseSignVC: UIViewController {
     
     func configure() {
         view.backgroundColor = .systemBackground
+    }
+    
+    func hideKeyboard() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }

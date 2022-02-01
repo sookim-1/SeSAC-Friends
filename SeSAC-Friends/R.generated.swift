@@ -471,20 +471,40 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 7 images.
+  /// This `R.image` struct is generated, and contains static references to 17 images.
   struct image {
     /// Image `SeSAC`.
     static let seSAC = Rswift.ImageResource(bundle: R.hostingBundle, name: "SeSAC")
     /// Image `Splash`.
     static let splash = Rswift.ImageResource(bundle: R.hostingBundle, name: "Splash")
+    /// Image `faq`.
+    static let faq = Rswift.ImageResource(bundle: R.hostingBundle, name: "faq")
+    /// Image `freindTapItem`.
+    static let freindTapItem = Rswift.ImageResource(bundle: R.hostingBundle, name: "freindTapItem")
+    /// Image `homeTapItem`.
+    static let homeTapItem = Rswift.ImageResource(bundle: R.hostingBundle, name: "homeTapItem")
     /// Image `man`.
     static let man = Rswift.ImageResource(bundle: R.hostingBundle, name: "man")
+    /// Image `myPageTapItem`.
+    static let myPageTapItem = Rswift.ImageResource(bundle: R.hostingBundle, name: "myPageTapItem")
+    /// Image `notice`.
+    static let notice = Rswift.ImageResource(bundle: R.hostingBundle, name: "notice")
     /// Image `onboardingImg1`.
     static let onboardingImg1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "onboardingImg1")
     /// Image `onboardingImg2`.
     static let onboardingImg2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "onboardingImg2")
     /// Image `onboardingImg3`.
     static let onboardingImg3 = Rswift.ImageResource(bundle: R.hostingBundle, name: "onboardingImg3")
+    /// Image `permit`.
+    static let permit = Rswift.ImageResource(bundle: R.hostingBundle, name: "permit")
+    /// Image `qna`.
+    static let qna = Rswift.ImageResource(bundle: R.hostingBundle, name: "qna")
+    /// Image `sesacFace`.
+    static let sesacFace = Rswift.ImageResource(bundle: R.hostingBundle, name: "sesacFace")
+    /// Image `setting_alarm`.
+    static let setting_alarm = Rswift.ImageResource(bundle: R.hostingBundle, name: "setting_alarm")
+    /// Image `shopTapItem`.
+    static let shopTapItem = Rswift.ImageResource(bundle: R.hostingBundle, name: "shopTapItem")
     /// Image `woman`.
     static let woman = Rswift.ImageResource(bundle: R.hostingBundle, name: "woman")
 
@@ -503,9 +523,44 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "faq", bundle: ..., traitCollection: ...)`
+    static func faq(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.faq, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "freindTapItem", bundle: ..., traitCollection: ...)`
+    static func freindTapItem(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.freindTapItem, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "homeTapItem", bundle: ..., traitCollection: ...)`
+    static func homeTapItem(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.homeTapItem, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "man", bundle: ..., traitCollection: ...)`
     static func man(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.man, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "myPageTapItem", bundle: ..., traitCollection: ...)`
+    static func myPageTapItem(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.myPageTapItem, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "notice", bundle: ..., traitCollection: ...)`
+    static func notice(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.notice, compatibleWith: traitCollection)
     }
     #endif
 
@@ -527,6 +582,41 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "onboardingImg3", bundle: ..., traitCollection: ...)`
     static func onboardingImg3(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.onboardingImg3, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "permit", bundle: ..., traitCollection: ...)`
+    static func permit(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.permit, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "qna", bundle: ..., traitCollection: ...)`
+    static func qna(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.qna, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "sesacFace", bundle: ..., traitCollection: ...)`
+    static func sesacFace(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.sesacFace, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "setting_alarm", bundle: ..., traitCollection: ...)`
+    static func setting_alarm(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.setting_alarm, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "shopTapItem", bundle: ..., traitCollection: ...)`
+    static func shopTapItem(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.shopTapItem, compatibleWith: traitCollection)
     }
     #endif
 

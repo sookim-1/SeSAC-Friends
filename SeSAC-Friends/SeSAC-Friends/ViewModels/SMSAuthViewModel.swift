@@ -11,9 +11,32 @@ import RxCocoa
 import FirebaseAuth
 
 class SMSAuthViewModel {
+    
+    var validText = BehaviorRelay<String>(value: "잘못된 전화번호에요😅")
+    
+    struct Input {
+        let text: ControlProperty<String?>
+        let tap: ControlEvent<Void>
+    }
+    
+    struct Output {
+        let validStatus: Observable<Bool>
+        let validText: BehaviorRelay<String>
+        let buttonTap: ControlEvent<Void>
+    }
+    
+    func transform(input: Input) -> Output {
+        let result = input.text
+            .orEmpty
+            .distinctUntilChanged()
+            .map { self.isValidPhoneNumber(text: $0) }
+        
+        return Output(validStatus: result, validText: validText, buttonTap: input.tap)
+    }
+    
     var phoneNumberText = BehaviorRelay<String>(value: "")
     var phoneNumberValid = BehaviorRelay<Bool>(value: false)
-    var verifyID = PublishSubject<String?>()
+    var verifyID = PublishSubject<String>()
     
     func isValidPhoneNumber(text: String) -> Bool {
         let phoneNumberRegEx = "^01([0-9])([0-9]{3,4})([0-9]{4})$"
@@ -41,7 +64,7 @@ class SMSAuthViewModel {
             guard let self = self else { return }
             if error == nil {
                 print("인증번호: \(varification)")
-                self.verifyID.onNext(varification)
+                self.verifyID.onNext(varification!)
             }
             else {
                 self.verifyID.onNext("에러")

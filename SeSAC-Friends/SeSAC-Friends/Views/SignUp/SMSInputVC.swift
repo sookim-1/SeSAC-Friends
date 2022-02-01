@@ -24,12 +24,41 @@ class SMSInputVC: BaseSignVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.makeToast("인증번호를 보냈습니다")
-        
         mainView.smsAuthTextField.becomeFirstResponder()
         getSetTime()
-        configure()
+        bind()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
+        self.view.makeToast("인증번호를 보냈습니다")
+    }
+    
+    @objc func getSetTime() {
+        secToTime(sec: limitTime)
+        limitTime -= 1
+    }
+    
+    func secToTime(sec: Int) {
+        let minute = (sec % 3600) / 60
+        let second = (sec % 3600) % 60
+        
+        if second < 10 {
+            mainView.timerLabel.text = String(minute) + ":" + "0" + String(second)
+        } else {
+            mainView.timerLabel.text = String(minute) + ":" + String(second)
+        }
+        
+        if limitTime != 0 {
+            perform(#selector(getSetTime), with: nil, afterDelay: 1.0)
+        }
+        else if limitTime == 0 {
+            mainView.timerLabel.text = "00:00"
+        }
+    }
+    
+    func bind() {
         mainView.smsAuthTextField.rx.text
             .orEmpty
             .bind(to: viewModel.smsAuthText)
@@ -115,30 +144,6 @@ class SMSInputVC: BaseSignVC {
                 }
         }
         .disposed(by: disposeBag)
-            
-    }
-    
-    @objc func getSetTime() {
-        secToTime(sec: limitTime)
-        limitTime -= 1
-    }
-    
-    func secToTime(sec: Int) {
-        let minute = (sec % 3600) / 60
-        let second = (sec % 3600) % 60
-        
-        if second < 10 {
-            mainView.timerLabel.text = String(minute) + ":" + "0" + String(second)
-        } else {
-            mainView.timerLabel.text = String(minute) + ":" + String(second)
-        }
-        
-        if limitTime != 0 {
-            perform(#selector(getSetTime), with: nil, afterDelay: 1.0)
-        }
-        else if limitTime == 0 {
-            mainView.timerLabel.text = "00:00"
-        }
     }
     
     func getUser(idToken: String, completion: @escaping (Result<String, Error>) -> Void) {

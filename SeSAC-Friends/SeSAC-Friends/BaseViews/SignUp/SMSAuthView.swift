@@ -48,6 +48,7 @@ class SMSAuthView: UIView, ViewRepresentable {
     func configure() {
         addSubview(stackView)
         doneButton.buttonStatus = .disable
+        phoneNumberTextField.becomeFirstResponder()
     }
     
     func setUpConstraints() {

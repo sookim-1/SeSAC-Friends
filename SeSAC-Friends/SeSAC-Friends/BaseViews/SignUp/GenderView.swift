@@ -31,9 +31,9 @@ class GenderView: UIView, ViewRepresentable {
         return view
     }()
     
-    let manImageView = UIImageView(image: UIImage(named: "man"))
+    let manImageView = UIImageView(image: R.image.man())
     let manLabel = UILabel()
-    let womanImageView = UIImageView(image: UIImage(named: "woman"))
+    let womanImageView = UIImageView(image: R.image.woman())
     let womanLabel = UILabel()
 
     

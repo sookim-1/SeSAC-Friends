@@ -102,7 +102,6 @@ class GenderVC: BaseSignVC {
                 return
             }
 
-            
             switch response.statusCode {
             case 200:
                 print("성공")
