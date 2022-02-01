@@ -14,7 +14,6 @@ class EmailInputView: UIView, ViewRepresentable {
     lazy var emailTextField: CustomTextField = {
         let textField = CustomTextField()
         textField.placeholder = "SeSAC@email.com"
-        textField.textFieldStatus = .inactive
         textField.keyboardType = .emailAddress
         
         return textField
@@ -41,12 +40,16 @@ class EmailInputView: UIView, ViewRepresentable {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        
+        emailTextField.textFieldStatus = .inactive
+    }
+    
     func configure() {
         addSubview(stackView)
         doneButton.buttonStatus = .disable
     }
-    
-    
 
     func setUpConstraints() {
         stackView.snp.makeConstraints { make in

@@ -21,18 +21,18 @@ class CustomTextField: UITextField {
         didSet {
             switch self.textFieldStatus {
             case .inactive:
-                self.setBottomLine(bottomLineColor: UIColor.CustomColor.gray3.cgColor)
+                self.setBottomLine(bottomLineColor: UIColor.CustomColor.gray3)
             case .focus:
-                self.setBottomLine(bottomLineColor: UIColor.CustomColor.focus.cgColor)
+                self.setBottomLine(bottomLineColor: UIColor.CustomColor.focus)
             case .active:
-                self.setBottomLine(bottomLineColor: UIColor.CustomColor.gray3.cgColor)
+                self.setBottomLine(bottomLineColor: UIColor.CustomColor.gray3)
             case .disable:
                 self.backgroundColor = UIColor.CustomColor.gray3
                 layer.cornerRadius = 4
             case .error:
-                self.setBottomLine(bottomLineColor: UIColor.CustomColor.error.cgColor)
+                self.setBottomLine(bottomLineColor: UIColor.CustomColor.error)
             case .success:
-                self.setBottomLine(bottomLineColor: UIColor.CustomColor.success.cgColor)
+                self.setBottomLine(bottomLineColor: UIColor.CustomColor.success)
             }
         }
     }
@@ -41,23 +41,17 @@ class CustomTextField: UITextField {
         super.init(frame: frame)
         
         placeholder = ""
-        self.setBottomLine(bottomLineColor: UIColor.CustomColor.gray3.cgColor)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureToStatus() {
-        
-    }
-    
-    func setBottomLine(bottomLineColor: CGColor) {
-        let bottomLine = CALayer()
-        bottomLine.frame = CGRect(x: 0, y: self.frame.height - 2, width: self.frame.width, height: 2)
+    func setBottomLine(bottomLineColor: UIColor) {
+        let bottomLine = UIView(frame: CGRect(x: 0, y: self.frame.height - 2, width: self.frame.width, height: 2))
         bottomLine.backgroundColor = bottomLineColor
         
         self.borderStyle = .none
-        self.layer.addSublayer(bottomLine)
+        self.addSubview(bottomLine)
     }
 }

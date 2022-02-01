@@ -23,7 +23,6 @@ class SMSInputView: UIView, ViewRepresentable {
     lazy var smsAuthTextField: CustomTextField = {
         let textField = CustomTextField()
         textField.placeholder = "인증번호 입력"
-        textField.textFieldStatus = .inactive
         textField.keyboardType = .numberPad
         textField.textContentType = .oneTimeCode
         
@@ -56,6 +55,12 @@ class SMSInputView: UIView, ViewRepresentable {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        
+        smsAuthTextField.textFieldStatus = .inactive
     }
     
     func configure() {

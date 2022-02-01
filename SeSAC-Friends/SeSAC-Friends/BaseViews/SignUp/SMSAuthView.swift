@@ -15,7 +15,6 @@ class SMSAuthView: UIView, ViewRepresentable {
         let textField = CustomTextField()
         textField.placeholder = "휴대폰 번호(-없이 숫자만 입력)"
         textField.keyboardType = .numberPad
-        
         return textField
     }()
     
@@ -38,6 +37,12 @@ class SMSAuthView: UIView, ViewRepresentable {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        
+        phoneNumberTextField.textFieldStatus = .inactive
     }
     
     func configure() {

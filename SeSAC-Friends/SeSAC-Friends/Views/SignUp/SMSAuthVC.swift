@@ -23,6 +23,7 @@ class SMSAuthVC: BaseSignVC {
         
         configure()
     
+        mainView.phoneNumberTextField.becomeFirstResponder()
         mainView.phoneNumberTextField.rx.text
             .orEmpty
             .bind(to: viewModel.phoneNumberText)
