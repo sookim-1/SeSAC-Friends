@@ -104,7 +104,6 @@ extension MypageViewModel: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         let cell = tableViewSections[indexPath.section].cells[indexPath.row]
         cell.action?(cell)
-        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

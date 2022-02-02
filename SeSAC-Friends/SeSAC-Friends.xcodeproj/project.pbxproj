@@ -40,6 +40,15 @@
 		765A4F7F279510440034A328 /* SeSAC_FriendsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765A4F7E279510440034A328 /* SeSAC_FriendsTests.swift */; };
 		765A4F89279510440034A328 /* SeSAC_FriendsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765A4F88279510440034A328 /* SeSAC_FriendsUITests.swift */; };
 		765A4F8B279510440034A328 /* SeSAC_FriendsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765A4F8A279510440034A328 /* SeSAC_FriendsUITestsLaunchTests.swift */; };
+		7692F35D27AAD44400E517C7 /* HobbyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692F35827AAD44400E517C7 /* HobbyTableViewCell.swift */; };
+		7692F35E27AAD44400E517C7 /* GenderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692F35927AAD44400E517C7 /* GenderTableViewCell.swift */; };
+		7692F35F27AAD44400E517C7 /* AgeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692F35A27AAD44400E517C7 /* AgeTableViewCell.swift */; };
+		7692F36027AAD44400E517C7 /* PhoneValidTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692F35B27AAD44400E517C7 /* PhoneValidTableViewCell.swift */; };
+		7692F36127AAD44400E517C7 /* ExpandableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692F35C27AAD44400E517C7 /* ExpandableTableViewCell.swift */; };
+		7692F36627AAD46800E517C7 /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692F36327AAD46700E517C7 /* BottomView.swift */; };
+		7692F36727AAD46800E517C7 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692F36427AAD46800E517C7 /* CustomImageView.swift */; };
+		7692F36827AAD46800E517C7 /* BottomTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692F36527AAD46800E517C7 /* BottomTitleView.swift */; };
+		7692F36A27AAD47200E517C7 /* AlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692F36927AAD47200E517C7 /* AlertVC.swift */; };
 		76CC47872797885600B82EF6 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 76CC47852797885500B82EF6 /* NotoSansKR-Medium.otf */; };
 		76CC47882797885600B82EF6 /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 76CC47862797885600B82EF6 /* NotoSansKR-Regular.otf */; };
 		76CC479027985E5A00B82EF6 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CC478F27985E5A00B82EF6 /* CustomFont.swift */; };
@@ -65,6 +74,7 @@
 		76DA822F27A9A0300062FEEB /* MypageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DA822E27A9A0300062FEEB /* MypageViewModel.swift */; };
 		76DA823127A9A0510062FEEB /* MypageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DA823027A9A0510062FEEB /* MypageModel.swift */; };
 		76DA823327A9A0690062FEEB /* MypageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DA823227A9A0690062FEEB /* MypageDelegate.swift */; };
+		76DA823527A9A19C0062FEEB /* MyInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DA823427A9A19C0062FEEB /* MyInfoVC.swift */; };
 		8DC310AC0357D98E88240950 /* Pods_SeSAC_FriendsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7134A9B299D25E5531425EA2 /* Pods_SeSAC_FriendsTests.framework */; };
 		D2067850F49FBFAD5890E1A9 /* Pods_SeSAC_Friends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B0DF07388A1930EEA9C7B8 /* Pods_SeSAC_Friends.framework */; };
 		DE66B39DE7617ED43B20DE7C /* Pods_SeSAC_Friends_SeSAC_FriendsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F66A08C613686400BCC4042 /* Pods_SeSAC_Friends_SeSAC_FriendsUITests.framework */; };
@@ -129,6 +139,15 @@
 		765A4F84279510440034A328 /* SeSAC-FriendsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SeSAC-FriendsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		765A4F88279510440034A328 /* SeSAC_FriendsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSAC_FriendsUITests.swift; sourceTree = "<group>"; };
 		765A4F8A279510440034A328 /* SeSAC_FriendsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSAC_FriendsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7692F35827AAD44400E517C7 /* HobbyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HobbyTableViewCell.swift; sourceTree = "<group>"; };
+		7692F35927AAD44400E517C7 /* GenderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderTableViewCell.swift; sourceTree = "<group>"; };
+		7692F35A27AAD44400E517C7 /* AgeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgeTableViewCell.swift; sourceTree = "<group>"; };
+		7692F35B27AAD44400E517C7 /* PhoneValidTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneValidTableViewCell.swift; sourceTree = "<group>"; };
+		7692F35C27AAD44400E517C7 /* ExpandableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableTableViewCell.swift; sourceTree = "<group>"; };
+		7692F36327AAD46700E517C7 /* BottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
+		7692F36427AAD46800E517C7 /* CustomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
+		7692F36527AAD46800E517C7 /* BottomTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomTitleView.swift; sourceTree = "<group>"; };
+		7692F36927AAD47200E517C7 /* AlertVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertVC.swift; sourceTree = "<group>"; };
 		76CC47852797885500B82EF6 /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
 		76CC47862797885600B82EF6 /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
 		76CC478F27985E5A00B82EF6 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
@@ -154,6 +173,7 @@
 		76DA822E27A9A0300062FEEB /* MypageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageViewModel.swift; sourceTree = "<group>"; };
 		76DA823027A9A0510062FEEB /* MypageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageModel.swift; sourceTree = "<group>"; };
 		76DA823227A9A0690062FEEB /* MypageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageDelegate.swift; sourceTree = "<group>"; };
+		76DA823427A9A19C0062FEEB /* MyInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoVC.swift; sourceTree = "<group>"; };
 		877E55BE2C47F8E371F7A836 /* Pods-SeSAC-FriendsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeSAC-FriendsTests.release.xcconfig"; path = "Target Support Files/Pods-SeSAC-FriendsTests/Pods-SeSAC-FriendsTests.release.xcconfig"; sourceTree = "<group>"; };
 		91CCE32BA0FF98052F72337F /* Pods-SeSAC-FriendsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeSAC-FriendsTests.debug.xcconfig"; path = "Target Support Files/Pods-SeSAC-FriendsTests/Pods-SeSAC-FriendsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D9B0DF07388A1930EEA9C7B8 /* Pods_SeSAC_Friends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeSAC_Friends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -371,6 +391,28 @@
 			path = "SeSAC-FriendsUITests";
 			sourceTree = "<group>";
 		};
+		7692F35727AAD43200E517C7 /* MyInfo */ = {
+			isa = PBXGroup;
+			children = (
+				7692F35A27AAD44400E517C7 /* AgeTableViewCell.swift */,
+				7692F35C27AAD44400E517C7 /* ExpandableTableViewCell.swift */,
+				7692F35927AAD44400E517C7 /* GenderTableViewCell.swift */,
+				7692F35827AAD44400E517C7 /* HobbyTableViewCell.swift */,
+				7692F35B27AAD44400E517C7 /* PhoneValidTableViewCell.swift */,
+			);
+			path = MyInfo;
+			sourceTree = "<group>";
+		};
+		7692F36227AAD45B00E517C7 /* MyInfo */ = {
+			isa = PBXGroup;
+			children = (
+				7692F36527AAD46800E517C7 /* BottomTitleView.swift */,
+				7692F36327AAD46700E517C7 /* BottomView.swift */,
+				7692F36427AAD46800E517C7 /* CustomImageView.swift */,
+			);
+			path = MyInfo;
+			sourceTree = "<group>";
+		};
 		76CC47842797881000B82EF6 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -384,6 +426,7 @@
 		76CC478E27985E4500B82EF6 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				7692F36227AAD45B00E517C7 /* MyInfo */,
 				76CC4791279860CD00B82EF6 /* CustomColor.swift */,
 				76CC47932798633000B82EF6 /* CustomButton.swift */,
 				76CC479527987C6C00B82EF6 /* CustomTextField.swift */,
@@ -395,6 +438,7 @@
 		76CC47972798817200B82EF6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7692F36927AAD47200E517C7 /* AlertVC.swift */,
 				76DA821727A97BAA0062FEEB /* Mypage */,
 				76DA821627A97BA30062FEEB /* Onboarding */,
 				76DA821527A97B9C0062FEEB /* Home */,
@@ -419,6 +463,7 @@
 		76CC479B279881AC00B82EF6 /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
+				7692F35727AAD43200E517C7 /* MyInfo */,
 				76CC479C279881C400B82EF6 /* OnboardingCollectionViewCell.swift */,
 				76DA822827A98F3C0062FEEB /* ProfileTableViewCell.swift */,
 				76DA822A27A98F490062FEEB /* SettingTableViewCell.swift */,
@@ -462,6 +507,7 @@
 			isa = PBXGroup;
 			children = (
 				76DA822227A981490062FEEB /* MypageVC.swift */,
+				76DA823427A9A19C0062FEEB /* MyInfoVC.swift */,
 			);
 			path = Mypage;
 			sourceTree = "<group>";
@@ -736,28 +782,38 @@
 				76CC47A62799DFF400B82EF6 /* NicknameInputVC.swift in Sources */,
 				7600B1C627A92B80000158FD /* BirthdayInputView.swift in Sources */,
 				76CC4792279860CD00B82EF6 /* CustomColor.swift in Sources */,
+				7692F36627AAD46800E517C7 /* BottomView.swift in Sources */,
 				7600B1BD27A92A38000158FD /* BaseSignVC.swift in Sources */,
+				7692F36027AAD44400E517C7 /* PhoneValidTableViewCell.swift in Sources */,
 				7600B1C427A92B70000158FD /* NicknameInputView.swift in Sources */,
 				76DA823327A9A0690062FEEB /* MypageDelegate.swift in Sources */,
 				76CC47A22798B2B500B82EF6 /* FirstLaunch.swift in Sources */,
 				7600B1C227A92B61000158FD /* SMSInputView.swift in Sources */,
+				7692F35D27AAD44400E517C7 /* HobbyTableViewCell.swift in Sources */,
 				7657E181279D730B004CE565 /* UserDefaults+Ext.swift in Sources */,
 				76DA821927A97BD90062FEEB /* HomeView.swift in Sources */,
 				76DA822F27A9A0300062FEEB /* MypageViewModel.swift in Sources */,
 				7657E16C279CC343004CE565 /* User.swift in Sources */,
+				7692F36827AAD46800E517C7 /* BottomTitleView.swift in Sources */,
+				7692F36727AAD46800E517C7 /* CustomImageView.swift in Sources */,
 				76DA821F27A980730062FEEB /* ShopVC.swift in Sources */,
 				7600B1C027A92B53000158FD /* SMSAuthView.swift in Sources */,
 				76DA821427A976B90062FEEB /* SMSInputService.swift in Sources */,
+				7692F36127AAD44400E517C7 /* ExpandableTableViewCell.swift in Sources */,
+				76DA823527A9A19C0062FEEB /* MyInfoVC.swift in Sources */,
 				7600B1CA27A92B9A000158FD /* GenderView.swift in Sources */,
 				765A4F68279510430034A328 /* AppDelegate.swift in Sources */,
 				7657E164279CBE9D004CE565 /* Date+Ext.swift in Sources */,
 				76DA822127A980840062FEEB /* FriendsVC.swift in Sources */,
 				76CC479627987C6C00B82EF6 /* CustomTextField.swift in Sources */,
+				7692F36A27AAD47200E517C7 /* AlertVC.swift in Sources */,
 				76CC47942798633000B82EF6 /* CustomButton.swift in Sources */,
 				76DA822927A98F3C0062FEEB /* ProfileTableViewCell.swift in Sources */,
 				76DA823127A9A0510062FEEB /* MypageModel.swift in Sources */,
 				7657E156279C89CC004CE565 /* CustomLabel.swift in Sources */,
 				7657E166279CBF5E004CE565 /* BirthdayViewModel.swift in Sources */,
+				7692F35F27AAD44400E517C7 /* AgeTableViewCell.swift in Sources */,
+				7692F35E27AAD44400E517C7 /* GenderTableViewCell.swift in Sources */,
 				7600B1C827A92B90000158FD /* EmailInputView.swift in Sources */,
 				76CC47A42798F82200B82EF6 /* SMSAuthViewModel.swift in Sources */,
 				76DA822B27A98F490062FEEB /* SettingTableViewCell.swift in Sources */,

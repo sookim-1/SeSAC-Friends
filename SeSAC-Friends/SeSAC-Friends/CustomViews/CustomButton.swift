@@ -52,6 +52,8 @@ class CustomButton: UIButton {
         super.init(frame: .zero)
         
         configureDefault(text: text)
+        self.configureToStatusWithBorder(backgroundColor: UIColor.CustomColor.white, borderColor: UIColor.CustomColor.gray4.cgColor)
+        self.setTitleColor(UIColor.CustomColor.black, for: .normal)
     }
     
     private func configureDefault(text: String) {

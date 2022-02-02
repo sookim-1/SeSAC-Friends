@@ -16,9 +16,8 @@ class MypageVC: UITableViewController {
         super.viewDidLoad()
 
         title = "내정보"
-        viewModel = MypageViewModel(delegate: self) // We set the delegate of the protocol we defined earlier to this class
+        viewModel = MypageViewModel(delegate: self)
         
-        // IMPORTANT. This transfer the responsibility of datasource and delegates to our ViewModel
         tableView.delegate = viewModel
         tableView.dataSource = viewModel
         tableView.tableFooterView = UIView()
@@ -28,7 +27,7 @@ class MypageVC: UITableViewController {
 
 extension MypageVC: MypageViewModelDelegate {
     func myInfoCellTapped() {
-        print("myInfoCellTapped")
+        self.navigationController?.pushViewController(MyInfoVC(), animated: true)
     }
     
     func noticeCellTapped() {
