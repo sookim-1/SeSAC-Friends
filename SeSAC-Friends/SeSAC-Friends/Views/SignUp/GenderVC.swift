@@ -8,7 +8,7 @@
 import RxCocoa
 import RxSwift
 
-class GenderVC: BaseSignVC {
+class GenderVC: BaseVC {
 
     var genderIndex: Int = 2
     let mainView = GenderView()

@@ -9,7 +9,7 @@ import RxCocoa
 import RxSwift
 import Toast_Swift
 
-class NicknameInputVC: BaseSignVC {
+class NicknameInputVC: BaseVC {
     var viewModel = NicknameViewModel()
     var disposeBag = DisposeBag()
     let mainView = NicknameInputView()

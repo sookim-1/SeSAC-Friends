@@ -2,16 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
-	<key>UIAppFonts</key>
-	<array>
-		<string>NotoSansKR-Regular.otf</string>
-		<string>NotoSansKR-Medium.otf</string>
-	</array>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -22,6 +12,16 @@
 				<string>com.googleusercontent.apps.355153590205-t1m9f834btg5s7ln16kfi4hopamc8r53</string>
 			</array>
 		</dict>
+	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>NotoSansKR-Regular.otf</string>
+		<string>NotoSansKR-Medium.otf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

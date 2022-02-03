@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 import Toast_Swift
 
-class SMSAuthVC: BaseSignVC {
+class SMSAuthVC: BaseVC {
     let mainView = SMSAuthView()
     var viewModel = SMSAuthViewModel()
     var disposeBag = DisposeBag()

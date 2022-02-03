@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class MyInfoVC: UIViewController {
+class MyInfoVC: BaseVC {
 
     // MARK: 프로퍼티
     let tableView = UITableView()
@@ -21,7 +21,7 @@ class MyInfoVC: UIViewController {
     }
 
     // MARK: 초기설정
-    func configure() {
+    override func configure() {
         view.backgroundColor = .systemBackground
         title = "정보 관리"
         tableView.delegate = self

@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class HomeVC: UIViewController {
+class HomeVC: BaseVC {
 
     var btn = UIButton()
     

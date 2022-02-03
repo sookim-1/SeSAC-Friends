@@ -9,7 +9,7 @@ import RxCocoa
 import RxSwift
 import Toast_Swift
 
-class EmailInputVC: BaseSignVC {
+class EmailInputVC: BaseVC {
     var viewModel = EmailViewModel()
     var disposeBag = DisposeBag()
     let mainView = EmailInputView()

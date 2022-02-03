@@ -8,7 +8,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class BirthdayInputVC: BaseSignVC {
+class BirthdayInputVC: BaseVC {
     
     let mainView = BirthdayInputView()
     var age = 0

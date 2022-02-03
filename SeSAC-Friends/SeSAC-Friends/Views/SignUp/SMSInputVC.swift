@@ -9,7 +9,7 @@ import RxCocoa
 import RxSwift
 import Toast_Swift
 
-class SMSInputVC: BaseSignVC {
+class SMSInputVC: BaseVC {
     let mainView = SMSInputView()
     var limitTime: Int = 60
     var varification: String?
