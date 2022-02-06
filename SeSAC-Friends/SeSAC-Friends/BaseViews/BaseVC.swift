@@ -26,7 +26,8 @@ class BaseVC: UIViewController {
         super.viewWillAppear(animated)
         
         if !self.checkNetworkValue {
-            self.view.makeToast("네트워크 연결이 원활하지 않습니다. 연결상태 확인 후 다시 시도해 주세요!", duration: 1.5,
+            self.view.makeToast("네트워크 연결이 원활하지 않습니다. 연결상태 확인 후 다시 시도해 주세요!",
+                                duration: 1.5,
                                 point: view.center,
                                 title: "",
                                 image: nil,
