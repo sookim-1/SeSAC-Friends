@@ -68,7 +68,7 @@ class GenderVC: BaseVC {
     }
     
     func postUser(idToken: String, completion: @escaping (Result<String, Error>) -> Void) {
-        var request = URLRequest(url: SeSacAPI.postUser.url)
+        var request = URLRequest(url: Endpoint.user.url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue(idToken, forHTTPHeaderField: "idtoken")

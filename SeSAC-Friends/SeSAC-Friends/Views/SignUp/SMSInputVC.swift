@@ -9,11 +9,11 @@ import RxCocoa
 import RxSwift
 import Toast_Swift
 
-class SMSInputVC: BaseVC {
-    let mainView = SMSInputView()
-    var limitTime: Int = 60
+final class SMSInputVC: BaseVC {
+    private let mainView = SMSInputView()
+    private var limitTime: Int = 60
     var varification: String?
-    var viewModel = SMSInputViewModel()
+    private var viewModel = SMSInputViewModel()
     var authViewModel: SMSAuthViewModel?
     var disposeBag = DisposeBag()
     
@@ -32,7 +32,7 @@ class SMSInputVC: BaseVC {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.view.makeToast("인증번호를 보냈습니다")
+        self.view.makeToast("인증번호를 보냈습니다", point: self.view.center, title: nil, image: nil, completion: nil)
     }
     
     @objc func getSetTime() {
@@ -40,7 +40,7 @@ class SMSInputVC: BaseVC {
         limitTime -= 1
     }
     
-    func secToTime(sec: Int) {
+    private func secToTime(sec: Int) {
         let minute = (sec % 3600) / 60
         let second = (sec % 3600) % 60
         
@@ -54,11 +54,12 @@ class SMSInputVC: BaseVC {
             perform(#selector(getSetTime), with: nil, afterDelay: 1.0)
         }
         else if limitTime == 0 {
-            mainView.timerLabel.text = "00:00"
+            mainView.timerLabel.text = "0:00"
+            mainView.doneButton.isEnabled = false
         }
     }
     
-    func bind() {
+    private func bind() {
         mainView.smsAuthTextField.rx.text
             .orEmpty
             .bind(to: viewModel.smsAuthText)
@@ -87,15 +88,13 @@ class SMSInputVC: BaseVC {
         viewModel.verifyID
             .observe(on: MainScheduler.instance)
             .subscribe { event in
-            print(event)
             switch event {
             case .next(let idToken):
-                print(idToken)
                 guard idToken != nil else {
                     return
                 }
                 if idToken == "에러" {
-                    self.view.makeToast("에러가 발생했습니다. 다시 시도해주세요")
+                    self.view.makeToast("에러가 발생했습니다. 다시 시도해주세요", point: self.view.center, title: nil, image: nil, completion: nil)
                 }
                 else {
                     UserDefaults.idToken = idToken!
@@ -110,7 +109,7 @@ class SMSInputVC: BaseVC {
                                     self?.navigationController?.pushViewController(HomeVC(), animated: true)
                                 }
                             }
-                        case .failure(let err):
+                        case .failure(_):
                             self?.view.makeToast("에러가 발생했습니다. 다시 시도해주세요")
                         }
                         
@@ -126,6 +125,7 @@ class SMSInputVC: BaseVC {
         mainView.sendButton.rx.tap
             .bind {
                 self.limitTime = 60
+                self.mainView.doneButton.isEnabled = true
                 self.authViewModel?.smsAuth()
             }
             .disposed(by: disposeBag)
@@ -147,14 +147,13 @@ class SMSInputVC: BaseVC {
     }
     
     func getUser(idToken: String, completion: @escaping (Result<String, Error>) -> Void) {
-        var request = URLRequest(url: SeSacAPI.getUser.url)
+        var request = URLRequest(url: Endpoint.user.url)
         request.httpMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue(idToken, forHTTPHeaderField: "idtoken")
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             guard error == nil else {
-                print(error)
                 completion(.failure(error!))
                 return
             }
@@ -164,12 +163,11 @@ class SMSInputVC: BaseVC {
                 return
             }
             
-            guard let data = data else {
+            guard data != nil else {
                 completion(.failure(error!))
                 return
             }
 
-            
             switch response.statusCode {
             case 200:
                 print("성공")
@@ -192,7 +190,6 @@ class SMSInputVC: BaseVC {
                 print("에러")
                 completion(.failure(error!))
             }
-            
         }.resume()
     }
 }

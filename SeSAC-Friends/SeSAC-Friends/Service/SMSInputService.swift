@@ -9,7 +9,7 @@ import Foundation
 
 struct SMSInputService {
     func getUser(idToken: String, completion: @escaping (Result<String, Error>) -> Void) {
-        var request = URLRequest(url: SeSacAPI.getUser.url)
+        var request = URLRequest(url: Endpoint.user.url)
         request.httpMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue(idToken, forHTTPHeaderField: "idtoken")

@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,22 +18,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash" translatesAutoresizingMaskIntoConstraints="NO" id="MW3-wj-VeP">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="14V-Eo-gDB">
+                                <rect key="frame" x="97" y="318" width="220" height="260"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="260" id="BKj-ii-q5f"/>
+                                    <constraint firstAttribute="width" constant="220" id="Guy-CW-36P"/>
+                                </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SeSAC" translatesAutoresizingMaskIntoConstraints="NO" id="pkB-l2-Mbk">
-                                <rect key="frame" x="113.5" y="424.5" width="187" height="47"/>
-                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SeSAC Friends" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9It-WZ-zWW">
+                                <rect key="frame" x="40.5" y="598" width="333" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="Qea-e3-yBs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="45"/>
+                                <color key="textColor" name="green"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="pkB-l2-Mbk" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="9SJ-6b-wbd"/>
-                            <constraint firstItem="MW3-wj-VeP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="LRl-ji-DLu"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MW3-wj-VeP" secondAttribute="trailing" id="ahh-mj-oQw"/>
-                            <constraint firstItem="MW3-wj-VeP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mbe-i3-x3n"/>
-                            <constraint firstItem="pkB-l2-Mbk" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="yCj-N8-qam"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="MW3-wj-VeP" secondAttribute="bottom" id="zgM-Jo-e9P"/>
+                            <constraint firstItem="14V-Eo-gDB" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="2bf-dM-puM"/>
+                            <constraint firstItem="14V-Eo-gDB" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="7vi-Cg-DVd"/>
+                            <constraint firstItem="9It-WZ-zWW" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="lJr-eX-1eK"/>
+                            <constraint firstItem="9It-WZ-zWW" firstAttribute="top" secondItem="14V-Eo-gDB" secondAttribute="bottom" constant="20" id="mtb-ui-q99"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -42,8 +51,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="SeSAC" width="187" height="47"/>
-        <image name="Splash" width="375" height="812"/>
+        <image name="splashLogo.png" width="219" height="263.5"/>
+        <namedColor name="green">
+            <color red="0.28600001335144043" green="0.86299997568130493" blue="0.57300001382827759" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

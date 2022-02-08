@@ -416,6 +416,13 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.entitlements` struct is generated, and contains static references to 1 properties.
+  struct entitlements {
+    static let apsEnvironment = infoPlistString(path: [], key: "aps-environment") ?? "development"
+
+    fileprivate init() {}
+  }
+
   /// This `R.file` struct is generated, and contains static references to 3 files.
   struct file {
     /// Resource file `GoogleService-Info.plist`.
@@ -471,7 +478,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 29 images.
+  /// This `R.image` struct is generated, and contains static references to 33 images.
   struct image {
     /// Image `SeSAC`.
     static let seSAC = Rswift.ImageResource(bundle: R.hostingBundle, name: "SeSAC")
@@ -481,6 +488,8 @@ struct R: Rswift.Validatable {
     static let arrow_down = Rswift.ImageResource(bundle: R.hostingBundle, name: "arrow_down")
     /// Image `arrow_up`.
     static let arrow_up = Rswift.ImageResource(bundle: R.hostingBundle, name: "arrow_up")
+    /// Image `defaultFloatingImage`.
+    static let defaultFloatingImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "defaultFloatingImage")
     /// Image `faq`.
     static let faq = Rswift.ImageResource(bundle: R.hostingBundle, name: "faq")
     /// Image `freindTapItem`.
@@ -489,6 +498,10 @@ struct R: Rswift.Validatable {
     static let homeTapItem = Rswift.ImageResource(bundle: R.hostingBundle, name: "homeTapItem")
     /// Image `man`.
     static let man = Rswift.ImageResource(bundle: R.hostingBundle, name: "man")
+    /// Image `matchedFloatingImage`.
+    static let matchedFloatingImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "matchedFloatingImage")
+    /// Image `matchingFloatingImage`.
+    static let matchingFloatingImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "matchingFloatingImage")
     /// Image `myPageTapItem`.
     static let myPageTapItem = Rswift.ImageResource(bundle: R.hostingBundle, name: "myPageTapItem")
     /// Image `notice`.
@@ -529,6 +542,8 @@ struct R: Rswift.Validatable {
     static let setting_alarm = Rswift.ImageResource(bundle: R.hostingBundle, name: "setting_alarm")
     /// Image `shopTapItem`.
     static let shopTapItem = Rswift.ImageResource(bundle: R.hostingBundle, name: "shopTapItem")
+    /// Image `splashLogo.png`.
+    static let splashLogoPng = Rswift.ImageResource(bundle: R.hostingBundle, name: "splashLogo.png")
     /// Image `woman`.
     static let woman = Rswift.ImageResource(bundle: R.hostingBundle, name: "woman")
 
@@ -561,6 +576,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "defaultFloatingImage", bundle: ..., traitCollection: ...)`
+    static func defaultFloatingImage(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.defaultFloatingImage, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "faq", bundle: ..., traitCollection: ...)`
     static func faq(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.faq, compatibleWith: traitCollection)
@@ -585,6 +607,20 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "man", bundle: ..., traitCollection: ...)`
     static func man(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.man, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "matchedFloatingImage", bundle: ..., traitCollection: ...)`
+    static func matchedFloatingImage(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.matchedFloatingImage, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "matchingFloatingImage", bundle: ..., traitCollection: ...)`
+    static func matchingFloatingImage(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.matchingFloatingImage, compatibleWith: traitCollection)
     }
     #endif
 
@@ -729,6 +765,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "splashLogo.png", bundle: ..., traitCollection: ...)`
+    static func splashLogoPng(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.splashLogoPng, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "woman", bundle: ..., traitCollection: ...)`
     static func woman(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.woman, compatibleWith: traitCollection)
@@ -804,9 +847,9 @@ struct _R: Rswift.Validatable {
       let name = "LaunchScreen"
 
       static func validate() throws {
-        if UIKit.UIImage(named: "SeSAC", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'SeSAC' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "Splash", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Splash' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "splashLogo.png", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'splashLogo.png' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "green", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'green' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
         }
       }
 

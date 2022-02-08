@@ -66,7 +66,7 @@ class MyInfoVC: BaseVC {
     }
     
     func withDrawUser(idToken: String, completion: @escaping (Result<String, Error>) -> Void) {
-        var request = URLRequest(url: SeSacAPI.withdrawUser.url)
+        var request = URLRequest(url: Endpoint.withdraw.url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue(idToken, forHTTPHeaderField: "idToken")
@@ -173,11 +173,14 @@ extension MyInfoVC: UITableViewDelegate, UITableViewDataSource {
             }
         }
         else if indexPath.row == 5 {
+            tableView.deselectRow(at: indexPath, animated: true)
             let alertVC = AlertVC()
-            alertVC.okBtn.addTarget(self, action: #selector(withDraw), for: .touchUpInside)
+            //alertVC.okBtn.addTarget(self, action: #selector(withDraw), for: .touchUpInside)
             alertVC.modalPresentationStyle = .overFullScreen
             alertVC.modalTransitionStyle = .crossDissolve
             self.present(alertVC, animated: true)
+        } else {
+            print("ttt")
         }
     }
     

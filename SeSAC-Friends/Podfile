@@ -12,6 +12,9 @@ target 'SeSAC-Friends' do
   pod 'RxSwift', '6.5.0'
   pod 'RxCocoa', '6.5.0'
   pod 'Toast-Swift', '~> 5.0.1'  
+  pod 'FirebaseMessaging'
+  pod 'Alamofire'
+  pod 'AnyFormatKit'
 
   target 'SeSAC-FriendsTests' do
     inherit! :search_paths

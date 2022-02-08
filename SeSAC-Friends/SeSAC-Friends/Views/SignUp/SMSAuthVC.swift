@@ -9,10 +9,11 @@ import FirebaseAuth
 import RxSwift
 import RxCocoa
 import Toast_Swift
+import AnyFormatKit
 
-class SMSAuthVC: BaseVC {
-    let mainView = SMSAuthView()
-    var viewModel = SMSAuthViewModel()
+final class SMSAuthVC: BaseVC {
+    private let mainView = SMSAuthView()
+    private var viewModel = SMSAuthViewModel()
     var disposeBag = DisposeBag()
     
     override func loadView() {
@@ -22,59 +23,11 @@ class SMSAuthVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-  //      bind()
-
-        test()
+        mainView.phoneNumberTextField.delegate = self
+        authTapButton()
     }
     
-    func bind() {
-//        let input = SMSAuthViewModel.Input(text: mainView.phoneNumberTextField.rx.text, tap: mainView.doneButton.rx.tap)
-//        let output = viewModel.transform(input: input)
-//
-//        output.validStatus.subscribe(onNext: { valid in
-//            if valid {
-//                self.mainView.phoneNumberTextField.textFieldStatus = .success
-//                self.mainView.doneButton.buttonStatus = .fill
-//            } else {
-//                self.mainView.phoneNumberTextField.textFieldStatus = .error
-//            }
-//        }).disposed(by: disposeBag)
-//
-//        output.buttonTap.bind {
-//            if !output.validStatus {
-//                self.view.makeToast("잘못된 전화번호 형식입니다")
-//            }
-//            self.viewModel.smsAuth()
-//         }
-//         .disposed(by: disposeBag)
-//
-//        viewModel.verifyID
-//            .observe(on: MainScheduler.instance)
-//            .subscribe { event in
-//            print(event)
-//            switch event {
-//            case .next(let varification):
-//                print(varification)
-//                guard varification != nil else { return }
-//                if varification == "에러" {
-//                    self.view.makeToast("에러가 발생했습니다. 다시 시도해주세요")
-//                } else {
-//                    let smsInputVC = SMSInputVC()
-//                    smsInputVC.varification = varification
-//                    smsInputVC.authViewModel = self.viewModel
-//                    UserDefaults.phoneNumber = "+82\(self.viewModel.phoneNumberText.value)"
-//                    self.navigationController?.pushViewController(smsInputVC, animated: true)
-//                }
-//            case .completed:
-//                print("완료")
-//            case .error(let err):
-//                print(err)
-//            }
-//        }.disposed(by: disposeBag)
-    }
-    
-
-    func test() {
+    private func bindTextField() {
         mainView.phoneNumberTextField.rx.text
             .orEmpty
             .distinctUntilChanged()
@@ -94,11 +47,13 @@ class SMSAuthVC: BaseVC {
                 self.mainView.phoneNumberTextField.textFieldStatus = .error
             }
         }).disposed(by: disposeBag)
-        
+    }
+
+    private func authTapButton() {
         mainView.doneButton.rx.tap
             .bind {
                 if !self.viewModel.phoneNumberValid.value {
-                    self.view.makeToast("잘못된 전화번호 형식입니다")
+                    self.view.makeToast("잘못된 전화번호 형식입니다", point: self.view.center, title: nil, image: nil, completion: nil)
                 } else {
                     self.viewModel.smsAuth()
                 }
@@ -109,7 +64,7 @@ class SMSAuthVC: BaseVC {
             .observe(on: MainScheduler.instance)
             .subscribe {
                 if $0.element == "에러" {
-                    self.view.makeToast("에러가 발생했습니다. 다시 시도해주세요")
+                    self.view.makeToast("에러가 발생했습니다. 다시 시도해주세요", point: self.view.center, title: nil, image: nil, completion: nil)
                 } else {
                     let smsInputVC = SMSInputVC()
                     smsInputVC.varification = $0.element
@@ -119,6 +74,17 @@ class SMSAuthVC: BaseVC {
                 }
             }.disposed(by: disposeBag)
     }
+}
 
+extension SMSAuthVC: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        textField.formatPhoneNumber(range: range, string: string)
+        bindTextField()
+        return false
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return true
+    }
 }
 

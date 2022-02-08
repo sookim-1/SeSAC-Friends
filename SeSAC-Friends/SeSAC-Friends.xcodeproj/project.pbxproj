@@ -76,6 +76,9 @@
 		76DA823127A9A0510062FEEB /* MypageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DA823027A9A0510062FEEB /* MypageModel.swift */; };
 		76DA823327A9A0690062FEEB /* MypageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DA823227A9A0690062FEEB /* MypageDelegate.swift */; };
 		76DA823527A9A19C0062FEEB /* MyInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DA823427A9A19C0062FEEB /* MyInfoVC.swift */; };
+		76F8A98527B04557009AE54D /* AnnotationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F8A98427B04557009AE54D /* AnnotationModel.swift */; };
+		76F8A98727B11CE1009AE54D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 765A4F70279510440034A328 /* Assets.xcassets */; };
+		76F8A98827B11CE2009AE54D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 765A4F70279510440034A328 /* Assets.xcassets */; };
 		8DC310AC0357D98E88240950 /* Pods_SeSAC_FriendsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7134A9B299D25E5531425EA2 /* Pods_SeSAC_FriendsTests.framework */; };
 		D2067850F49FBFAD5890E1A9 /* Pods_SeSAC_Friends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B0DF07388A1930EEA9C7B8 /* Pods_SeSAC_Friends.framework */; };
 		DE66B39DE7617ED43B20DE7C /* Pods_SeSAC_Friends_SeSAC_FriendsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F66A08C613686400BCC4042 /* Pods_SeSAC_Friends_SeSAC_FriendsUITests.framework */; };
@@ -176,6 +179,8 @@
 		76DA823027A9A0510062FEEB /* MypageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageModel.swift; sourceTree = "<group>"; };
 		76DA823227A9A0690062FEEB /* MypageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageDelegate.swift; sourceTree = "<group>"; };
 		76DA823427A9A19C0062FEEB /* MyInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoVC.swift; sourceTree = "<group>"; };
+		76F8A98427B04557009AE54D /* AnnotationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationModel.swift; sourceTree = "<group>"; };
+		76F8A98627B119B6009AE54D /* SeSAC-Friends.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SeSAC-Friends.entitlements"; sourceTree = "<group>"; };
 		877E55BE2C47F8E371F7A836 /* Pods-SeSAC-FriendsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeSAC-FriendsTests.release.xcconfig"; path = "Target Support Files/Pods-SeSAC-FriendsTests/Pods-SeSAC-FriendsTests.release.xcconfig"; sourceTree = "<group>"; };
 		91CCE32BA0FF98052F72337F /* Pods-SeSAC-FriendsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeSAC-FriendsTests.debug.xcconfig"; path = "Target Support Files/Pods-SeSAC-FriendsTests/Pods-SeSAC-FriendsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D9B0DF07388A1930EEA9C7B8 /* Pods_SeSAC_Friends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeSAC_Friends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -293,8 +298,8 @@
 		7657E147279C6EBD004CE565 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				76CC47A32798F82200B82EF6 /* SMSAuthViewModel.swift */,
 				7657E15A279CA870004CE565 /* SMSInputViewModel.swift */,
+				76CC47A32798F82200B82EF6 /* SMSAuthViewModel.swift */,
 				7657E161279CBC51004CE565 /* NicknameViewModel.swift */,
 				7657E165279CBF5E004CE565 /* BirthdayViewModel.swift */,
 				7657E167279CBF6E004CE565 /* EmailViewModel.swift */,
@@ -360,6 +365,7 @@
 		765A4F66279510430034A328 /* SeSAC-Friends */ = {
 			isa = PBXGroup;
 			children = (
+				76F8A98627B119B6009AE54D /* SeSAC-Friends.entitlements */,
 				76DA821227A976A50062FEEB /* Service */,
 				7600B1CE27A9344A000158FD /* Network */,
 				7600B1CB27A92D42000158FD /* Protocols */,
@@ -460,6 +466,7 @@
 				7657E157279C947B004CE565 /* SignUp */,
 				76CC47992798818800B82EF6 /* OnboardingSlide.swift */,
 				76DA823027A9A0510062FEEB /* MypageModel.swift */,
+				76F8A98427B04557009AE54D /* AnnotationModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -638,6 +645,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76F8A98727B11CE1009AE54D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,6 +653,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76F8A98827B11CE2009AE54D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -782,6 +791,7 @@
 				765A4F6C279510430034A328 /* SMSAuthVC.swift in Sources */,
 				7657E168279CBF6E004CE565 /* EmailViewModel.swift in Sources */,
 				76DA822D27A99EEC0062FEEB /* R.generated.swift in Sources */,
+				76F8A98527B04557009AE54D /* AnnotationModel.swift in Sources */,
 				7600B1D027A9345B000158FD /* SeSacAPI.swift in Sources */,
 				76CC47A62799DFF400B82EF6 /* NicknameInputVC.swift in Sources */,
 				7600B1C627A92B80000158FD /* BirthdayInputView.swift in Sources */,
@@ -1006,6 +1016,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "SeSAC-Friends/SeSAC-Friends.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1038,6 +1049,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "SeSAC-Friends/SeSAC-Friends.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
