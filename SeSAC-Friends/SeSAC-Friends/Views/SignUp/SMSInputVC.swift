@@ -32,7 +32,7 @@ final class SMSInputVC: BaseVC {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.view.makeToast("인증번호를 보냈습니다", point: self.view.center, title: nil, image: nil, completion: nil)
+        self.centerMessageToast(message: "인증번호를 보냈습니다.")
     }
     
     @objc func getSetTime() {
@@ -94,25 +94,33 @@ final class SMSInputVC: BaseVC {
                     return
                 }
                 if idToken == "에러" {
-                    self.view.makeToast("에러가 발생했습니다. 다시 시도해주세요", point: self.view.center, title: nil, image: nil, completion: nil)
+                    self.centerMessageToast(message: "에러가 발생했습니다. 다시 시도해주세요.")
                 }
                 else {
                     UserDefaults.idToken = idToken!
-                    self.getUser(idToken: idToken!) { [weak self] result in
-                        switch result {
-                        case .success(let str):
-                            DispatchQueue.main.async {
-                                if str == "닉네임" {
-                                    self?.navigationController?.pushViewController(NicknameInputVC(), animated: true)
-                                }
-                                else{
-                                    self?.navigationController?.pushViewController(HomeVC(), animated: true)
-                                }
+                    SignUpService.shared.getSesacUser { response in
+                        switch response.response?.statusCode {
+                        case 200:
+                            print("성공")
+                            UserDefaults.isUser = true
+                            switch response.result {
+                            case .success(let response):
+                                print("\(response)")
+                                self.windowChangeVC(viewController: TabBarVC())
+                            case .failure(let error):
+                                print("get user error: \(error)")
                             }
-                        case .failure(_):
-                            self?.view.makeToast("에러가 발생했습니다. 다시 시도해주세요")
+                        case 401:
+                            print("파이어베이스토큰만료")
+                        case 406:
+                            self.windowChangeVC(viewController: NicknameInputVC())
+                        case 500:
+                            print("서버에러")
+                        case 501:
+                            print("클라이언트에러")
+                        default:
+                            print("에러")
                         }
-                        
                     }
                 }
             case .completed:
@@ -146,50 +154,4 @@ final class SMSInputVC: BaseVC {
         .disposed(by: disposeBag)
     }
     
-    func getUser(idToken: String, completion: @escaping (Result<String, Error>) -> Void) {
-        var request = URLRequest(url: Endpoint.user.url)
-        request.httpMethod = "GET"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue(idToken, forHTTPHeaderField: "idtoken")
-        
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            guard error == nil else {
-                completion(.failure(error!))
-                return
-            }
-            
-            guard let response = response as? HTTPURLResponse else {
-                completion(.failure(error!))
-                return
-            }
-            
-            guard data != nil else {
-                completion(.failure(error!))
-                return
-            }
-
-            switch response.statusCode {
-            case 200:
-                print("성공")
-//                let token = try! JSONDecoder().decode(FCMTokenModel.self, from: data)
-//                UserDefaults.standard.set(token, forKey: "FCMToken")
-                completion(.success("성공"))
-            case 201:
-                print("닉네임")
-                completion(.success("닉네임"))
-            case 401:
-                print("파이어베이스토큰만료")
-                completion(.failure(error!))
-            case 500:
-                print("서버에러")
-                completion(.failure(error!))
-            case 501:
-                print("클라이언트에러")
-                completion(.failure(error!))
-            default:
-                print("에러")
-                completion(.failure(error!))
-            }
-        }.resume()
-    }
 }

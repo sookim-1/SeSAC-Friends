@@ -8,10 +8,10 @@
 import RxCocoa
 import RxSwift
 
-class GenderVC: BaseVC {
+final class GenderVC: BaseVC {
 
-    var genderIndex: Int = 2
-    let mainView = GenderView()
+    private var genderIndex: Int = -1
+    private let mainView = GenderView()
     
     override func loadView() {
         self.view = mainView
@@ -20,7 +20,6 @@ class GenderVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         mainView.doneButton.addTarget(self, action: #selector(authComplete), for: .touchUpInside)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:)))
         mainView.manView.addGestureRecognizer(tapGesture)
@@ -50,82 +49,40 @@ class GenderVC: BaseVC {
     
     
     @objc func authComplete() {
-        
-        let idToken = UserDefaults.idToken
-        postUser(idToken: idToken) { result in
-            switch result {
-            case .success(let str):
-                print(str)
-                DispatchQueue.main.async {
-                    guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
-                    windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: HomeVC())
-                    windowScene.windows.first?.makeKeyAndVisible()
+        SignUpService.shared.postSignUp(gender: genderIndex) { response in
+            switch response.response?.statusCode {
+            case 200:
+                UserDefaults.isUser = true
+                print("성공")
+                switch response.result {
+                case .success(let response):
+                    print("\(response)")
+                    self.windowChangeVC(viewController: TabBarVC())
+                case .failure(let error):
+                    print("get user error: \(error)")
                 }
-            case .failure(let err):
-                print(err)
+            case 201:
+                UserDefaults.isUser = true
+                print("이미 가입한 유저입니다.")
+                self.view.makeToast("이미 등록된 회원입니다.", point: self.view.center, title: nil, image: nil) { didTap in
+                    self.windowChangeVC(viewController: TabBarVC())
+                }
+            case 202:
+                print("사용할 수 없는 닉네임입니다.")
+                self.view.makeToast("사용할 수 없는 닉네임입니다.", point: self.view.center, title: nil, image: nil) { didTap in
+                    self.navigationController?.popToRootViewController(animated: true) // 닉네임화면으로 이동
+                }
+            case 401:
+                print("파이어베이스 토큰만료")
+            case 500:
+                print("서버에러")
+            case 501:
+                print("클라이언트에러")
+            default:
+                print("에러")
             }
         }
     }
     
-    func postUser(idToken: String, completion: @escaping (Result<String, Error>) -> Void) {
-        var request = URLRequest(url: Endpoint.user.url)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue(idToken, forHTTPHeaderField: "idtoken")
-        let phoneNumber = UserDefaults.phoneNumber
-        let FCMToken = UserDefaults.FCMToken
-        let nick = UserDefaults.nickname
-        let birth = UserDefaults.birthday
-        let email = UserDefaults.email
-        
-        [phoneNumber, FCMToken, nick, birth, email].forEach { str in
-            print(str)
-        }
-        
-        request.httpBody = try? JSONEncoder().encode(User(phoneNumber: phoneNumber, FCMtoken: "aefewfawefajlgrhawljfawflawejflajw313123123efkljawlkfj222aw", nick: nick, birth: birth, email: email, gender: genderIndex))
-        
-        
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            guard error == nil else {
-                print(error)
-                completion(.failure(error!))
-                return
-            }
-            
-            guard let response = response as? HTTPURLResponse else {
-                completion(.failure(error!))
-                return
-            }
-            
-            guard let data = data else {
-                completion(.failure(error!))
-                return
-            }
-
-            switch response.statusCode {
-            case 200:
-                print("성공")
-                completion(.success("성공"))
-            case 201:
-                print("닉네임")
-                completion(.success("닉네임"))
-            case 202:
-                print("사용할수없는닉네임")
-                completion(.success("닉네임"))
-            case 401:
-                print("파이어베이스토큰만료")
-                completion(.failure(error!))
-            case 500:
-                print("서버에러")
-                completion(.failure(error!))
-            case 501:
-                print("클라이언트에러")
-                completion(.failure(error!))
-            default:
-                print("에러")
-                completion(.failure(error!))
-            }
-            
-        }.resume()
-    }
+    
 }

@@ -9,10 +9,10 @@ import RxCocoa
 import RxSwift
 import Toast_Swift
 
-class EmailInputVC: BaseVC {
-    var viewModel = EmailViewModel()
+final class EmailInputVC: BaseVC {
+    private var viewModel = EmailViewModel()
     var disposeBag = DisposeBag()
-    let mainView = EmailInputView()
+    private let mainView = EmailInputView()
 
     override func loadView() {
         self.view = mainView
@@ -22,7 +22,14 @@ class EmailInputVC: BaseVC {
         super.viewDidLoad()
 
         mainView.emailTextField.becomeFirstResponder()
-        
+        bind()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        mainView.emailTextField.textFieldStatus = .inactive
+    }
+    
+    private func bind() {
         mainView.emailTextField.rx.text
             .orEmpty
             .bind(to: viewModel.emailText)
@@ -44,16 +51,12 @@ class EmailInputVC: BaseVC {
             .bind {
                 if self.viewModel.emailValid.value {
                     UserDefaults.email = self.viewModel.emailText.value
-                self.navigationController?.pushViewController(GenderVC(), animated: true)
+                    self.navigationController?.pushViewController(GenderVC(), animated: true)
                 } else {
-                    self.view.makeToast("이메일 형식이 올바르지 않습니다.")
+                    self.centerMessageToast(message: "이메일 형식이 올바르지 않습니다.")
                 }
              }
              .disposed(by: disposeBag)
-    }
-    
-    override func viewDidLayoutSubviews() {
-        mainView.emailTextField.textFieldStatus = .inactive
     }
 
 }

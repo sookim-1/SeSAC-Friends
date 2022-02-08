@@ -53,7 +53,7 @@ final class SMSAuthVC: BaseVC {
         mainView.doneButton.rx.tap
             .bind {
                 if !self.viewModel.phoneNumberValid.value {
-                    self.view.makeToast("잘못된 전화번호 형식입니다", point: self.view.center, title: nil, image: nil, completion: nil)
+                    self.centerMessageToast(message: "잘못된 전화번호 형식입니다")
                 } else {
                     self.viewModel.smsAuth()
                 }
@@ -64,15 +64,22 @@ final class SMSAuthVC: BaseVC {
             .observe(on: MainScheduler.instance)
             .subscribe {
                 if $0.element == "에러" {
-                    self.view.makeToast("에러가 발생했습니다. 다시 시도해주세요", point: self.view.center, title: nil, image: nil, completion: nil)
+                    self.centerMessageToast(message: "에러가 발생했습니다. 다시 시도해주세요")
                 } else {
                     let smsInputVC = SMSInputVC()
                     smsInputVC.varification = $0.element
                     smsInputVC.authViewModel = self.viewModel
-                    UserDefaults.phoneNumber = "+82\(self.viewModel.phoneNumberText.value)"
+                    UserDefaults.phoneNumber = "+82\(self.removeHyphenPhoneNumber(phoneNumber: self.viewModel.phoneNumberText.value))"
                     self.navigationController?.pushViewController(smsInputVC, animated: true)
                 }
             }.disposed(by: disposeBag)
+    }
+    
+    private func removeHyphenPhoneNumber(phoneNumber: String?) -> String {
+        var phoneNumber = phoneNumber!
+        phoneNumber = phoneNumber.replacingOccurrences(of: "_", with: "", options: NSString.CompareOptions.literal, range: nil)
+        
+        return phoneNumber
     }
 }
 

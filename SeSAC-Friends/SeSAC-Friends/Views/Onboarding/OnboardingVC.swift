@@ -99,9 +99,7 @@ final class OnboardingVC: UIViewController {
    @objc func clickedNextBtn(_ sender: UIButton) {
         if currentPage == slides.count - 1 {
             DispatchQueue.main.async {
-                guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
-                windowScene.windows.first?.rootViewController = SMSAuthVC()
-                windowScene.windows.first?.makeKeyAndVisible()
+                self.windowChangeVC(viewController: SMSAuthVC())
             }
         }
         else {

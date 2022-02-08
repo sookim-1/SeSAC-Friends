@@ -8,10 +8,10 @@
 import UIKit
 import SnapKit
 
-class MyInfoVC: BaseVC {
+final class MyInfoVC: BaseVC {
 
     // MARK: 프로퍼티
-    let tableView = UITableView()
+    private let tableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,75 +39,54 @@ class MyInfoVC: BaseVC {
     }
     
     // MARK: 오토레이아웃
-    func setUpLayout() {
+    private func setUpLayout() {
         tableView.snp.makeConstraints { make in
             make.edges.equalTo(view.safeAreaLayoutGuide).inset(UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
         }
     }
     
-    @objc func withDraw() {
-        let idToken = UserDefaults.standard.string(forKey: "idToken")
-        withDrawUser(idToken: idToken!) { result in
-            switch result {
-            case .success(let str):
-                print(str)
+    private func withDraw() {
+        SignUpService.shared.postWithDraw { response in
+            switch response.response?.statusCode {
+            case 200:
+                UserDefaults.isUser = false
+                
                 ["idToken", "phoneNumber", "FCMToken", "nickname", "birthday", "email"].forEach { str in
                     UserDefaults.standard.removeObject(forKey: str)
                 }
-                DispatchQueue.main.async {
+                switch response.result {
+                case .success(let response):
+                    print("\(response)")
                     guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
-                    windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: SMSAuthVC())
+                    windowScene.windows.first?.rootViewController = OnboardingVC()
+                    windowScene.windows.first?.makeKeyAndVisible()
+                case .failure(let error):
+                    print("withdraw user error: \(error)")
+                }
+            case 401:
+                print("파이어베이스 토큰만료")
+            case 406:
+                UserDefaults.isUser = false
+                
+                ["idToken", "phoneNumber", "FCMToken", "nickname", "birthday", "email"].forEach { str in
+                    UserDefaults.standard.removeObject(forKey: str)
+                }
+                
+                self.view.makeToast("이미 탈퇴 처리된 회원입니다.", point: self.view.center, title: nil, image: nil) { didTap in
+                    guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+                    windowScene.windows.first?.rootViewController = OnboardingVC()
                     windowScene.windows.first?.makeKeyAndVisible()
                 }
-            case .failure(let err):
-                print(err)
+            case 500:
+                print("서버에러")
+            case 501:
+                print("클라이언트에러")
+            default:
+                print("에러")
             }
         }
     }
     
-    func withDrawUser(idToken: String, completion: @escaping (Result<String, Error>) -> Void) {
-        var request = URLRequest(url: Endpoint.withdraw.url)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue(idToken, forHTTPHeaderField: "idToken")
-        
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            guard error == nil else {
-                print(error)
-                completion(.failure(error!))
-                return
-            }
-            
-            guard let response = response as? HTTPURLResponse else {
-                completion(.failure(error!))
-                return
-            }
-            
-            guard let data = data else {
-                completion(.failure(error!))
-                return
-            }
-            
-            switch response.statusCode {
-            case 200:
-                print("성공")
-                completion(.success("성공"))
-            case 401:
-                print("파이어베이스토큰만료")
-                completion(.failure(error!))
-            case 406:
-                print("이미 탈퇴처리된 회원")
-                completion(.failure(error!))
-            case 500:
-                print("서버에러")
-                completion(.failure(error!))
-            default:
-                print("에러")
-                completion(.failure(error!))
-            }
-                           
-        }.resume()
-    }
 }
 
 extension MyInfoVC: UITableViewDelegate, UITableViewDataSource {
@@ -174,13 +153,14 @@ extension MyInfoVC: UITableViewDelegate, UITableViewDataSource {
         }
         else if indexPath.row == 5 {
             tableView.deselectRow(at: indexPath, animated: true)
-            let alertVC = AlertVC()
-            //alertVC.okBtn.addTarget(self, action: #selector(withDraw), for: .touchUpInside)
-            alertVC.modalPresentationStyle = .overFullScreen
-            alertVC.modalTransitionStyle = .crossDissolve
-            self.present(alertVC, animated: true)
+            withDraw()
+//            let alertVC = AlertVC()
+//            alertVC.okBtn.addTarget(self, action: #selector(withDraw), for: .touchUpInside)
+//            alertVC.modalPresentationStyle = .overFullScreen
+//            alertVC.modalTransitionStyle = .crossDissolve
+//            self.present(alertVC, animated: true)
         } else {
-            print("ttt")
+            print("기능 구현 예정")
         }
     }
     

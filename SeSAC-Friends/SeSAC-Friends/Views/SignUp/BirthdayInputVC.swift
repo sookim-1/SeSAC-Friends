@@ -8,10 +8,10 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class BirthdayInputVC: BaseVC {
+final class BirthdayInputVC: BaseVC {
     
-    let mainView = BirthdayInputView()
-    var age = 0
+    private let mainView = BirthdayInputView()
+    private var age = 0
     
     override func loadView() {
         self.view = mainView
@@ -25,14 +25,7 @@ class BirthdayInputVC: BaseVC {
         mainView.dayTextField.setInputViewDatePicker(target: self, selector: #selector(tapDayDone))
         
         mainView.yearTextField.becomeFirstResponder()
-        mainView.doneButton.rx.tap
-            .bind {
-                if !(self.age >= 17) {
-                    self.view.makeToast("새싹친구는 만17세 이상만 사용할 수 있습니다.")
-                } else {
-                    self.navigationController?.pushViewController(EmailInputVC(), animated: true)
-                }
-            }
+        bind()
     }
     
     override func viewDidLayoutSubviews() {
@@ -54,19 +47,19 @@ class BirthdayInputVC: BaseVC {
         mainView.doneButton.buttonStatus = .fill
     }
     
-    func setDatePicker(_ sender: UITextField) {
+    private func setDatePicker(_ sender: UITextField) {
         guard let datePicker = sender.inputView as? UIDatePicker
         else {
             return
         }
 
-        let dateformatter = DateFormatter() // 2-2
+        let dateformatter = DateFormatter()
         dateformatter.dateFormat = "yyyy"
-        self.mainView.yearTextField.text = dateformatter.string(from: datePicker.date) //2-4
+        self.mainView.yearTextField.text = dateformatter.string(from: datePicker.date)
         dateformatter.dateFormat = "MM"
-        self.mainView.monthTextField.text = dateformatter.string(from: datePicker.date) //2-4
+        self.mainView.monthTextField.text = dateformatter.string(from: datePicker.date)
         dateformatter.dateFormat = "dd"
-        self.mainView.dayTextField.text = dateformatter.string(from: datePicker.date) //2-4
+        self.mainView.dayTextField.text = dateformatter.string(from: datePicker.date)
         
         age = datePicker.date.age
         dateformatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
@@ -76,6 +69,15 @@ class BirthdayInputVC: BaseVC {
         sender.resignFirstResponder()
     }
     
-
+    private func bind() {
+        mainView.doneButton.rx.tap
+            .bind {
+                if !(self.age >= 17) {
+                    self.centerMessageToast(message: "새싹친구는 만17세 이상만 사용할 수 있습니다.")
+                } else {
+                    self.navigationController?.pushViewController(EmailInputVC(), animated: true)
+                }
+            }
+    }
 }
 

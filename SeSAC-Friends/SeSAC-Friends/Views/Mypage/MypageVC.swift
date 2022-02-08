@@ -7,9 +7,9 @@
 
 import UIKit
 
-class MypageVC: UITableViewController {
+final class MypageVC: UITableViewController {
 
-    let mainView = MypageView()
+    private let mainView = MypageView()
     private var viewModel: MypageViewModel!
     
     override func viewDidLoad() {

@@ -16,7 +16,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         
         let firstLaunch = FirstLaunch(userDefaults: .standard, key: "firstLaunchKey")
-        firstLaunch.isFirstLaunch ? (window?.rootViewController = OnboardingVC()) : (window?.rootViewController = UINavigationController(rootViewController: TabBarVC()))
+        if firstLaunch.isFirstLaunch {
+            window?.rootViewController = OnboardingVC()
+        } else {
+            UserDefaults.isUser ?
+            (window?.rootViewController = UINavigationController(rootViewController: TabBarVC())) :
+            (window?.rootViewController = UINavigationController(rootViewController: SMSAuthVC()))
+        }
         window?.makeKeyAndVisible()
     }
 

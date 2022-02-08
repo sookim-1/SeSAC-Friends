@@ -50,6 +50,7 @@
 		7692F36727AAD46800E517C7 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692F36427AAD46800E517C7 /* CustomImageView.swift */; };
 		7692F36827AAD46800E517C7 /* BottomTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692F36527AAD46800E517C7 /* BottomTitleView.swift */; };
 		7692F36A27AAD47200E517C7 /* AlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692F36927AAD47200E517C7 /* AlertVC.swift */; };
+		769F991C27B31156001B9202 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769F991B27B31155001B9202 /* UIViewController+Ext.swift */; };
 		76CC47872797885600B82EF6 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 76CC47852797885500B82EF6 /* NotoSansKR-Medium.otf */; };
 		76CC47882797885600B82EF6 /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 76CC47862797885600B82EF6 /* NotoSansKR-Regular.otf */; };
 		76CC479027985E5A00B82EF6 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CC478F27985E5A00B82EF6 /* CustomFont.swift */; };
@@ -62,7 +63,7 @@
 		76CC47A22798B2B500B82EF6 /* FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CC47A12798B2B500B82EF6 /* FirstLaunch.swift */; };
 		76CC47A42798F82200B82EF6 /* SMSAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CC47A32798F82200B82EF6 /* SMSAuthViewModel.swift */; };
 		76CC47A62799DFF400B82EF6 /* NicknameInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CC47A52799DFF400B82EF6 /* NicknameInputVC.swift */; };
-		76DA821427A976B90062FEEB /* SMSInputService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DA821327A976B90062FEEB /* SMSInputService.swift */; };
+		76DA821427A976B90062FEEB /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DA821327A976B90062FEEB /* SignUpService.swift */; };
 		76DA821927A97BD90062FEEB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DA821827A97BD90062FEEB /* HomeView.swift */; };
 		76DA821B27A97BE90062FEEB /* MypageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DA821A27A97BE90062FEEB /* MypageView.swift */; };
 		76DA821D27A97CE30062FEEB /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DA821C27A97CE30062FEEB /* TabBarVC.swift */; };
@@ -153,6 +154,7 @@
 		7692F36427AAD46800E517C7 /* CustomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		7692F36527AAD46800E517C7 /* BottomTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomTitleView.swift; sourceTree = "<group>"; };
 		7692F36927AAD47200E517C7 /* AlertVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertVC.swift; sourceTree = "<group>"; };
+		769F991B27B31155001B9202 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		76CC47852797885500B82EF6 /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
 		76CC47862797885600B82EF6 /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
 		76CC478F27985E5A00B82EF6 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
@@ -165,7 +167,7 @@
 		76CC47A12798B2B500B82EF6 /* FirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunch.swift; sourceTree = "<group>"; };
 		76CC47A32798F82200B82EF6 /* SMSAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSAuthViewModel.swift; sourceTree = "<group>"; };
 		76CC47A52799DFF400B82EF6 /* NicknameInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameInputVC.swift; sourceTree = "<group>"; };
-		76DA821327A976B90062FEEB /* SMSInputService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSInputService.swift; sourceTree = "<group>"; };
+		76DA821327A976B90062FEEB /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
 		76DA821827A97BD90062FEEB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		76DA821A27A97BE90062FEEB /* MypageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageView.swift; sourceTree = "<group>"; };
 		76DA821C27A97CE30062FEEB /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 				7657E153279C8955004CE565 /* UITextField+Ext.swift */,
 				7657E163279CBE9D004CE565 /* Date+Ext.swift */,
 				7657E180279D730B004CE565 /* UserDefaults+Ext.swift */,
+				769F991B27B31155001B9202 /* UIViewController+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -493,7 +496,7 @@
 		76DA821227A976A50062FEEB /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				76DA821327A976B90062FEEB /* SMSInputService.swift */,
+				76DA821327A976B90062FEEB /* SignUpService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -812,7 +815,7 @@
 				7692F36727AAD46800E517C7 /* CustomImageView.swift in Sources */,
 				76DA821F27A980730062FEEB /* ShopVC.swift in Sources */,
 				7600B1C027A92B53000158FD /* SMSAuthView.swift in Sources */,
-				76DA821427A976B90062FEEB /* SMSInputService.swift in Sources */,
+				76DA821427A976B90062FEEB /* SignUpService.swift in Sources */,
 				7692F36127AAD44400E517C7 /* ExpandableTableViewCell.swift in Sources */,
 				76DA823527A9A19C0062FEEB /* MyInfoVC.swift in Sources */,
 				7600B1CA27A92B9A000158FD /* GenderView.swift in Sources */,
@@ -820,6 +823,7 @@
 				7657E164279CBE9D004CE565 /* Date+Ext.swift in Sources */,
 				76DA822127A980840062FEEB /* FriendsVC.swift in Sources */,
 				76CC479627987C6C00B82EF6 /* CustomTextField.swift in Sources */,
+				769F991C27B31156001B9202 /* UIViewController+Ext.swift in Sources */,
 				7692F36A27AAD47200E517C7 /* AlertVC.swift in Sources */,
 				76CC47942798633000B82EF6 /* CustomButton.swift in Sources */,
 				76DA822927A98F3C0062FEEB /* ProfileTableViewCell.swift in Sources */,

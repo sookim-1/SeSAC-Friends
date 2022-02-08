@@ -18,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         setUserNotification()
         Messaging.messaging().delegate = self
+        UserDefaults.FCMToken = Messaging.messaging().fcmToken
+        print("Messaging.messaging().fcmToken : \(Messaging.messaging().fcmToken)")
+        
         application.registerForRemoteNotifications()
         
         return true
@@ -46,7 +49,7 @@ extension AppDelegate: MessagingDelegate, UNUserNotificationCenterDelegate {
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
         let dataDict:[String: String] = ["token": fcmToken ?? ""]
         NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
-        UserDefaults.FCMToken = fcmToken ?? ""
+        
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {

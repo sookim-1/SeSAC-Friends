@@ -9,10 +9,10 @@ import RxCocoa
 import RxSwift
 import Toast_Swift
 
-class NicknameInputVC: BaseVC {
-    var viewModel = NicknameViewModel()
+final class NicknameInputVC: BaseVC {
+    private var viewModel = NicknameViewModel()
     var disposeBag = DisposeBag()
-    let mainView = NicknameInputView()
+    private let mainView = NicknameInputView()
     
     override func loadView() {
         self.view = mainView
@@ -23,6 +23,14 @@ class NicknameInputVC: BaseVC {
 
         mainView.nicknameTextField.becomeFirstResponder()
         
+        bind()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        mainView.nicknameTextField.textFieldStatus = .inactive
+    }
+    
+    private func bind() {
         mainView.nicknameTextField.rx.text
             .orEmpty
             .bind(to: viewModel.nicknameText)
@@ -43,7 +51,7 @@ class NicknameInputVC: BaseVC {
         mainView.doneButton.rx.tap
             .bind {
                 if self.viewModel.nicknameValid.value {
-                    self.view.makeToast("닉네임은 1자 이상 10자 이내로 부탁드려요")
+                    self.centerMessageToast(message: "닉네임은 1자 이상 10자 이내로 부탁드려요")
                 }
                 else {
                     UserDefaults.nickname = self.viewModel.nicknameText.value
@@ -51,11 +59,6 @@ class NicknameInputVC: BaseVC {
                 }
              }
              .disposed(by: disposeBag)
-        
-    }
-    
-    override func viewDidLayoutSubviews() {
-        mainView.nicknameTextField.textFieldStatus = .inactive
     }
     
 }

@@ -28,7 +28,7 @@ extension UserDefaults {
     static var phoneNumber: String
     
     @UserDefault(key: "FCMToken", defaultValue: "")
-    static var FCMToken: String
+    static var FCMToken: String?
     
     @UserDefault(key: "nickname", defaultValue: "")
     static var nickname: String
@@ -41,4 +41,7 @@ extension UserDefaults {
     
     @UserDefault(key: "idToken", defaultValue: "")
     static var idToken: String
+    
+    @UserDefault(key: "isUser", defaultValue: false)
+    static var isUser: Bool
 }
