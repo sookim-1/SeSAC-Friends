@@ -51,6 +51,11 @@
 		7692F36827AAD46800E517C7 /* BottomTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692F36527AAD46800E517C7 /* BottomTitleView.swift */; };
 		7692F36A27AAD47200E517C7 /* AlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692F36927AAD47200E517C7 /* AlertVC.swift */; };
 		769F991C27B31156001B9202 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769F991B27B31155001B9202 /* UIViewController+Ext.swift */; };
+		769F992227B44A57001B9202 /* HobbyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769F992127B44A57001B9202 /* HobbyVC.swift */; };
+		769F992427B44EAB001B9202 /* UIButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769F992327B44EAA001B9202 /* UIButton+Ext.swift */; };
+		769F992627B44FE7001B9202 /* CustomSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769F992527B44FE7001B9202 /* CustomSegmentControl.swift */; };
+		769F992827B45640001B9202 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769F992727B45640001B9202 /* HomeService.swift */; };
+		769F992A27B4568B001B9202 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769F992927B4568B001B9202 /* Queue.swift */; };
 		76CC47872797885600B82EF6 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 76CC47852797885500B82EF6 /* NotoSansKR-Medium.otf */; };
 		76CC47882797885600B82EF6 /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 76CC47862797885600B82EF6 /* NotoSansKR-Regular.otf */; };
 		76CC479027985E5A00B82EF6 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CC478F27985E5A00B82EF6 /* CustomFont.swift */; };
@@ -155,6 +160,11 @@
 		7692F36527AAD46800E517C7 /* BottomTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomTitleView.swift; sourceTree = "<group>"; };
 		7692F36927AAD47200E517C7 /* AlertVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertVC.swift; sourceTree = "<group>"; };
 		769F991B27B31155001B9202 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		769F992127B44A57001B9202 /* HobbyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyVC.swift; sourceTree = "<group>"; };
+		769F992327B44EAA001B9202 /* UIButton+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Ext.swift"; sourceTree = "<group>"; };
+		769F992527B44FE7001B9202 /* CustomSegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentControl.swift; sourceTree = "<group>"; };
+		769F992727B45640001B9202 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		769F992927B4568B001B9202 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		76CC47852797885500B82EF6 /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
 		76CC47862797885600B82EF6 /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
 		76CC478F27985E5A00B82EF6 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
@@ -331,6 +341,7 @@
 				7657E163279CBE9D004CE565 /* Date+Ext.swift */,
 				7657E180279D730B004CE565 /* UserDefaults+Ext.swift */,
 				769F991B27B31155001B9202 /* UIViewController+Ext.swift */,
+				769F992327B44EAA001B9202 /* UIButton+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -444,6 +455,7 @@
 				76CC47932798633000B82EF6 /* CustomButton.swift */,
 				76CC479527987C6C00B82EF6 /* CustomTextField.swift */,
 				7657E155279C89CC004CE565 /* CustomLabel.swift */,
+				769F992527B44FE7001B9202 /* CustomSegmentControl.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -469,6 +481,7 @@
 				7657E157279C947B004CE565 /* SignUp */,
 				76CC47992798818800B82EF6 /* OnboardingSlide.swift */,
 				76DA823027A9A0510062FEEB /* MypageModel.swift */,
+				769F992927B4568B001B9202 /* Queue.swift */,
 				76F8A98427B04557009AE54D /* AnnotationModel.swift */,
 			);
 			path = Models;
@@ -497,6 +510,7 @@
 			isa = PBXGroup;
 			children = (
 				76DA821327A976B90062FEEB /* SignUpService.swift */,
+				769F992727B45640001B9202 /* HomeService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -505,6 +519,7 @@
 			isa = PBXGroup;
 			children = (
 				7657E14D279C8727004CE565 /* HomeVC.swift */,
+				769F992127B44A57001B9202 /* HobbyVC.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -799,6 +814,7 @@
 				76CC47A62799DFF400B82EF6 /* NicknameInputVC.swift in Sources */,
 				7600B1C627A92B80000158FD /* BirthdayInputView.swift in Sources */,
 				76CC4792279860CD00B82EF6 /* CustomColor.swift in Sources */,
+				769F992827B45640001B9202 /* HomeService.swift in Sources */,
 				7692F36627AAD46800E517C7 /* BottomView.swift in Sources */,
 				7600B1BD27A92A38000158FD /* BaseVC.swift in Sources */,
 				7692F36027AAD44400E517C7 /* PhoneValidTableViewCell.swift in Sources */,
@@ -810,6 +826,7 @@
 				7657E181279D730B004CE565 /* UserDefaults+Ext.swift in Sources */,
 				76DA821927A97BD90062FEEB /* HomeView.swift in Sources */,
 				76DA822F27A9A0300062FEEB /* MypageViewModel.swift in Sources */,
+				769F992A27B4568B001B9202 /* Queue.swift in Sources */,
 				7657E16C279CC343004CE565 /* User.swift in Sources */,
 				7692F36827AAD46800E517C7 /* BottomTitleView.swift in Sources */,
 				7692F36727AAD46800E517C7 /* CustomImageView.swift in Sources */,
@@ -819,6 +836,7 @@
 				7692F36127AAD44400E517C7 /* ExpandableTableViewCell.swift in Sources */,
 				76DA823527A9A19C0062FEEB /* MyInfoVC.swift in Sources */,
 				7600B1CA27A92B9A000158FD /* GenderView.swift in Sources */,
+				769F992627B44FE7001B9202 /* CustomSegmentControl.swift in Sources */,
 				765A4F68279510430034A328 /* AppDelegate.swift in Sources */,
 				7657E164279CBE9D004CE565 /* Date+Ext.swift in Sources */,
 				76DA822127A980840062FEEB /* FriendsVC.swift in Sources */,
@@ -827,6 +845,7 @@
 				7692F36A27AAD47200E517C7 /* AlertVC.swift in Sources */,
 				76CC47942798633000B82EF6 /* CustomButton.swift in Sources */,
 				76DA822927A98F3C0062FEEB /* ProfileTableViewCell.swift in Sources */,
+				769F992227B44A57001B9202 /* HobbyVC.swift in Sources */,
 				76DA823127A9A0510062FEEB /* MypageModel.swift in Sources */,
 				7657E156279C89CC004CE565 /* CustomLabel.swift in Sources */,
 				7657E166279CBF5E004CE565 /* BirthdayViewModel.swift in Sources */,
@@ -839,6 +858,7 @@
 				76DA822327A981490062FEEB /* MypageVC.swift in Sources */,
 				76DA821D27A97CE30062FEEB /* TabBarVC.swift in Sources */,
 				7657E15B279CA870004CE565 /* SMSInputViewModel.swift in Sources */,
+				769F992427B44EAB001B9202 /* UIButton+Ext.swift in Sources */,
 				7600B1CD27A92D53000158FD /* ViewRepresentable.swift in Sources */,
 				7657E144279C6E92004CE565 /* SMSInputVC.swift in Sources */,
 				76DA821B27A97BE90062FEEB /* MypageView.swift in Sources */,

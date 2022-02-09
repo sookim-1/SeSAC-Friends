@@ -41,54 +41,23 @@ final class HomeView: UIView {
         return btn
     }()
     
-    lazy var entireButton: UIButton = {
-        let btn = UIButton()
-        btn.backgroundColor = .CustomColor.white
-        btn.setTitle("전체", for: .normal)
-        btn.titleLabel?.font = .CustomFont.title3M14
-        btn.setTitleColor(.CustomColor.black, for: .normal)
-        btn.setTitleColor(.CustomColor.white, for: .selected)
+    lazy var centerPinImageView: UIImageView = {
+        let imgView = UIImageView()
+        imgView.image = UIImage(named: "map_marker")
+        imgView.clipsToBounds = true
+        imgView.contentMode = .scaleAspectFit
         
-        return btn
+        return imgView
     }()
     
-    lazy var manButton: UIButton = {
-        let btn = UIButton()
-        btn.backgroundColor = .CustomColor.white
-        btn.setTitle("남자", for: .normal)
-        btn.titleLabel?.font = .CustomFont.title4R14
-        btn.setTitleColor(.CustomColor.black, for: .normal)
-        btn.setTitleColor(.CustomColor.white, for: .selected)
-        
-        return btn
-    }()
-    
-    lazy var womanButton: UIButton = {
-        let btn = UIButton()
-        btn.backgroundColor = .CustomColor.white
-        btn.setTitle("여자", for: .normal)
-        btn.titleLabel?.font = .CustomFont.title4R14
-        btn.setTitleColor(.CustomColor.black, for: .normal)
-        btn.setTitleColor(.CustomColor.white, for: .selected)
-        
-        return btn
-    }()
-    
-    lazy var btnStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [entireButton, manButton, womanButton])
-        stackView.axis = .vertical
-        stackView.alignment = .fill
-        stackView.distribution = .fillEqually
-        stackView.layer.cornerRadius = 8
-        stackView.clipsToBounds = true
-        
-        return stackView
-    }()
+    lazy var customSegmentControl = CustomSegmentControl()
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         
         floatingButton.frame = CGRect(x: self.frame.size.width - 70, y: self.frame.size.height - 100, width: 64, height: 64)
+        
+        customSegmentControl.frame.size = CGSize(width: 144, height: 144)
     }
     
     override init(frame: CGRect) {
@@ -106,7 +75,8 @@ final class HomeView: UIView {
         addSubview(mapView)
         addSubview(gpsButton)
         addSubview(floatingButton)
-        addSubview(btnStackView)
+        addSubview(customSegmentControl)
+        addSubview(centerPinImageView)
     }
     
     private func setUpLayout() {
@@ -117,18 +87,17 @@ final class HomeView: UIView {
         gpsButton.snp.makeConstraints { make in
             make.size.equalTo(CGSize(width: 48, height: 48))
             make.left.equalToSuperview().offset(20)
-            make.top.equalTo(btnStackView.snp.bottom).offset(20)
+            make.top.equalTo(customSegmentControl.snp.bottom).offset(20)
         }
-        
-        [entireButton, manButton, womanButton].forEach { btn in
-            btn.snp.makeConstraints { make in
-                make.size.equalTo(CGSize(width: 48, height: 48))
-            }
-        }
-        
-        btnStackView.snp.makeConstraints { make in
+    
+        customSegmentControl.snp.makeConstraints { make in
             make.top.equalTo(self.safeAreaLayoutGuide)
             make.left.equalTo(gpsButton.snp.left)
+        }
+        
+        centerPinImageView.snp.makeConstraints { make in
+            make.center.equalTo(mapView.snp.center)
+            make.size.equalTo(CGSize(width: 40, height: 40))
         }
     }
     
