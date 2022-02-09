@@ -52,7 +52,6 @@
 		7692F36A27AAD47200E517C7 /* AlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692F36927AAD47200E517C7 /* AlertVC.swift */; };
 		769F991C27B31156001B9202 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769F991B27B31155001B9202 /* UIViewController+Ext.swift */; };
 		769F992227B44A57001B9202 /* HobbyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769F992127B44A57001B9202 /* HobbyVC.swift */; };
-		769F992427B44EAB001B9202 /* UIButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769F992327B44EAA001B9202 /* UIButton+Ext.swift */; };
 		769F992627B44FE7001B9202 /* CustomSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769F992527B44FE7001B9202 /* CustomSegmentControl.swift */; };
 		769F992827B45640001B9202 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769F992727B45640001B9202 /* HomeService.swift */; };
 		769F992A27B4568B001B9202 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769F992927B4568B001B9202 /* Queue.swift */; };
@@ -161,7 +160,6 @@
 		7692F36927AAD47200E517C7 /* AlertVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertVC.swift; sourceTree = "<group>"; };
 		769F991B27B31155001B9202 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		769F992127B44A57001B9202 /* HobbyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyVC.swift; sourceTree = "<group>"; };
-		769F992327B44EAA001B9202 /* UIButton+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Ext.swift"; sourceTree = "<group>"; };
 		769F992527B44FE7001B9202 /* CustomSegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentControl.swift; sourceTree = "<group>"; };
 		769F992727B45640001B9202 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		769F992927B4568B001B9202 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
@@ -341,7 +339,6 @@
 				7657E163279CBE9D004CE565 /* Date+Ext.swift */,
 				7657E180279D730B004CE565 /* UserDefaults+Ext.swift */,
 				769F991B27B31155001B9202 /* UIViewController+Ext.swift */,
-				769F992327B44EAA001B9202 /* UIButton+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -858,7 +855,6 @@
 				76DA822327A981490062FEEB /* MypageVC.swift in Sources */,
 				76DA821D27A97CE30062FEEB /* TabBarVC.swift in Sources */,
 				7657E15B279CA870004CE565 /* SMSInputViewModel.swift in Sources */,
-				769F992427B44EAB001B9202 /* UIButton+Ext.swift in Sources */,
 				7600B1CD27A92D53000158FD /* ViewRepresentable.swift in Sources */,
 				7657E144279C6E92004CE565 /* SMSInputVC.swift in Sources */,
 				76DA821B27A97BE90062FEEB /* MypageView.swift in Sources */,
