@@ -27,6 +27,7 @@ final class GenderVC: BaseVC {
         let tapGesture2 = UITapGestureRecognizer(target: self, action: #selector(handleTap2(sender:)))
         mainView.womanView.addGestureRecognizer(tapGesture2)
     }
+    
     @objc func handleTap(sender: UITapGestureRecognizer) {
         mainView.manView.backgroundColor = UIColor.CustomColor.green.withAlphaComponent(0.5)
         if mainView.womanView.backgroundColor == UIColor.CustomColor.green.withAlphaComponent(0.5) {
@@ -37,6 +38,7 @@ final class GenderVC: BaseVC {
         print("man")
         
     }
+    
     @objc func handleTap2(sender: UITapGestureRecognizer) {
         mainView.womanView.backgroundColor = UIColor.CustomColor.green.withAlphaComponent(0.5)
         if mainView.manView.backgroundColor == UIColor.CustomColor.green.withAlphaComponent(0.5) {
@@ -46,7 +48,6 @@ final class GenderVC: BaseVC {
         mainView.doneButton.buttonStatus = .fill
         print("woman")
     }
-    
     
     @objc func authComplete() {
         SignUpService.shared.postSignUp(gender: genderIndex) { response in
