@@ -50,7 +50,7 @@ final class NicknameInputVC: BaseVC {
         
         mainView.doneButton.rx.tap
             .bind {
-                if self.viewModel.nicknameValid.value {
+                if !self.viewModel.nicknameValid.value {
                     self.centerMessageToast(message: "닉네임은 1자 이상 10자 이내로 부탁드려요")
                 }
                 else {
