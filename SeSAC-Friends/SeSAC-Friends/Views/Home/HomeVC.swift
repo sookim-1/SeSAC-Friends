@@ -34,6 +34,7 @@ final class HomeVC: BaseVC, CustomSegmentControlDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        checkNetworkStatus()
         checkLocationServices()
     }
     
