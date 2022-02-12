@@ -75,6 +75,8 @@ final class MyInfoVC: BaseVC {
                 case .failure(let error):
                     print("withdraw user error: \(error)")
                 }
+                
+                break
             case 401:
                 print("파이어베이스 토큰만료")
                 self.refreshIdToken { result in
@@ -86,6 +88,7 @@ final class MyInfoVC: BaseVC {
                         print(error)
                     }
                 }
+                break
             case 406:
                 UserDefaults.isUser = false
                 
@@ -98,12 +101,20 @@ final class MyInfoVC: BaseVC {
                     windowScene.windows.first?.rootViewController = OnboardingVC()
                     windowScene.windows.first?.makeKeyAndVisible()
                 }
+                
+                break
             case 500:
                 print("서버에러")
+                
+                break
             case 501:
                 print("클라이언트에러")
+                
+                break
             default:
                 print("에러")
+                
+                break
             }
         }
     }

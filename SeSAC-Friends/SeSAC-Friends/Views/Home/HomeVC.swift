@@ -17,7 +17,8 @@ final class HomeVC: BaseVC, CustomSegmentControlDelegate {
     private let locationManager = CLLocationManager()
     private let regionInMeters: Double = 700
     private var previousLocation: CLLocation?
-    
+    private var onQueueArray: [FromQueueDB] = []
+    private var filterdArray: [FromQueueDB] = []
     
     // MARK: - 뷰컨트롤러 생명주기
     override func loadView() {
@@ -27,7 +28,6 @@ final class HomeVC: BaseVC, CustomSegmentControlDelegate {
     override func viewDidLoad() {
         mainView.mapView.delegate = self
         mainView.customSegmentControl.delegate = self
-        addCustomPin()
         setUpButtonEvent()
     }
     
@@ -57,44 +57,77 @@ final class HomeVC: BaseVC, CustomSegmentControlDelegate {
     }
     
     func segmentValueChanged(to index: Int) {
-        switch index {
-        case 0:
-            self.centerMessageToast(message: "전체클릭")
-        case 1:
-            self.centerMessageToast(message: "남자클릭")
-        case 2:
-            self.centerMessageToast(message: "여자클릭")
-        default:
-            break
+        onQueueNetworking { [self] result in
+            switch result {
+            case .success(let value):
+                if value == true {
+                    switch index {
+                    case 0:
+                        self.centerMessageToast(message: "전체클릭")
+                        
+                        self.mainView.mapView.removeAnnotations(self.mainView.mapView.annotations)
+                        self.addCustomPin()
+                    case 1:
+                        self.centerMessageToast(message: "남자클릭")
+                        
+                        self.onQueueArray.enumerated().forEach {
+                            if $0.1.gender == 1 {
+                                self.filterdArray.append($0.1)
+                            }
+                        }
+                        
+                        self.onQueueArray = []
+                        self.onQueueArray = self.filterdArray
+                        self.filterdArray = []
+                        print("남자클릭 필터링 한 배열\(self.onQueueArray)")
+                        
+                        self.mainView.mapView.removeAnnotations(self.mainView.mapView.annotations)
+                        print("\(self.mainView.mapView.annotations)")
+                        self.addCustomPin()
+                        
+                        print("\(self.mainView.mapView.annotations)")
+                        
+                    case 2:
+                        self.centerMessageToast(message: "여자클릭")
+                        
+                        self.onQueueArray.enumerated().forEach {
+                            if $0.1.gender == 0 {
+                                self.filterdArray.append($0.1)
+                            }
+                        }
+                        
+                        self.onQueueArray = []
+                        self.onQueueArray = self.filterdArray
+                        self.filterdArray = []
+                        
+                        print("여자클릭 필터링 한 배열\(self.onQueueArray)")
+                        
+                        self.mainView.mapView.removeAnnotations(self.mainView.mapView.annotations)
+                        print(self.mainView.mapView.annotations)
+                        self.addCustomPin()
+                        
+                        print(self.mainView.mapView.annotations)
+                    default:
+                        break
+                    }
+                }
+            default:
+                print("필터링")
+            }
         }
+        
     }
     
     // MARK: - Mapview 세팅
     private func addCustomPin() {
-        let test1pin = MKPointAnnotation()
-        let test2pin = MKPointAnnotation()
-        let test3pin = MKPointAnnotation()
-        
-        let test1: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 37.61036121, longitude: 127.02011510)
-        
-        let test2: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 37.62192515, longitude: 127.03169344)
-        
-        let test3: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 38.62192515, longitude: 127.03169344)
-        
-        test1pin.title = "set"
-        test1pin.subtitle = "qwe"
-        test1pin.coordinate = test1
-        mainView.mapView.addAnnotation(test1pin)
-        
-        test2pin.title = "set"
-        test2pin.subtitle = "qwe"
-        test2pin.coordinate = test2
-        mainView.mapView.addAnnotation(test2pin)
-
-        test3pin.title = "set"
-        test3pin.subtitle = "qwe"
-        test3pin.coordinate = test3
-        mainView.mapView.addAnnotation(test3pin)
+        for i in onQueueArray.enumerated() {
+            let pin = CustomAnnotation()
+            pin.title = "\(i.element.nick)"
+            pin.coordinate = CLLocationCoordinate2D(latitude: i.element.lat, longitude: i.element.long)
+            pin.index = i.offset
+            
+            mainView.mapView.addAnnotation(pin)
+        }
     }
     
     // MARK: - 위치권한
@@ -187,7 +220,10 @@ final class HomeVC: BaseVC, CustomSegmentControlDelegate {
         centerViewOnUserLocation()
         locationManager.startUpdatingLocation() // didUpdateLocations메서드를 수행할 수 있도록 하는 메서드
         previousLocation = getCenterLocation(for: mainView.mapView)
-        onQueueNetworking()
+        onQueueNetworking { _ in
+            
+            print("유저 트래킹 배열\(self.onQueueArray)")
+        }
     }
     
     // MARK: - Helper
@@ -207,6 +243,24 @@ final class HomeVC: BaseVC, CustomSegmentControlDelegate {
         present(alert, animated: true, completion: nil)
     }
     
+    private func setUpAnnotationImage(sesacIndex: Int) -> UIImage? {
+        switch sesacIndex {
+        case 0:
+            return R.image.sesac_face_1()
+        case 1:
+            return R.image.sesac_face_2()
+        case 2:
+            return R.image.sesac_face_3()
+        case 3:
+            return R.image.sesac_face_4()
+        case 4:
+            return R.image.sesac_face_5()
+        default:
+            return R.image.sesac_face_1()
+        }
+    }
+    
+    
     // MARK: - Networking
     private func calculateRegion(region: CLLocationCoordinate2D) -> Int {
         let regionLatitude = region.latitude + 90
@@ -218,7 +272,7 @@ final class HomeVC: BaseVC, CustomSegmentControlDelegate {
         return Int((removeDotLatitude.prefix(5) + removeDotLongtitue.prefix(5)))!
     }
     
-    private func onQueueNetworking() {
+    private func onQueueNetworking(completion: @escaping (Result<Bool, Error>) -> Void) {
         guard let previousLocation = previousLocation else {
             return
         }
@@ -232,29 +286,43 @@ final class HomeVC: BaseVC, CustomSegmentControlDelegate {
                 print("성공")
                 switch response.result {
                 case .success(let response):
-                    print("\(response)")
+                    print("네트워크 리스폰스\(response)")
+                    self.onQueueArray = []
+                    self.onQueueArray += response.fromQueueDB
+                    self.onQueueArray += response.fromQueueDBRequested
+                    completion(.success(true))
+                    //self.addCustomPin()
                 case .failure(let error):
                     print("get user error: \(error)")
                 }
+                break
             case 401:
                 print("파이어베이스 토큰만료")
                 self.refreshIdToken { result in
                     switch result {
                     case .success(let idToken):
                         UserDefaults.idToken = idToken
-                        self.onQueueNetworking()
+                        self.onQueueNetworking { _ in
+                            print("토큰갱신")
+                            completion(.success(false))
+                        }
                     case .failure(let error):
                         print(error)
                     }
                 }
+                break
             case 406:
                 print("미가입 회원입니다.")
+                break
             case 500:
                 print("서버에러")
+                break
             case 501:
                 print("클라이언트에러")
+                break
             default:
                 print("에러")
+                break
             }
         }
 
@@ -311,24 +379,36 @@ extension HomeVC: MKMapViewDelegate {
         // 사용자의 위치 확인
         guard !annotation.isKind(of: MKUserLocation.self) else { return nil }
         
+        print("어노테이션?: \(annotation.description)")
+        
         let annotationIdentifier = "Custom"
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationIdentifier)
+        
         if annotationView == nil {
-            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
-            annotationView?.canShowCallout = true
+            if let annotation = annotation as? CustomAnnotation {
+                annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
+                annotationView?.canShowCallout = true
 
-            // 이미지 리사이징
-            let pinImage = UIImage(named: "sesac_face_1.png")
-            let size = CGSize(width: 80, height: 80)
-            UIGraphicsBeginImageContext(size)
-            pinImage!.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
-            let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
-            annotationView?.image = resizedImage
+                // 이미지 리사이징
+                let pinImage = setUpAnnotationImage(sesacIndex: onQueueArray[annotation.index].sesac)
+                annotation.title = onQueueArray[annotation.index].nick
+                let size = CGSize(width: 80, height: 80)
+                UIGraphicsBeginImageContext(size)
+                pinImage!.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+                let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+                annotationView?.image = resizedImage
+            }
+            
         }
         else {
+            //annotationView?.image = nil
             annotationView?.annotation = annotation
+            
         }
-        
         return annotationView
     }
+}
+
+class CustomAnnotation: MKPointAnnotation {
+    var index: Int!
 }

@@ -55,6 +55,7 @@
 		769F992627B44FE7001B9202 /* CustomSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769F992527B44FE7001B9202 /* CustomSegmentControl.swift */; };
 		769F992827B45640001B9202 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769F992727B45640001B9202 /* HomeService.swift */; };
 		769F992A27B4568B001B9202 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769F992927B4568B001B9202 /* Queue.swift */; };
+		76AD2A1E27B77C57001944F3 /* UserMatchStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AD2A1D27B77C57001944F3 /* UserMatchStatus.swift */; };
 		76CC47872797885600B82EF6 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 76CC47852797885500B82EF6 /* NotoSansKR-Medium.otf */; };
 		76CC47882797885600B82EF6 /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 76CC47862797885600B82EF6 /* NotoSansKR-Regular.otf */; };
 		76CC479027985E5A00B82EF6 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CC478F27985E5A00B82EF6 /* CustomFont.swift */; };
@@ -163,6 +164,7 @@
 		769F992527B44FE7001B9202 /* CustomSegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentControl.swift; sourceTree = "<group>"; };
 		769F992727B45640001B9202 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		769F992927B4568B001B9202 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		76AD2A1D27B77C57001944F3 /* UserMatchStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMatchStatus.swift; sourceTree = "<group>"; };
 		76CC47852797885500B82EF6 /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
 		76CC47862797885600B82EF6 /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
 		76CC478F27985E5A00B82EF6 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
@@ -376,6 +378,7 @@
 		765A4F66279510430034A328 /* SeSAC-Friends */ = {
 			isa = PBXGroup;
 			children = (
+				76AD2A1C27B77C48001944F3 /* Enum */,
 				76F8A98627B119B6009AE54D /* SeSAC-Friends.entitlements */,
 				76DA821227A976A50062FEEB /* Service */,
 				7600B1CE27A9344A000158FD /* Network */,
@@ -432,6 +435,14 @@
 				7692F36427AAD46800E517C7 /* CustomImageView.swift */,
 			);
 			path = MyInfo;
+			sourceTree = "<group>";
+		};
+		76AD2A1C27B77C48001944F3 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				76AD2A1D27B77C57001944F3 /* UserMatchStatus.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 		76CC47842797881000B82EF6 /* Fonts */ = {
@@ -844,6 +855,7 @@
 				76DA822927A98F3C0062FEEB /* ProfileTableViewCell.swift in Sources */,
 				769F992227B44A57001B9202 /* HobbyVC.swift in Sources */,
 				76DA823127A9A0510062FEEB /* MypageModel.swift in Sources */,
+				76AD2A1E27B77C57001944F3 /* UserMatchStatus.swift in Sources */,
 				7657E156279C89CC004CE565 /* CustomLabel.swift in Sources */,
 				7657E166279CBF5E004CE565 /* BirthdayViewModel.swift in Sources */,
 				7692F35F27AAD44400E517C7 /* AgeTableViewCell.swift in Sources */,
