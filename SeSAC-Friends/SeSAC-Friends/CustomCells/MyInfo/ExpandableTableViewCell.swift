@@ -68,12 +68,12 @@ class ExpandableTableViewCell: UITableViewCell {
         }
         
         customImageView.snp.makeConstraints { make in
-            make.height.equalTo(120)
-            make.top.equalTo(headerStackView.snp.top)
+            make.size.equalTo(CGSize(width: 343, height: 194))
+            make.left.top.right.equalToSuperview()
         }
         
         bottomTitleView.snp.makeConstraints { make in
-            make.bottom.equalTo(headerStackView.snp.bottom)
+            make.bottom.left.right.equalToSuperview()
             make.height.equalTo(customImageView.snp.height)
             make.top.equalTo(customImageView.snp.bottom)
         }

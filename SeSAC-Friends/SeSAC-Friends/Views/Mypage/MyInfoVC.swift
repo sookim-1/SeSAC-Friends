@@ -17,6 +17,7 @@ final class MyInfoVC: BaseVC {
         super.viewDidLoad()
         
         configure()
+        saveButton()
         setUpLayout()
     }
 
@@ -24,6 +25,8 @@ final class MyInfoVC: BaseVC {
     override func configure() {
         view.backgroundColor = .systemBackground
         title = "정보 관리"
+        tableView.allowsSelection = true
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none // 테이블뷰 간의 구분선없애기
@@ -35,7 +38,16 @@ final class MyInfoVC: BaseVC {
         tableView.register(HobbyTableViewCell.self, forCellReuseIdentifier: "HobbyTableViewCell")
         tableView.register(PhoneValidTableViewCell.self, forCellReuseIdentifier: "PhoneValidTableViewCell")
         tableView.register(AgeTableViewCell.self, forCellReuseIdentifier: "AgeTableViewCell")
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
+        //tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
+    }
+    
+    private func saveButton() {
+        let saveButton = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(save))
+        self.navigationItem.rightBarButtonItem = saveButton
+    }
+    
+    @objc func save() {
+        print("저장")
     }
     
     // MARK: 오토레이아웃
@@ -109,7 +121,7 @@ extension MyInfoVC: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "ExpandableTableViewCell", for: indexPath) as? ExpandableTableViewCell
             else { return UITableViewCell() }
             
-            cell.customImageView.image = UIImage(named: "sesac_background_1")
+            cell.customImageView.image = R.image.sesac_background_1()
             
             return cell
         case 1:
@@ -132,11 +144,11 @@ extension MyInfoVC: UITableViewDelegate, UITableViewDataSource {
             else { return UITableViewCell() }
             
             return cell
-        case 5:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
-            cell.textLabel?.text = "회원탈퇴"
-            cell.textLabel?.font = UIFont.CustomFont.title2R16
-            return cell
+//        case 5:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
+//            cell.textLabel?.text = "회원탈퇴"
+//            cell.textLabel?.font = UIFont.CustomFont.title2R16
+//            return cell
         default:
             return UITableViewCell()
         }
@@ -161,8 +173,9 @@ extension MyInfoVC: UITableViewDelegate, UITableViewDataSource {
             }
         }
         else if indexPath.row == 5 {
-            tableView.deselectRow(at: indexPath, animated: true)
-            withDraw()
+            //tableView.deselectRow(at: indexPath, animated: true)
+            //withDraw()
+            print("few")
 //            let alertVC = AlertVC()
 //            alertVC.okBtn.addTarget(self, action: #selector(withDraw), for: .touchUpInside)
 //            alertVC.modalPresentationStyle = .overFullScreen
@@ -177,6 +190,6 @@ extension MyInfoVC: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 0 {
             return 500
         }
-        return 100
+        return 200
     }
 }

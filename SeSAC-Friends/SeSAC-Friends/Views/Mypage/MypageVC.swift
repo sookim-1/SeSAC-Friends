@@ -15,12 +15,23 @@ final class MypageVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "내정보"
         viewModel = MypageViewModel(delegate: self)
         
         tableView.delegate = viewModel
         tableView.dataSource = viewModel
         tableView.tableFooterView = UIView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        title = "내정보"
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        title = ""
     }
 
 }

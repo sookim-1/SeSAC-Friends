@@ -26,7 +26,7 @@ class MypageViewModel: NSObject {
                     createdCell: {
                         let cell = ProfileTableViewCell(style: .default, reuseIdentifier: MypageViewModel.ReuseIdentifier)
                         
-                        cell.label.text = "김새싹"
+                        cell.label.text = "\(UserDefaults.nickname)"
                         cell.accessoryType = .disclosureIndicator
                         return cell
                     },
