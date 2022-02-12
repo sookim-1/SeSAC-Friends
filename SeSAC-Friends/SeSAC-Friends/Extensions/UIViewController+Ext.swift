@@ -7,6 +7,7 @@
 
 import UIKit
 import Network
+import FirebaseAuth
 
 extension UIViewController {
     func windowChangeVC(viewController: UIViewController) {
@@ -35,5 +36,18 @@ extension UIViewController {
             }
         }
         monitor.cancel()
+    }
+    
+    func refreshIdToken(completion: @escaping (Result<String, Error>) -> Void) {
+        Auth.auth().currentUser?.getIDTokenForcingRefresh(true) { idToken, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+                           
+            if let idToken = idToken {
+                completion(.success(idToken))
+            }
+        }
     }
 }

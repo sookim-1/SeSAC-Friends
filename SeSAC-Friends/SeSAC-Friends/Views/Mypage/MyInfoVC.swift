@@ -65,6 +65,15 @@ final class MyInfoVC: BaseVC {
                 }
             case 401:
                 print("파이어베이스 토큰만료")
+                self.refreshIdToken { result in
+                    switch result {
+                    case .success(let idToken):
+                        UserDefaults.idToken = idToken
+                        self.withDraw()
+                    case .failure(let error):
+                        print(error)
+                    }
+                }
             case 406:
                 UserDefaults.isUser = false
                 

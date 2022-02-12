@@ -238,6 +238,15 @@ final class HomeVC: BaseVC, CustomSegmentControlDelegate {
                 }
             case 401:
                 print("파이어베이스 토큰만료")
+                self.refreshIdToken { result in
+                    switch result {
+                    case .success(let idToken):
+                        UserDefaults.idToken = idToken
+                        self.onQueueNetworking()
+                    case .failure(let error):
+                        print(error)
+                    }
+                }
             case 406:
                 print("미가입 회원입니다.")
             case 500:

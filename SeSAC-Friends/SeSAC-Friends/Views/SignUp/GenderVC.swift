@@ -75,6 +75,15 @@ final class GenderVC: BaseVC {
                 }
             case 401:
                 print("파이어베이스 토큰만료")
+                self.refreshIdToken { result in
+                    switch result {
+                    case .success(let idToken):
+                        UserDefaults.idToken = idToken
+                        self.authComplete()
+                    case .failure(let error):
+                        print(error)
+                    }
+                }
             case 500:
                 print("서버에러")
             case 501:

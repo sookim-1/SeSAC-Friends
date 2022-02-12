@@ -44,4 +44,7 @@ extension UserDefaults {
     
     @UserDefault(key: "isUser", defaultValue: false)
     static var isUser: Bool
+    
+    @UserDefault(key: "varification", defaultValue: "")
+    static var varification: String
 }

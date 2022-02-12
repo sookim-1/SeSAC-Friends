@@ -8,6 +8,7 @@
 import RxCocoa
 import RxSwift
 import Toast_Swift
+import Foundation
 
 final class SMSInputVC: BaseVC {
     private let mainView = SMSInputView()
@@ -33,6 +34,12 @@ final class SMSInputVC: BaseVC {
         super.viewDidAppear(animated)
         
         self.centerMessageToast(message: "인증번호를 보냈습니다.")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        UserDefaults.varification = self.varification!
     }
     
     @objc func getSetTime() {
