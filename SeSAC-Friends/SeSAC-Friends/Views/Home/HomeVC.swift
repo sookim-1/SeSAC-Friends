@@ -141,7 +141,8 @@ final class HomeVC: BaseVC, CustomSegmentControlDelegate {
         if let location = locationManager.location?.coordinate {
             // 지도가 보이는 반경 및 위치를 지정하기
             let region = MKCoordinateRegion.init(center: location, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
-            mainView.mapView.setRegion(region, animated: true)
+            let tempRegion = MKCoordinateRegion.init(center: CLLocationCoordinate2D(latitude: 37.517819364682694, longitude: 126.88647317074734), latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
+            mainView.mapView.setRegion(tempRegion, animated: true)
         }
     }
     
