@@ -6,7 +6,9 @@
 //
 
 import UIKit
+
 import SnapKit
+
 class ExpandableTableViewCell: UITableViewCell {
     
     lazy var customImageView = CustomImageView(frame: .zero)

@@ -5,11 +5,11 @@
 //  Created by sookim on 2022/01/17.
 //
 
+import AnyFormatKit
 import FirebaseAuth
+import Toast_Swift
 import RxSwift
 import RxCocoa
-import Toast_Swift
-import AnyFormatKit
 
 final class SMSAuthVC: BaseVC {
     private let mainView = SMSAuthView()

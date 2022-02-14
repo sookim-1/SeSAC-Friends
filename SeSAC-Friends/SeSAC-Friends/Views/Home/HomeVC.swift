@@ -5,9 +5,10 @@
 //  Created by sookim on 2022/01/23.
 //
 
-import UIKit
 import MapKit
 import CoreLocation
+import UIKit
+
 import SwiftyJSON
 
 final class HomeVC: BaseVC, CustomSegmentControlDelegate {

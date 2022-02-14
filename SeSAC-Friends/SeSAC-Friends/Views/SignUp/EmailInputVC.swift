@@ -5,9 +5,9 @@
 //  Created by sookim on 2022/01/23.
 //
 
+import Toast_Swift
 import RxCocoa
 import RxSwift
-import Toast_Swift
 
 final class EmailInputVC: BaseVC {
     private var viewModel = EmailViewModel()

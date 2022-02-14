@@ -6,9 +6,10 @@
 //
 
 import Foundation
+
+import FirebaseAuth
 import RxSwift
 import RxCocoa
-import FirebaseAuth
 
 final class SMSAuthViewModel {
     

@@ -5,9 +5,9 @@
 //  Created by sookim on 2022/02/07.
 //
 
+import Contacts
 import Foundation
 import MapKit
-import Contacts
 
 // MKAnnotation 프로토콜을 구현하기 위해서 title, subtitle, coordinate 등 필요
 

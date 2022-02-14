@@ -5,9 +5,10 @@
 //  Created by sookim on 2022/02/01.
 //
 
-import UIKit
-import SnapKit
 import MapKit
+import UIKit
+
+import SnapKit
 
 final class HomeView: UIView {
     lazy var mapView = MKMapView()
