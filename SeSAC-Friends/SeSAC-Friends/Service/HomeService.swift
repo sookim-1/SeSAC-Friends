@@ -15,6 +15,8 @@ struct HomeService {
         "idtoken": "\(UserDefaults.idToken)"
     ]
 
+    private init() {}
+    
     func postOnQueue(model: OnQueue, completion: @escaping (DataResponse<Post, AFError>) -> Void) {
         
         AF.request(Endpoint.onqueue.url, method: .post, parameters: model, encoder: JSONParameterEncoder.default, headers: headers)

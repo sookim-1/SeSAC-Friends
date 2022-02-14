@@ -15,6 +15,8 @@ struct SignUpService {
         "idtoken": "\(UserDefaults.idToken)"
     ]
     
+    private init() {}
+    
     func getSesacUser(completion: @escaping (DataResponse<UserInfoModel, AFError>) -> Void) {
         AF.request(Endpoint.user.url, method: .get, parameters: [:], headers: headers)
             .validate(contentType: ["application/json"])
