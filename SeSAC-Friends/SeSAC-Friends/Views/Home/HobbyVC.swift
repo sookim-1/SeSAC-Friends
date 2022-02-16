@@ -70,22 +70,25 @@ final class HobbyVC: UIViewController {
         {
             UIView.animate(withDuration: 0.1, animations: {
                 
-                let findChangePosition = self.findButton.frame.origin.y - keyboardSize.height + (self.view.frame.maxY - self.view.safeAreaLayoutGuide.layoutFrame.maxY)
-                
-                self.originButtonPosition = self.findButton.frame.origin.y
-                self.findButton.frame.origin.y = findChangePosition
+                let findChangePosition = (self.view.frame.maxY - self.view.safeAreaLayoutGuide.layoutFrame.maxY) - keyboardSize.height
+                self.findButton.snp.remakeConstraints { make in
+                    make.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(findChangePosition)
+                    make.height.equalTo(44)
+                    make.width.equalToSuperview()
+                }
             })
         }
         
     }
     @objc func textViewMoveDown(_ notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
-        {
-            UIView.animate(withDuration: 0.1, animations: {
-                self.findButton.frame.origin.y = self.originButtonPosition
-            })
-
-        }
+        UIView.animate(withDuration: 0.1, animations: {
+            self.findButton.snp.remakeConstraints { make in
+                make.height.equalTo(48)
+                make.width.equalToSuperview().multipliedBy(0.9)
+                make.centerX.equalToSuperview()
+                make.bottom.equalTo(self.view.safeAreaLayoutGuide)
+            }
+        })
     }
     
     private func modelSetting() {
