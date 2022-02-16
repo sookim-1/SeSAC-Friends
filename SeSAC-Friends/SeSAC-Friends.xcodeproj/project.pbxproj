@@ -17,6 +17,8 @@
 		7600B1CA27A92B9A000158FD /* GenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7600B1C927A92B9A000158FD /* GenderView.swift */; };
 		7600B1CD27A92D53000158FD /* ViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7600B1CC27A92D53000158FD /* ViewRepresentable.swift */; };
 		7600B1D027A9345B000158FD /* SeSacAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7600B1CF27A9345B000158FD /* SeSacAPI.swift */; };
+		7654017427BB1AFC001CFAB1 /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7654017327BB1AFC001CFAB1 /* TagCollectionViewCell.swift */; };
+		7654017627BB242E001CFAB1 /* FindVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7654017527BB242E001CFAB1 /* FindVC.swift */; };
 		7657E144279C6E92004CE565 /* SMSInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7657E143279C6E92004CE565 /* SMSInputVC.swift */; };
 		7657E146279C6EB3004CE565 /* BirthdayInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7657E145279C6EB3004CE565 /* BirthdayInputVC.swift */; };
 		7657E14A279C6EEE004CE565 /* EmailInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7657E149279C6EEE004CE565 /* EmailInputVC.swift */; };
@@ -122,6 +124,8 @@
 		7600B1C927A92B9A000158FD /* GenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderView.swift; sourceTree = "<group>"; };
 		7600B1CC27A92D53000158FD /* ViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRepresentable.swift; sourceTree = "<group>"; };
 		7600B1CF27A9345B000158FD /* SeSacAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSacAPI.swift; sourceTree = "<group>"; };
+		7654017327BB1AFC001CFAB1 /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
+		7654017527BB242E001CFAB1 /* FindVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindVC.swift; sourceTree = "<group>"; };
 		7657E143279C6E92004CE565 /* SMSInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSInputVC.swift; sourceTree = "<group>"; };
 		7657E145279C6EB3004CE565 /* BirthdayInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayInputVC.swift; sourceTree = "<group>"; };
 		7657E149279C6EEE004CE565 /* EmailInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailInputVC.swift; sourceTree = "<group>"; };
@@ -502,6 +506,7 @@
 				76CC479C279881C400B82EF6 /* OnboardingCollectionViewCell.swift */,
 				76DA822827A98F3C0062FEEB /* ProfileTableViewCell.swift */,
 				76DA822A27A98F490062FEEB /* SettingTableViewCell.swift */,
+				7654017327BB1AFC001CFAB1 /* TagCollectionViewCell.swift */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -528,6 +533,7 @@
 			children = (
 				7657E14D279C8727004CE565 /* HomeVC.swift */,
 				769F992127B44A57001B9202 /* HobbyVC.swift */,
+				7654017527BB242E001CFAB1 /* FindVC.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -832,6 +838,7 @@
 				7600B1C227A92B61000158FD /* SMSInputView.swift in Sources */,
 				7692F35D27AAD44400E517C7 /* HobbyTableViewCell.swift in Sources */,
 				7657E181279D730B004CE565 /* UserDefaults+Ext.swift in Sources */,
+				7654017627BB242E001CFAB1 /* FindVC.swift in Sources */,
 				76DA821927A97BD90062FEEB /* HomeView.swift in Sources */,
 				76DA822F27A9A0300062FEEB /* MypageViewModel.swift in Sources */,
 				769F992A27B4568B001B9202 /* Queue.swift in Sources */,
@@ -877,6 +884,7 @@
 				76CC479D279881C500B82EF6 /* OnboardingCollectionViewCell.swift in Sources */,
 				7657E162279CBC51004CE565 /* NicknameViewModel.swift in Sources */,
 				76CC479A2798818800B82EF6 /* OnboardingSlide.swift in Sources */,
+				7654017427BB1AFC001CFAB1 /* TagCollectionViewCell.swift in Sources */,
 				7657E14E279C8727004CE565 /* HomeVC.swift in Sources */,
 				7657E14C279C6F0F004CE565 /* GenderVC.swift in Sources */,
 			);

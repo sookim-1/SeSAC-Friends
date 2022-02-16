@@ -20,6 +20,7 @@ final class HomeVC: BaseVC, CustomSegmentControlDelegate {
     private var previousLocation: CLLocation?
     private var onQueueArray: [FromQueueDB] = []
     private var filterdArray: [FromQueueDB] = []
+    private var filterFlag: Bool = false
     
     // MARK: - 뷰컨트롤러 생명주기
     override func loadView() {
@@ -30,6 +31,11 @@ final class HomeVC: BaseVC, CustomSegmentControlDelegate {
         mainView.mapView.delegate = self
         mainView.customSegmentControl.delegate = self
         setUpButtonEvent()
+        
+        navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "arrow.left")
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "arrow.left")
+        navigationItem.backBarButtonItem = UIBarButtonItem()
+        navigationController?.navigationBar.tintColor = .label
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,7 +51,35 @@ final class HomeVC: BaseVC, CustomSegmentControlDelegate {
         mainView.gpsButton.addTarget(self, action: #selector(touchUpGpsButton), for: .touchUpInside)
     }
     @objc private func touchUpFloatingButton() {
-        self.navigationController?.pushViewController(HobbyVC(), animated: true)
+        onQueueNetworking { result in
+            switch result {
+            case .success(let value):
+                if value != nil {
+                    if !self.filterFlag {
+                        self.onQueueArray = []
+                        self.onQueueArray += value!.fromQueueDB
+                        self.onQueueArray += value!.fromQueueDBRequested
+                    }
+                    
+                    DispatchQueue.main.async {
+                        var hobbyVC = HobbyVC()
+                        hobbyVC.hidesBottomBarWhenPushed = true
+                        
+                        hobbyVC.recommendHobby = value!.fromRecommend
+                        hobbyVC.userHobby = []
+                        hobbyVC.requestLocation = CLLocationCoordinate2D(latitude: 37.517819364682694, longitude: 126.88647317074734) // 임시
+                        self.onQueueArray.forEach { queue in
+                            queue.hf.forEach { hf in
+                                hobbyVC.userHobby?.append(hf)
+                            }
+                        }
+                        self.navigationController?.pushViewController(hobbyVC, animated: true)
+                    }
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 
     @objc private func touchUpGpsButton() {
@@ -61,7 +95,12 @@ final class HomeVC: BaseVC, CustomSegmentControlDelegate {
         onQueueNetworking { [self] result in
             switch result {
             case .success(let value):
-                if value == true {
+                if value != nil {
+                    
+                    self.onQueueArray = []
+                    self.onQueueArray += value!.fromQueueDB
+                    self.onQueueArray += value!.fromQueueDBRequested
+                    
                     switch index {
                     case 0:
                         self.centerMessageToast(message: "전체클릭")
@@ -85,7 +124,7 @@ final class HomeVC: BaseVC, CustomSegmentControlDelegate {
                         self.mainView.mapView.removeAnnotations(self.mainView.mapView.annotations)
                         print("\(self.mainView.mapView.annotations)")
                         self.addCustomPin()
-                        
+                        self.filterFlag = true
                         print("\(self.mainView.mapView.annotations)")
                         
                     case 2:
@@ -106,7 +145,7 @@ final class HomeVC: BaseVC, CustomSegmentControlDelegate {
                         self.mainView.mapView.removeAnnotations(self.mainView.mapView.annotations)
                         print(self.mainView.mapView.annotations)
                         self.addCustomPin()
-                        
+                        self.filterFlag = true
                         print(self.mainView.mapView.annotations)
                     default:
                         break
@@ -274,7 +313,7 @@ final class HomeVC: BaseVC, CustomSegmentControlDelegate {
         return Int((removeDotLatitude.prefix(5) + removeDotLongtitue.prefix(5)))!
     }
     
-    private func onQueueNetworking(completion: @escaping (Result<Bool, Error>) -> Void) {
+    private func onQueueNetworking(completion: @escaping (Result<Post?, Error>) -> Void) {
         guard let previousLocation = previousLocation else {
             return
         }
@@ -289,10 +328,7 @@ final class HomeVC: BaseVC, CustomSegmentControlDelegate {
                 switch response.result {
                 case .success(let response):
                     print("네트워크 리스폰스\(response)")
-                    self.onQueueArray = []
-                    self.onQueueArray += response.fromQueueDB
-                    self.onQueueArray += response.fromQueueDBRequested
-                    completion(.success(true))
+                    completion(.success(response))
                     //self.addCustomPin()
                 case .failure(let error):
                     print("get user error: \(error)")
@@ -306,7 +342,7 @@ final class HomeVC: BaseVC, CustomSegmentControlDelegate {
                         UserDefaults.idToken = idToken
                         self.onQueueNetworking { _ in
                             print("토큰갱신")
-                            completion(.success(false))
+                            completion(.success(nil))
                         }
                     case .failure(let error):
                         print(error)

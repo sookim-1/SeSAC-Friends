@@ -25,4 +25,10 @@ struct HomeService {
             .responseDecodable(of: Post.self, completionHandler: completion)
     }
     
+    func postQueue(model: Queue, completion: @escaping (AFDataResponse<String>) -> Void) {
+        
+        AF.request(Endpoint.queue.url, method: .post, parameters: model, encoder: JSONParameterEncoder.default, headers: headers)
+            .responseString(completionHandler: completion)
+    }
+    
 }

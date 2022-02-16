@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxSwift
 
 struct OnQueue: Codable {
     let region: Int
@@ -26,4 +27,12 @@ struct FromQueueDB: Codable {
     let reputation: [Int]
     let hf, reviews: [String]
     let gender, type, sesac, background: Int
+}
+
+struct Queue: Codable {
+    let type: Int
+    let region: Int
+    let long: Double
+    let lat: Double
+    let hf: [String]
 }
