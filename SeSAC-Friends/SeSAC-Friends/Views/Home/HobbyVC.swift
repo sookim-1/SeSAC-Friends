@@ -35,15 +35,16 @@ final class HobbyVC: UIViewController {
     
     private func configureDefault() {
         view.backgroundColor = .systemBackground
+        title = ""
         view.addSubview(findButton)
         findButton.buttonStatus = .fill
         findButton.addTarget(self, action: #selector(findTapped), for: .touchUpInside)
         
         let searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width - 28, height: 0))
         searchBar.placeholder = "띄어쓰기로 복수 입력이 가능해요"
-        searchBar.autocorrectionType = .no
+        searchBar.autocorrectionType = .yes
         searchBar.searchTextField.delegate = self
-        searchBar.searchTextField.autocorrectionType = .no
+        //searchBar.searchTextField.autocorrectionType = .no
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: searchBar)
 
         //let searchController = UISearchController(searchResultsController: nil)
