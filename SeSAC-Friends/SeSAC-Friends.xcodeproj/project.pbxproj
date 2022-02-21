@@ -17,6 +17,7 @@
 		7600B1CA27A92B9A000158FD /* GenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7600B1C927A92B9A000158FD /* GenderView.swift */; };
 		7600B1CD27A92D53000158FD /* ViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7600B1CC27A92D53000158FD /* ViewRepresentable.swift */; };
 		7600B1D027A9345B000158FD /* SeSacAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7600B1CF27A9345B000158FD /* SeSacAPI.swift */; };
+		762836DE27C336C60069DD9E /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762836DD27C336C60069DD9E /* EmptyView.swift */; };
 		7654017427BB1AFC001CFAB1 /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7654017327BB1AFC001CFAB1 /* TagCollectionViewCell.swift */; };
 		7654017627BB242E001CFAB1 /* FindVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7654017527BB242E001CFAB1 /* FindVC.swift */; };
 		7657E144279C6E92004CE565 /* SMSInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7657E143279C6E92004CE565 /* SMSInputVC.swift */; };
@@ -125,6 +126,7 @@
 		7600B1C927A92B9A000158FD /* GenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderView.swift; sourceTree = "<group>"; };
 		7600B1CC27A92D53000158FD /* ViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRepresentable.swift; sourceTree = "<group>"; };
 		7600B1CF27A9345B000158FD /* SeSacAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSacAPI.swift; sourceTree = "<group>"; };
+		762836DD27C336C60069DD9E /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		7654017327BB1AFC001CFAB1 /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
 		7654017527BB242E001CFAB1 /* FindVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindVC.swift; sourceTree = "<group>"; };
 		7657E143279C6E92004CE565 /* SMSInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSInputVC.swift; sourceTree = "<group>"; };
@@ -300,6 +302,14 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		762836DC27C336B30069DD9E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				762836DD27C336C60069DD9E /* EmptyView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		763A9BB027A857CE001B04DD /* Support */ = {
 			isa = PBXGroup;
 			children = (
@@ -464,6 +474,7 @@
 		76CC478E27985E4500B82EF6 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				762836DC27C336B30069DD9E /* Home */,
 				7692F36227AAD45B00E517C7 /* MyInfo */,
 				76CC4791279860CD00B82EF6 /* CustomColor.swift */,
 				76CC47932798633000B82EF6 /* CustomButton.swift */,
@@ -834,6 +845,7 @@
 				769F992827B45640001B9202 /* HomeService.swift in Sources */,
 				7692F36627AAD46800E517C7 /* BottomView.swift in Sources */,
 				7600B1BD27A92A38000158FD /* BaseVC.swift in Sources */,
+				762836DE27C336C60069DD9E /* EmptyView.swift in Sources */,
 				7692F36027AAD44400E517C7 /* PhoneValidTableViewCell.swift in Sources */,
 				7600B1C427A92B70000158FD /* NicknameInputView.swift in Sources */,
 				76DA823327A9A0690062FEEB /* MypageDelegate.swift in Sources */,

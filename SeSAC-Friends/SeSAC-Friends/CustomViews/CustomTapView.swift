@@ -15,7 +15,7 @@ final class CustomTapView: UIView {
 
     private var buttonTitles: [String]!
     private var buttons: [UIButton]!
-    private var selectorView: UIView!
+    public private(set) var selectorView: UIView!
     
     var textColor: UIColor = .CustomColor.gray6
     var selectorViewColor: UIColor = .CustomColor.green

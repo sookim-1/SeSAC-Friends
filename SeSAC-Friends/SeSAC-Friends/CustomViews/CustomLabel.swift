@@ -14,6 +14,7 @@ enum LabelList {
     case birthdayLabel
     case emailLabel
     case genderLabel
+    case descriptionLabel
 }
 
 class CustomLabel: UILabel {
@@ -71,6 +72,12 @@ class CustomLabel: UILabel {
             attributedString.addAttributes([.kern: -0.5,
                                             .paragraphStyle: paragraphStyle,.foregroundColor: UIColor.CustomColor.black, .font: UIFont.CustomFont.displayR20],
                                            range: NSRange(location: 0, length: 11))
+        case .descriptionLabel:
+            font = UIFont.CustomFont.title4R14
+            textColor = UIColor.CustomColor.gray7
+            attributedString.addAttributes([.kern: -0.5,
+                                            .paragraphStyle: paragraphStyle,.foregroundColor: UIColor.CustomColor.black, .font: UIFont.CustomFont.displayR20],
+                                           range: NSRange(location: 0, length: 17))
         }
 
         numberOfLines = 0
