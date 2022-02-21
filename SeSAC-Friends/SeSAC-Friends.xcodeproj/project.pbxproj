@@ -18,6 +18,8 @@
 		7600B1CD27A92D53000158FD /* ViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7600B1CC27A92D53000158FD /* ViewRepresentable.swift */; };
 		7600B1D027A9345B000158FD /* SeSacAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7600B1CF27A9345B000158FD /* SeSacAPI.swift */; };
 		762836DE27C336C60069DD9E /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762836DD27C336C60069DD9E /* EmptyView.swift */; };
+		762836E027C340BB0069DD9E /* ExpandableCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762836DF27C340BB0069DD9E /* ExpandableCardView.swift */; };
+		762836E427C359FA0069DD9E /* FindTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762836E327C359FA0069DD9E /* FindTableViewCell.swift */; };
 		7654017427BB1AFC001CFAB1 /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7654017327BB1AFC001CFAB1 /* TagCollectionViewCell.swift */; };
 		7654017627BB242E001CFAB1 /* FindVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7654017527BB242E001CFAB1 /* FindVC.swift */; };
 		7657E144279C6E92004CE565 /* SMSInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7657E143279C6E92004CE565 /* SMSInputVC.swift */; };
@@ -127,6 +129,8 @@
 		7600B1CC27A92D53000158FD /* ViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRepresentable.swift; sourceTree = "<group>"; };
 		7600B1CF27A9345B000158FD /* SeSacAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSacAPI.swift; sourceTree = "<group>"; };
 		762836DD27C336C60069DD9E /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		762836DF27C340BB0069DD9E /* ExpandableCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableCardView.swift; sourceTree = "<group>"; };
+		762836E327C359FA0069DD9E /* FindTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindTableViewCell.swift; sourceTree = "<group>"; };
 		7654017327BB1AFC001CFAB1 /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
 		7654017527BB242E001CFAB1 /* FindVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindVC.swift; sourceTree = "<group>"; };
 		7657E143279C6E92004CE565 /* SMSInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSInputVC.swift; sourceTree = "<group>"; };
@@ -306,6 +310,8 @@
 			isa = PBXGroup;
 			children = (
 				762836DD27C336C60069DD9E /* EmptyView.swift */,
+				762836DF27C340BB0069DD9E /* ExpandableCardView.swift */,
+				762836E327C359FA0069DD9E /* FindTableViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -868,6 +874,8 @@
 				76DA823527A9A19C0062FEEB /* MyInfoVC.swift in Sources */,
 				7600B1CA27A92B9A000158FD /* GenderView.swift in Sources */,
 				769F992627B44FE7001B9202 /* CustomSegmentControl.swift in Sources */,
+				762836E027C340BB0069DD9E /* ExpandableCardView.swift in Sources */,
+				762836E427C359FA0069DD9E /* FindTableViewCell.swift in Sources */,
 				765A4F68279510430034A328 /* AppDelegate.swift in Sources */,
 				7657E164279CBE9D004CE565 /* Date+Ext.swift in Sources */,
 				76DA822127A980840062FEEB /* FriendsVC.swift in Sources */,
