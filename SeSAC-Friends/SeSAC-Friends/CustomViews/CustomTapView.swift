@@ -50,7 +50,7 @@ final class CustomTapView: UIView {
         button.setTitleColor(selectorTextColor, for: .normal)
         let selectorPosition = frame.width / CGFloat(buttonTitles.count) * CGFloat(index)
         UIView.animate(withDuration: 0.2) {
-            self.selectorView.frame.origin.x = selectorPosition
+            //self.selectorView.frame.origin.x = selectorPosition
         }
     }
     
@@ -62,7 +62,7 @@ final class CustomTapView: UIView {
                 selectedIndex = buttonIndex
                 delegate?.change(to: selectedIndex)
                 UIView.animate(withDuration: 0.3) {
-                    self.selectorView.frame.origin.x = selectorPosition
+                    //self.selectorView.frame.origin.x = selectorPosition
                 }
                 btn.setTitleColor(selectorTextColor, for: .normal)
             }
@@ -71,11 +71,8 @@ final class CustomTapView: UIView {
     
     private func updateView() {
         createButton()
-        configSelectorView()
+        //configSelectorView()
         configStackView()
-        buttons.forEach({ btn in
-            btn.layer.zPosition = 99
-        })
     }
     
     private func configStackView() {
@@ -84,6 +81,7 @@ final class CustomTapView: UIView {
         stack.axis = .horizontal
         stack.alignment = .fill
         stack.distribution = .fillEqually
+        stack.spacing = 0
         addSubview(stack)
         stack.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -96,6 +94,8 @@ final class CustomTapView: UIView {
         selectorView = UIView(frame: CGRect(x: 0, y: self.frame.height, width: selectorWidth, height: 2))
         selectorView.backgroundColor = selectorViewColor
         addSubview(selectorView)
+
+        
     }
     
     private func createButton() {

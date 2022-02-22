@@ -31,4 +31,10 @@ struct HomeService {
             .responseString(completionHandler: completion)
     }
     
+    func deleteQueue(completion: @escaping (AFDataResponse<String>) -> Void) {
+        
+        AF.request(Endpoint.queue.url, method: .delete, parameters: [:], headers: headers)
+            .responseString(completionHandler: completion)
+    }
+
 }

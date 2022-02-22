@@ -9,8 +9,8 @@ import UIKit
 
 class EmptyView: UIView {
 
-    private var changeHobbyButton: CustomButton = CustomButton(text: "취미 변경하기")
-    private var refreshButton: CustomButton = CustomButton()
+    var changeHobbyButton: CustomButton = CustomButton(text: "취미 변경하기")
+    var refreshButton: CustomButton = CustomButton()
     private var placeHolder: UIImageView = UIImageView()
     private var descriptionLabel: CustomLabel!
     
