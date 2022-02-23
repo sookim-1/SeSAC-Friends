@@ -36,3 +36,8 @@ struct Queue: Codable {
     let lat: Double
     let hf: [String]
 }
+
+// Request
+struct Request: Codable {
+    let otheruid: String 
+}

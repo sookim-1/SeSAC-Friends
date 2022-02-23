@@ -36,5 +36,11 @@ struct HomeService {
         AF.request(Endpoint.queue.url, method: .delete, parameters: [:], headers: headers)
             .responseString(completionHandler: completion)
     }
+    
+    func hobbyrequestQueue(uid: Request, completion: @escaping (AFDataResponse<String>) -> Void) {
+        
+        AF.request(Endpoint.hobbyrequest.url, method: .post, parameters: uid, encoder: JSONParameterEncoder.default, headers: headers)
+            .responseString(completionHandler: completion)
+    }
 
 }

@@ -40,7 +40,9 @@ class ExpandableCardView: UIView {
     
     
     // 바텀뷰
-    private let bottomView = CardBottomView()
+    let bottomView = CardBottomView()
+    var isRequested = false
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -60,7 +62,7 @@ class ExpandableCardView: UIView {
         addSubview(bottomView)
         
         bottomView.layer.cornerRadius = 8
-        decisionButton.addTarget(self, action: #selector(touchDecisionButton), for: .touchUpInside)
+        //decisionButton.addTarget(self, action: #selector(touchDecisionButton), for: .touchUpInside)
     }
     
     func setUpLayout() {
@@ -93,9 +95,6 @@ class ExpandableCardView: UIView {
         }
     }
     
-    @objc func touchDecisionButton() {
-        print("터치")
-    }
 }
 
 class CardBottomView: UIView {
