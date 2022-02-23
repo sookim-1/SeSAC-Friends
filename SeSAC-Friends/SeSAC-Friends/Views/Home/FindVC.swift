@@ -258,9 +258,12 @@ extension FindVC: UITableViewDelegate, UITableViewDataSource {
             cell.cardView.sesacImageView.image = UIImage(named: "sesac_face_\(fromQueueDBRequested[indexPath.row].sesac + 1)")
             cell.cardView.bottomView.titleLable.text = fromQueueDBRequested[indexPath.row].nick
             cell.cardView.bottomView.reviewView.text = fromQueueDBRequested[indexPath.row].reviews[0]
+            addTextViewGesture(textView: cell.cardView.bottomView.reviewView)
+            
             cell.cardView.decisionButton.setTitle("수락하기", for: .normal)
             cell.cardView.decisionButton.backgroundColor = .CustomColor.success
             cell.cardView.decisionButton.addTarget(self, action: #selector(touchDecisionButton), for: .touchUpInside)
+            
             
         } else {
             cell.cardView.backgroundImageView.image = UIImage(named: "sesac_background_\(fromQueueDB[indexPath.row].background + 1)")
@@ -273,6 +276,7 @@ extension FindVC: UITableViewDelegate, UITableViewDataSource {
                 cell.cardView.bottomView.reviewView.text = fromQueueDB[indexPath.row].reviews[0]
                 cell.cardView.bottomView.reviewView.textColor = .CustomColor.black
             }
+            addTextViewGesture(textView: cell.cardView.bottomView.reviewView)
             cell.cardView.decisionButton.setTitle("요청하기", for: .normal)
             cell.cardView.decisionButton.backgroundColor = .CustomColor.error
             
@@ -284,6 +288,26 @@ extension FindVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 600
+    }
+    
+    func addTextViewGesture(textView: UITextView) {
+        textView.isUserInteractionEnabled = true
+        let event = UITapGestureRecognizer(target: self,
+                    action: #selector(commuteMethod))
+        textView.addGestureRecognizer(event)
+    }
+    
+    @objc func commuteMethod() {
+        print(indexPathRow)
+        let reviewVC = ReviewVC()
+        
+        if isRequested {
+            reviewVC.reviews = fromQueueDBRequested[indexPathRow].reviews
+            self.navigationController?.pushViewController(reviewVC, animated: true)
+        } else {
+            reviewVC.reviews = fromQueueDB[indexPathRow].reviews
+            self.navigationController?.pushViewController(reviewVC, animated: true)
+        }
     }
     
     @objc func touchDecisionButton() {
